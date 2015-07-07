@@ -1,0 +1,19 @@
+{
+  "name": "widget-o",
+  "version": "0.1.0",
+  "homepage": "https://github.com/sebastian-misiewicz/widget-o",
+  "authors": [
+    "Sebastian Misiewicz <sebastian@sebastianmisiewicz.info>"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
