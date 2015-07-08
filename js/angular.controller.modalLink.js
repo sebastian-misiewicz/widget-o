@@ -18,6 +18,6 @@ widgeto.controller('ModalLinkController', function ($scope, $rootScope, Template
 });
 
 widgeto.run(function (TemplateManager) {
-    TemplateManager.add('widget-o/html/modal-link.html');
+    TemplateManager.add('bower_components/widget-o/html/modal-link.html');
 });
 

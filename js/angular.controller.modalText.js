@@ -18,7 +18,7 @@ widgeto.controller('ModalTextController', function ($scope, $rootScope, Template
 });
 
 widgeto.run(function (TemplateManager) {
-    TemplateManager.add('widget-o/html/modal-text.html');
+    TemplateManager.add('bower_components/widget-o/html/modal-text.html');
 });
 
 
