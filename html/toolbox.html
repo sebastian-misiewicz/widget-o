@@ -1,0 +1,17 @@
+<div ng-controller="ToolboxController"
+     ng-mouseenter="show()"
+     ng-mouseleave="hide()"
+    style="position: fixed; top: 5px; left: 5px; z-index: 9999; display: block;">
+    <h1>
+        <span class="glyphicon glyphicon-flash" style="color: #ffffff; opacity: 0.3" ng-show="!isVisible"></span>
+    </h1>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <span style="color: #ffffff;" ng-show="isVisible">TOOLBOX</span>
+        </div>
+    </div>
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default" ng-click="save()" ng-show="isVisible">Save</button>
+        <button type="button" class="btn btn-default" ng-click="reset()" ng-show="isVisible">Reset</button>
+    </div>
+</div>
