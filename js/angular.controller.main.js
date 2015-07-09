@@ -1,27 +1,8 @@
-widgeto.controller('MainController', function ($scope, $rootScope, TemplateManager) {
+widgeto.controller('MainController', function ($scope, $rootScope, TemplateManager, PageManager) {
    
-    /*
-     * Load all templates added to the manager.
-     */
     TemplateManager.loadAll($scope);
    
-    $scope.page = {
-        title: {
-            value: "Some title"
-        },
-        introText: {
-            value: "start bootstrap"
-        },
-        skills: {
-            value: "Web Developer - Graphic Artist - User Experience Designer"
-        },
-        portfolio: {
-            value: {
-                text: "Portfolio",
-                href: "#portfolio"
-            }
-        }
-    };
+    $scope.page = PageManager.get();
     
     
     $scope.edit = function(id, type) {
@@ -31,10 +12,6 @@ widgeto.controller('MainController', function ($scope, $rootScope, TemplateManag
     
     $rootScope.$on('modal-close', function (event, id, value) {
         $scope.page[id].value = value;
-    });
-    
-    $rootScope.$on('modal-load', function (event, template) {
-        
     });
     
 });
