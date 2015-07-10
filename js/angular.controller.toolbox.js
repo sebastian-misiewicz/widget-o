@@ -9,7 +9,13 @@ widgeto.controller('ToolboxController', function ($scope, $rootScope) {
         $scope.isVisible = false;
     };
     
+    $scope.save = function() {
+        $rootScope.$broadcast('page-save');
+    };
     
+    $scope.reset = function() {
+        $rootScope.$broadcast('page-reset');
+    };
     
 });
 

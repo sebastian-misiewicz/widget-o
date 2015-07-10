@@ -1,1 +1,1 @@
-widgeto = angular.module('widget-o', []);
+widgeto = angular.module('widget-o', ['ngResource']);

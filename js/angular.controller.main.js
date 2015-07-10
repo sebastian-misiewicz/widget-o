@@ -1,9 +1,9 @@
-widgeto.controller('MainController', function ($scope, $rootScope, TemplateManager, PageManager) {
+widgeto.controller('MainController', function ($scope, $rootScope, TemplateManager, PageCache, Page) {
    
     TemplateManager.loadAll($scope);
    
-    $scope.page = PageManager.get();
-    
+    $scope.idpage = PageCache.getIdPage();
+    $scope.page = PageCache.getPage();
     
     $scope.edit = function(id, type) {
         $rootScope.$broadcast('modal-open', id, $scope.page[id].value);
@@ -12,6 +12,14 @@ widgeto.controller('MainController', function ($scope, $rootScope, TemplateManag
     
     $rootScope.$on('modal-close', function (event, id, value) {
         $scope.page[id].value = value;
+    });
+    
+    $rootScope.$on('page-save', function (event) {
+        Page.update({id: $scope.idpage}, $scope.page);
+    });
+    
+    $rootScope.$on('page-reset', function (event) {
+        $scope.page = Page.get({id: $scope.idpage});
     });
     
 });
