@@ -1,6 +1,6 @@
-widgeto.controller('MainController', function ($scope, $rootScope, TemplateManager, PageCache, Page) {
+widgeto.controller('MainController', function ($scope, $rootScope, $compile, TemplateManager, PageCache, Page) {
    
-    TemplateManager.loadAll($scope);
+    TemplateManager.loadAll();
    
     $scope.idpage = PageCache.getIdPage();
     $scope.page = PageCache.getPage();
@@ -20,6 +20,11 @@ widgeto.controller('MainController', function ($scope, $rootScope, TemplateManag
     
     $rootScope.$on('page-reset', function (event) {
         $scope.page = Page.get({id: $scope.idpage});
+    });
+    
+    $rootScope.$on('templates-loaded', function () {
+        $compile($("body").contents())($scope);
+        $rootScope.$broadcast('body-compiled');
     });
     
 });
