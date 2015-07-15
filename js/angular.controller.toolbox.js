@@ -1,5 +1,8 @@
-widgeto.controller('ToolboxController', function ($scope, $rootScope) {
+widgeto.controller('ToolboxController', function ($scope, $rootScope, EnableManager) {
 
+    EnableManager.add($scope);
+    $scope.isEnabled = false;
+    
     $scope.isVisible = false;
 
     $scope.show = function() {
@@ -15,6 +18,10 @@ widgeto.controller('ToolboxController', function ($scope, $rootScope) {
     
     $scope.reset = function() {
         $rootScope.$broadcast('page-reset');
+    };
+    
+    $scope.stopEdit = function() {
+        $rootScope.$broadcast('stop-edit');
     };
     
 });

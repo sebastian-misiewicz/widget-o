@@ -1,4 +1,7 @@
-widgeto.controller('ModalLinkController', function ($scope, $rootScope, TemplateManager) {
+widgeto.controller('ModalLinkController', function ($scope, $rootScope, EnableManager) {
+
+    EnableManager.add($scope);
+    $scope.isEnabled = false;
 
     $scope.id = '';
     $scope.value = '';

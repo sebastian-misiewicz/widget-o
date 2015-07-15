@@ -10,6 +10,17 @@ widgeto.controller('MainController', function ($scope, $rootScope, $compile, Tem
         $('#modal-' + type).modal('show');
     };
     
+    $scope.startEdit = function() {
+        console.log('Starting the edit mode');
+        $rootScope.$broadcast('start-edit');
+        inEdit = true;
+    };
+    
+    $rootScope.$on('stop-edit', function () {
+        console.log('Stopping the edit mode');
+        inEdit = false;
+    });
+    
     $rootScope.$on('modal-close', function (event, id, value) {
         $scope.page[id].value = value;
     });
@@ -19,7 +30,12 @@ widgeto.controller('MainController', function ($scope, $rootScope, $compile, Tem
     });
     
     $rootScope.$on('page-reset', function (event) {
-        $scope.page = Page.get({id: $scope.idpage});
+        Page.get({id: $scope.idpage}, function (page) {
+            $scope.page = page;
+        }, function() {
+            // TODO sebastian show a proper error message on the website
+            console.log('Failed to get the page: ' + $scope.idpage);
+        });
     });
     
     $rootScope.$on('templates-loaded', function () {
@@ -31,6 +47,7 @@ widgeto.controller('MainController', function ($scope, $rootScope, $compile, Tem
 
 // TODO global variables!
 var current;
+var inEdit = false;
 function edit() {
     var scope = angular.element($("#"+current)).scope();
     if (!current) {
@@ -57,7 +74,9 @@ $('.widget-o-editable').popover({
     template: '<div class="popover" onmouseover="clearTimeout(timeoutObj);$(this).mouseleave(function() {$(this).hide();});"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
 }).mouseenter(function(e) {
     current = e.target.id;
-    $(this).popover('show');
+    if (inEdit) {
+        $(this).popover('show');
+    }
 }).mouseleave(function(e) {
     var ref = $(this);
     timeoutObj = setTimeout(function(){
