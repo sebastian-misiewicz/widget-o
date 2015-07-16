@@ -12,6 +12,7 @@ widgeto.controller('ModalLoginController', function ($scope, $rootScope, $http, 
         }).success(function () {
             $scope.loginFailed = false;
             $('#modal-login').modal('hide');
+            $rootScope.$broadcast('login-success');
         }).error(function () {
             $scope.loginFailed = true;
         });

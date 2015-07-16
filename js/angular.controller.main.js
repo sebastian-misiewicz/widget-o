@@ -13,8 +13,11 @@ widgeto.controller('MainController', function ($scope, $rootScope, $compile, Tem
     $scope.startEdit = function() {
         console.log('Starting the edit mode');
         $rootScope.$broadcast('start-edit');
-        inEdit = true;
     };
+    
+    $rootScope.$on('login-success', function () {
+        inEdit = true;
+    });
     
     $rootScope.$on('stop-edit', function () {
         console.log('Stopping the edit mode');

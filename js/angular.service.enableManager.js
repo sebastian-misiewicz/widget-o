@@ -6,7 +6,7 @@ widgeto.service('EnableManager', function($rootScope) {
         scopes.push(scope);
     };
     
-    $rootScope.$on('start-edit', function() {
+    $rootScope.$on('login-success', function() {
         scopes.forEach(function (scope) {
             scope.isEnabled = true;
         });
