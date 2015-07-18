@@ -8,7 +8,7 @@ widgeto.controller('ModalLoginController', function ($scope, $rootScope, $http, 
     $scope.login = function () {
         // TODO Make it more secure
         $http.defaults.headers.common['auth-token'] = '{"username":"' + $scope.username + '", "password":"' + $scope.password + '"}';
-        $http.post('rest/login.html', {
+        $http.post('rest/login/', {
         }).success(function () {
             $scope.loginFailed = false;
             $('#modal-login').modal('hide');

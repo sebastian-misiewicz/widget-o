@@ -1,5 +1,5 @@
 widgeto.factory("Page", function ($resource) {
-    return $resource("rest/:id", null,
+    return $resource("rest/page/:id", null,
             {
                 'update': {method: 'PUT'}
             });
