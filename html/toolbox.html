@@ -6,9 +6,12 @@
     <h1>
         <span class="glyphicon glyphicon-flash" style="color: #ffffff; opacity: 0.3" ng-show="!isVisible"></span>
     </h1>
-    <div class="btn-group-vertical" role="group">
-        <button type="button" class="btn btn-default" ng-click="save()" ng-show="isVisible">Save</button>
-        <button type="button" class="btn btn-default" ng-click="reset()" ng-show="isVisible">Reset</button>
-        <button type="button" class="btn btn-default" ng-click="stopEdit()" ng-show="isVisible">Exit</button>
+    <div class="btn-group-vertical" role="toolbar" ng-show="isVisible">
+        <div class="bg-info text-center">Current</div>
+        <button type="button" class="btn btn-default" ng-click="save()">Save</button>
+        <button type="button" class="btn btn-default" ng-click="reset()">Reset</button>
+        <div class="bg-info text-center">Page</div>
+        <button type="button" class="btn btn-default" ng-click="addNew()">New</button>
+        <button type="button" class="btn btn-default" ng-click="stopEdit()">Exit</button>
     </div>
 </div>
