@@ -24,6 +24,10 @@ widgeto.controller('ToolboxController', function ($scope, $rootScope, EnableMana
         $rootScope.$broadcast('stop-edit');
     };
     
+    $scope.addNew = function() {
+        $rootScope.$broadcast('page-add-new');
+    };
+    
 });
 
 widgeto.run(function (TemplateManager) {
