@@ -25,7 +25,7 @@ widgeto.controller('ToolboxController', function ($scope, $rootScope, EnableMana
     };
     
     $scope.addNew = function() {
-        $rootScope.$broadcast('page-add-new');
+        $rootScope.$broadcast('modal-add-new-page-open');
     };
     
 });
