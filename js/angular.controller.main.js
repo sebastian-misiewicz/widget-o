@@ -50,7 +50,7 @@ widgeto.controller('MainController', function ($scope, $rootScope, $compile, Tem
 
 // TODO global variables!
 var current;
-var inEdit = true;
+var inEdit = false;
 function edit() {
     var scope = angular.element($("#"+current)).scope();
     if (!current) {

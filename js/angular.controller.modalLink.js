@@ -1,4 +1,4 @@
-widgeto.controller('ModalLinkController', function ($scope, $rootScope, EnableManager) {
+widgeto.controller('ModalLinkController', function ($scope, $rootScope, EnableManager, Page) {
 
     EnableManager.add($scope);
     $scope.isEnabled = false;
@@ -20,14 +20,23 @@ widgeto.controller('ModalLinkController', function ($scope, $rootScope, EnableMa
     };
     
     $scope.$watch('value.type', function() {
+        $scope.hrefs = new Array();
         switch ($scope.value.type) {
             case 'section':
                 var sections = $('section').toArray();
-                $scope.hrefs = new Array();
-                for(var section in sections) {
+                for (var section in sections) {
                     var id = $(sections[section]).attr('id');
                     $scope.hrefs.push("#" + id);
                 }
+                break;
+            case 'internal':
+                Page.query({}, function(pages) {
+                    pages.forEach(function (page) {
+                        if (page.idsite) {
+                           $scope.hrefs.push(page.idsite);
+                        }
+                    });
+                });
                 break;
         }
     });
