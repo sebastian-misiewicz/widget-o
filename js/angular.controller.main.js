@@ -3,7 +3,7 @@ widgeto.controller('MainController', function ($scope, $rootScope, $compile, Tem
     TemplateManager.loadAll();
    
     $scope.idpage = PageCache.getIdPage();
-    $scope.page = PageCache.getPage();
+    
     
     $scope.edit = function(id, type) {
         $rootScope.$broadcast('modal-open', id, $scope.page[id].value);
@@ -42,7 +42,14 @@ widgeto.controller('MainController', function ($scope, $rootScope, $compile, Tem
     });
     
     $rootScope.$on('templates-loaded', function () {
+        Page.get({id: $scope.idpage}, function (page) {
+            $scope.page = page;
+        }, function() {
+            // TODO sebastian show a proper error message on the website
+            console.log('Failed to get the page: ' + $scope.idpage);
+        });
         $compile($("body").contents())($scope);
+        console.log('body got compiled');
         $rootScope.$broadcast('body-compiled');
     });
     
