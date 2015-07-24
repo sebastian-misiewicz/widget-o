@@ -4,7 +4,6 @@ widgeto.controller('MainController', function ($scope, $rootScope, $compile, Tem
    
     $scope.idpage = PageCache.getIdPage();
     
-    
     $scope.edit = function(id, type) {
         $rootScope.$broadcast('modal-open', id, $scope.page[id].value);
         $('#modal-' + type).modal('show');
