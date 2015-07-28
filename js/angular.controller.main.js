@@ -27,11 +27,11 @@ widgeto.controller('MainController', function ($scope, $rootScope, $compile, Tem
         $scope.page[id].value = value;
     });
 
-    $rootScope.$on('page-save', function (event) {
+    $rootScope.$on('page-save', function () {
         Page.update({id: $scope.idpage}, $scope.page);
     });
 
-    $rootScope.$on('page-reset', function (event) {
+    $rootScope.$on('page-reset', function () {
         Page.get({id: $scope.idpage}, function (page) {
             $scope.page = page;
         }, function () {
