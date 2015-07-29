@@ -5,9 +5,36 @@ widgeto.controller('MainController', function ($scope, $rootScope, $compile, Tem
     $scope.idpage = PageCache.getIdPage();
 
     $scope.edit = function (id, type) {
-        $rootScope.$broadcast('modal-open', id, $scope.page[id].value);
+        $rootScope.$broadcast('modal-open', id, getElement(id));
         $('#modal-' + type).modal('show');
     };
+    
+    function getElement(id) {
+        var ids = id.split("-");
+        
+        if (ids.length === 1) {
+            return $scope.page[id];
+        }
+        var elements = $scope.page[ids[0]].elements;
+        for (var i in elements) {
+            if (elements[i].id === ids[1]) {
+                return elements[i];
+            }
+        }
+    }
+    function setElement(id, value) {
+        var ids = id.split("-");
+        
+        if (ids.length === 1) {
+            $scope.page[id] = value;
+        }
+        var elements = $scope.page[ids[0]].elements;
+        for (var i in elements) {
+            if (elements[i].id === ids[1]) {
+                elements[i] = value;
+            }
+        }
+    }
 
     $scope.startEdit = function () {
         console.log('Starting the edit mode');
@@ -24,7 +51,7 @@ widgeto.controller('MainController', function ($scope, $rootScope, $compile, Tem
     });
 
     $rootScope.$on('modal-close', function (event, id, value) {
-        $scope.page[id].value = value;
+        setElement(id, value);
     });
 
     $rootScope.$on('page-save', function () {
@@ -57,7 +84,7 @@ widgeto.controller('MainController', function ($scope, $rootScope, $compile, Tem
 
 // TODO global variables!
 var current;
-var inEdit = false;
+var inEdit = true;
 function edit() {
     var scope = angular.element($("#" + current)).scope();
     if (!current) {
