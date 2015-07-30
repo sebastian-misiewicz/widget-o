@@ -8,7 +8,6 @@ widgeto.controller('EditLinkController', function ($scope, $rootScope, EnableMan
     $scope.hrefs = [];
     
     $rootScope.$on('modal-open', function (event, id, value) {
-        console.log('modal-link-opened');
         $scope.$apply(function () {
             $scope.id = id;
             $scope.value = value;
