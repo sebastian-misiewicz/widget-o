@@ -12,11 +12,6 @@ widgeto.controller('ModalEditController', function ($scope, $rootScope, EnableMa
         });
     });
 
-    $scope.save = function () {
-//        $rootScope.$broadcast('modal-close', $scope.id, $scope.value);
-//        $('#modal-text').modal('hide');
-    };
-
 });
 
 widgeto.run(function (TemplateManager) {
