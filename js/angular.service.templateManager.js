@@ -49,22 +49,6 @@ widgeto.service('TemplateManager', function($rootScope, $sce, $templateRequest, 
 
     },
     
-//    $rootScope.$watch(function () {
-//        return count['body'];
-//    }, function(count) {
-//        console.log(count);
-//        if (count === 0) {
-//            $rootScope.$broadcast('templates-loaded', current.id);
-//            if (!current.elements) {
-//                return;
-//            }
-//            
-//            current.elements.forEach(function (template) {
-//                templateManager.loadLevel(template); 
-//            });
-//        }
-//    });
-    
     this.load = function (element, templateFilePath) {
         var templateUrl = $sce.getTrustedResourceUrl(templateFilePath);
     
