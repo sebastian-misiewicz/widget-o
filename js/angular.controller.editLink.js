@@ -1,4 +1,4 @@
-widgeto.controller('ModalLinkController', function ($scope, $rootScope, EnableManager, Page) {
+widgeto.controller('EditLinkController', function ($scope, $rootScope, EnableManager, Page) {
 
     EnableManager.add($scope);
     $scope.isEnabled = false;
@@ -15,11 +15,6 @@ widgeto.controller('ModalLinkController', function ($scope, $rootScope, EnableMa
         });
     });
 
-    $scope.save = function () {
-        $rootScope.$broadcast('modal-close', $scope.id, $scope.value);
-        $('#modal-link').modal('hide');
-    };
-    
     $scope.$watch('value.type', function() {
         $scope.hrefs = new Array();
         switch ($scope.value.type) {
@@ -46,8 +41,8 @@ widgeto.controller('ModalLinkController', function ($scope, $rootScope, EnableMa
 
 widgeto.run(function (TemplateManager) {
     TemplateManager.add(
-            'modal-link', 
-            'bower_components/widget-o/html/modal-link.html', 
+            'edit-link', 
+            'bower_components/widget-o/html/edit-link.html', 
             '#modal-edit');
 });
 
