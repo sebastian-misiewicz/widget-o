@@ -8,6 +8,7 @@ widgeto.controller('ModalLinkController', function ($scope, $rootScope, EnableMa
     $scope.hrefs = [];
     
     $rootScope.$on('modal-open', function (event, id, value) {
+        console.log('modal-link-opened');
         $scope.$apply(function () {
             $scope.id = id;
             $scope.value = value;
@@ -44,6 +45,9 @@ widgeto.controller('ModalLinkController', function ($scope, $rootScope, EnableMa
 });
 
 widgeto.run(function (TemplateManager) {
-    TemplateManager.add('bower_components/widget-o/html/modal-link.html');
+    TemplateManager.add(
+            'modal-link', 
+            'bower_components/widget-o/html/modal-link.html', 
+            '#modal-edit');
 });
 

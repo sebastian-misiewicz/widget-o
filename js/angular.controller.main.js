@@ -6,7 +6,7 @@ widgeto.controller('MainController', function ($scope, $rootScope, $compile, Tem
 
     $scope.edit = function (id, type) {
         $rootScope.$broadcast('modal-open', id, getElement(id));
-        $('#modal-' + type).modal('show');
+        $('#modal-edit').modal('show');
     };
     
     function getElement(id) {
@@ -67,17 +67,17 @@ widgeto.controller('MainController', function ($scope, $rootScope, $compile, Tem
         });
     });
 
-    $rootScope.$on('templates-loaded', function () {
+    $rootScope.$on('templates-loaded', function (event, id) {
         Page.get({id: $scope.idpage}, function (page) {
             $scope.page = page;
         }, function () {
             // TODO sebastian show a proper error message on the website
             console.log('Failed to get the page: ' + $scope.idpage);
         });
-        $compile($("body").contents())($scope);
-        console.log('body got compiled');
-        $rootScope.$broadcast('body-compiled');
-
+        console.log('Compiling ' + id);
+        $compile($(id).contents())($scope);
+        console.log('Compiled '+ id);
+        $rootScope.$broadcast('compiled', id);
     });
 
 });

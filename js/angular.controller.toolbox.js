@@ -31,5 +31,8 @@ widgeto.controller('ToolboxController', function ($scope, $rootScope, EnableMana
 });
 
 widgeto.run(function (TemplateManager) {
-    TemplateManager.add('bower_components/widget-o/html/toolbox.html');
+    TemplateManager.add(
+            'toolbox',
+            'bower_components/widget-o/html/toolbox.html',
+            'body');
 });

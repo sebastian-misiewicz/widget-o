@@ -1,34 +1,90 @@
 widgeto.service('TemplateManager', function($rootScope, $sce, $templateRequest, $compile) {
     
-    var templates = [];
-    var templatesCount;
-
-    this.add = function(templateFilePath) {
-        templates.push(templateFilePath);
+    var templates = {
+        "id": "body",
+        "append": "body",
+        "elements": []
+    };
+    
+    var count = [];
+    var templateManager = this;
+    
+    // TODO sebastian Add full traversal (now only one level is supported)
+    // TODO sebastian improve the code (remove duplication)
+    this.add = function(id, templateFilePath, position, append) {
+        if (position === 'body') {
+            templates.elements.push({
+                "id": id,
+                "path": templateFilePath,
+                "append": append,
+                "elements": []
+            });
+        } else { 
+            templates.elements.forEach(function (element) {
+                if (element.id === position) {
+                    element.elements.push({
+                        "id": id,
+                        "append": append,
+                        "path": templateFilePath
+                    });
+                }
+            });
+        }
     };
     
     this.loadAll = function() {
-        var templateManager = this;
-        templatesCount = templates.length;
-        templates.forEach(function (template) {
-           templateManager.load(template); 
-        });
+        this.loadLevel(templates);
     },
     
-    $rootScope.$watch(function () {
-        return templatesCount;
-    }, function() {
-        if (templatesCount === 0) {
-            $rootScope.$broadcast('templates-loaded');
+    this.loadLevel = function(element) {
+        count[element.id] = (element.elements) ? element.elements.length : 0;
+        console.log("Loading level " + element.id + " of elements "+ count[element.id]);
+        if (!element.elements) {
+            return;
         }
-    });
+        
+        element.elements.forEach(function (template) {
+           templateManager.load(element, template.path); 
+        });
+
+    },
     
-    this.load = function (templateFilePath) {
+//    $rootScope.$watch(function () {
+//        return count['body'];
+//    }, function(count) {
+//        console.log(count);
+//        if (count === 0) {
+//            $rootScope.$broadcast('templates-loaded', current.id);
+//            if (!current.elements) {
+//                return;
+//            }
+//            
+//            current.elements.forEach(function (template) {
+//                templateManager.loadLevel(template); 
+//            });
+//        }
+//    });
+    
+    this.load = function (element, templateFilePath) {
         var templateUrl = $sce.getTrustedResourceUrl(templateFilePath);
     
         $templateRequest(templateUrl).then(function(template) {
-            $("body").append(template);
-            templatesCount--;
+            console.log("Adding template " + templateFilePath + " at position: " + element.append);
+            console.log(element.append);
+            $(element.append).append(template);
+            count[element.id]--;
+            console.log(count[element.id]);
+            if (count[element.id] === 0) {
+                $rootScope.$broadcast('templates-loaded', element.id);
+                
+                if (!element.elements) {
+                    return;
+                }
+
+                element.elements.forEach(function (template) {
+                    templateManager.loadLevel(template); 
+                });
+            }
         }, function() {
             // TODO Add some exception throwing
         });

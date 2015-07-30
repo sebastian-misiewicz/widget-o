@@ -7,6 +7,7 @@ widgeto.controller('ModalTextController', function ($scope, $rootScope, EnableMa
     $scope.value = '';
 
     $rootScope.$on('modal-open', function (event, id, value) {
+        console.log('modal-text-opened');
         $scope.$apply(function () {
             $scope.id = id;
             $scope.value = value;
@@ -21,7 +22,10 @@ widgeto.controller('ModalTextController', function ($scope, $rootScope, EnableMa
 });
 
 widgeto.run(function (TemplateManager) {
-    TemplateManager.add('bower_components/widget-o/html/modal-text.html');
+    TemplateManager.add(
+            'modal-text', 
+            'bower_components/widget-o/html/modal-text.html', 
+            '#modal-edit');
 });
 
 

@@ -28,6 +28,9 @@ widgeto.controller('ModalAddNewPageController', function ($scope, $rootScope, En
 });
 
 widgeto.run(function (TemplateManager) {
-    TemplateManager.add('bower_components/widget-o/html/modal-add-new-page.html');
+    TemplateManager.add(
+            'modal-add-new-page', 
+            'bower_components/widget-o/html/modal-add-new-page.html',
+            'body');
 });
 
