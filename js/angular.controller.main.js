@@ -90,14 +90,7 @@ function edit() {
     if (!current) {
         throw new Error("Element id doesn't exist");
     }
-    var classList = $("#" + current).attr('class').split(/\s+/);
-    var widgetClassPrefix = 'widget-o-widget-';
-    $.each(classList, function (index, item) {
-        if (item.substring(0, widgetClassPrefix.length) === widgetClassPrefix) {
-            scope.edit(current, item.substring(widgetClassPrefix.length));
-        }
-    });
-
+    scope.edit(current);
 }
 
 $("body").on("mouseenter", ".widget-o-editable", function (e) {
