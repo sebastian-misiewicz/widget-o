@@ -1,0 +1,10 @@
+<div class="panel panel-primary" 
+     ng-controller="EditOrderController" 
+     ng-show="value.order !== undefined">
+    <div class="panel-heading">Order</div>
+    <div class="panel-body">
+        <div class="form-group">
+            <input type="text" class="form-control" id="value" placeholder="Order of {{value.id}}" ng-model="value.order">
+        </div>
+    </div>
+</div>
