@@ -7,7 +7,6 @@ widgeto.controller('EditOrderController', function ($scope, $rootScope, EnableMa
     $scope.value = '';
 
     $rootScope.$on('modal-open', function (event, id, value) {
-        console.log('edit-order received!');
         $scope.$apply(function () {
             $scope.id = id;
             $scope.value = value;
