@@ -1,10 +1,20 @@
 <div class="panel panel-primary" 
      ng-controller="EditOrderController" 
-     ng-show="value.order !== undefined">
+     ng-show="value.elements !== undefined">
     <div class="panel-heading">Order</div>
     <div class="panel-body">
-        <div class="form-group">
-            <input type="text" class="form-control" id="value" placeholder="Order of {{value.id}}" ng-model="value.order">
+        <div class="input-group" ng-repeat="element in value.elements">
+            <span class="input-group-addon" id="sizing-addon1">{{element.id}}</span>
+            <input type="text" class="form-control" id="value" placeholder="Order of {{element.id}}" ng-model="element.order">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" ng-click="remove(element)">Remove</button>
+            </span>
+        </div>
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Enter an id (unique)" ng-model="sampleId">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" ng-click="add()">Add</button>
+            </span>
         </div>
     </div>
 </div>

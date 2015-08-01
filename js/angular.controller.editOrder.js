@@ -12,6 +12,20 @@ widgeto.controller('EditOrderController', function ($scope, $rootScope, EnableMa
             $scope.value = value;
         });
     });
+    
+    $scope.remove = function(element) {
+        var index = $scope.value.elements.indexOf(element);
+        if (index > -1) {
+            $scope.value.elements.splice(index, 1);
+        }
+    };
+    
+    $scope.add = function() {
+        var element = JSON.parse(JSON.stringify($scope.value.sample));
+        element.id = $scope.sampleId;
+        
+        $scope.value.elements.push(element);
+    };
 
 });
 
