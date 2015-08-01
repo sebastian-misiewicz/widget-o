@@ -4,11 +4,13 @@ widgeto.controller('ModalEditController', function ($scope, $rootScope, EnableMa
     $scope.isEnabled = false;
 
     $scope.id = '';
+    $scope.value;
 
     $rootScope.$on('modal-open', function (event, id, value) {
         console.log('modal-edit-opened');
         $scope.$apply(function () {
             $scope.id = id;
+            $scope.value = value;
         });
     });
 
