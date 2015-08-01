@@ -84,6 +84,7 @@ widgeto.controller('MainController', function ($scope, $rootScope, $compile, Tem
 
 // TODO global variables!
 var current;
+var currentManage;
 var inEdit = true;
 function edit() {
     var scope = angular.element($("#" + current)).scope();
@@ -91,6 +92,13 @@ function edit() {
         throw new Error("Element id doesn't exist");
     }
     scope.edit(current);
+}
+function manage() {
+    var scope = angular.element($("#" + currentManage)).scope();
+    if (!currentManage) {
+        throw new Error("Element id doesn't exist");
+    }
+    scope.edit(currentManage);
 }
 
 $("body").on("mouseenter", ".widget-o-editable", function (e) {
@@ -107,6 +115,29 @@ $("body").on("mouseenter", ".widget-o-editable", function (e) {
     }
 });
 $("body").on("mouseleave", ".widget-o-editable", function () {
+    if (inEdit) {
+        var ref = $(this);
+        timeoutObj = setTimeout(function () {
+            ref.popover('hide');
+        }, 50);
+    }
+});
+
+$("body").on("mouseenter", ".widget-o-managable", function (e) {
+    if (inEdit) {
+        // Taken from http://stackoverflow.com/a/12274958 Thanks.
+        $(this).popover({
+            content: '<button type="button" class="btn btn-default" onclick="manage()"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Manage</button>',
+            trigger: "manual",
+            html: true,
+            placement: "bottom",
+            template: '<div class="popover" onmouseover="clearTimeout(timeoutObj);$(this).mouseleave(function() {$(this).hide();});"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
+        });
+        currentManage = e.target.id;
+        $(this).popover('show');
+    }
+});
+$("body").on("mouseleave", ".widget-o-managable", function () {
     if (inEdit) {
         var ref = $(this);
         timeoutObj = setTimeout(function () {
