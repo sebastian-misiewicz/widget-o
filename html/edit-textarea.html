@@ -3,9 +3,15 @@
     <div class="panel-body">
         <div class="panel panel-default">
             <div class="panel-body">
-                <span class="label label-primary" ng-click="addTag('p')">Paragraph</span>
-                <span class="label label-success" ng-click="addTag('b')">Bold</span>
-                <span class="label label-default" ng-click="addText()">Text</span>
+                <span class="label label-primary" 
+                      style="cursor: pointer;" 
+                      ng-click="addTag('p')">Paragraph</span>
+                <span class="label label-success"
+                      style="cursor: pointer;" 
+                      ng-click="addTag('b')">Bold</span>
+                <span class="label label-default" 
+                      style="cursor: pointer;" 
+                      ng-click="addText()">Text</span>
             </div>
         </div>
 
@@ -21,10 +27,13 @@
                       ng-show="element.tag === 'b'">Bold</span>
                 <span class="label label-success" 
                       ng-show="element.tag === 'b-close'">Close Bold</span>
-                <input type="text" class="form-control" 
-                       ng-show="element.text"
-                       ng-model="element.text"
-                       ng-trim="false" />
+                <div class="input-group" ng-show="element.text !== undefined">
+                    <span class="input-group-addon glyphicon glyphicon-edit" aria-hidden="true"></span>
+                    <input type="text" class="form-control" 
+                           ng-model="element.text"
+                           ng-trim="false" />
+                </div>
+
             </li>
         </ul>
     </div>

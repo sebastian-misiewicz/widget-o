@@ -16,6 +16,15 @@ widgeto.controller('EditTextareaController', function ($scope, $rootScope, Enabl
     $scope.sortableOptions = {
         axis: 'y'
     };
+    
+    $scope.addTag = function (tag) {
+        $scope.value.textarea.push({ "tag": tag });
+        $scope.value.textarea.push({ "tag": tag + "-close" });
+    };
+    
+    $scope.addText = function () {
+        $scope.value.textarea.push({ "text": "Some text" });
+    };
 
 });
 
