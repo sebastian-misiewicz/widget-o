@@ -12,13 +12,17 @@ widgeto.controller('EditTextareaController', function ($scope, $rootScope, Enabl
             $scope.value = value;
         });
     });
+    
+    $scope.sortableOptions = {
+        axis: 'y'
+    };
 
 });
 
 widgeto.run(function (TemplateManager) {
     TemplateManager.add(
-            'edit-text', 
-            'bower_components/widget-o/html/edit-textarea.html', 
+            'edit-text',
+            'bower_components/widget-o/html/edit-textarea.html',
             '#modal-edit');
 });
 

@@ -1,1 +1,1 @@
-widgeto = angular.module('widget-o', ['ngResource', 'ngSanitize']);
+widgeto = angular.module('widget-o', ['ngResource', 'ngSanitize', 'ui.sortable']);
