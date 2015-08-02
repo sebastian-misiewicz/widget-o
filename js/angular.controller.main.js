@@ -138,6 +138,9 @@ $("body").on("mouseenter", ".widget-o-editable", function (e) {
             html: true,
             template: '<div class="popover" onmouseover="clearTimeout(timeoutObj);$(this).mouseleave(function() {$(this).hide();});"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
         });
+        $('.modal-dialog').draggable({
+            handle: ".modal-header"
+        });
         current = e.target.id;
         $(this).popover('show');
     }
