@@ -25,6 +25,13 @@ widgeto.controller('EditTextareaController', function ($scope, $rootScope, Enabl
     $scope.addText = function () {
         $scope.value.textarea.push({ "text": "Some text" });
     };
+    
+    $scope.remove = function (element) {
+        var index = $scope.value.textarea.indexOf(element);
+        if (index > -1) {
+            $scope.value.textarea.splice(index, 1);
+        }
+    };
 
 });
 
