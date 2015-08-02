@@ -79,6 +79,34 @@ widgeto.controller('MainController', function ($scope, $rootScope, $compile, Tem
         console.log('Compiled '+ id);
         $rootScope.$broadcast('compiled', id);
     });
+    
+    $scope.toText = function(elements) {
+        var text = "";
+        for (var i in elements) {
+            var element = elements[i];
+            if (!element.tag) {
+                text += element.text;
+                continue;
+            }
+            
+            switch (element.tag) {
+                case "p":
+                    text += "<p>";
+                    break;
+                case "p-close":
+                    text += "</p>";
+                    break;
+                case "b":
+                    text += "<b>";
+                    break;
+                case "b-close":
+                    text += "</b>";
+                    break;
+            }
+        }
+        
+        return text;
+    };
 
 });
 

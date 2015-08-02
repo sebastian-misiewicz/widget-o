@@ -1,0 +1,27 @@
+<div class="panel panel-primary" ng-controller="EditTextareaController" ng-show="value.textarea">
+    <div class="panel-heading">Textarea</div>
+    <div class="panel-body">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <span class="label label-primary" ng-click="addTag('p')">Paragraph</span>
+                <span class="label label-primary" ng-click="addTag('p-close')">Close Paragraph</span>
+                <span class="label label-success" ng-click="addTag('b')">Bold</span>
+                <span class="label label-success" ng-click="addTag('b-close')">Close Bold</span>
+            </div>
+        </div>
+
+        <div ng-repeat="element in value.textarea">
+            <span class="label label-primary" 
+                  ng-show="element.tag === 'p'">Paragraph</span>
+            <span class="label label-primary" 
+                  ng-show="element.tag === 'p-close'">Close Paragraph</span>
+            <span class="label label-success" 
+                  ng-show="element.tag === 'b'">Bold</span>
+            <span class="label label-success" 
+                  ng-show="element.tag === 'b-close'">Close Bold</span>
+            <input type="text" class="form-control" 
+                   ng-show="element.text"
+                   ng-model="element.text" />
+        </div>
+    </div>
+</div>
