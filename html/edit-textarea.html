@@ -9,6 +9,9 @@
                 <span class="label label-success"
                       style="cursor: pointer;" 
                       ng-click="addTag('b')">Bold</span>
+                <span class="label label-success"
+                      style="cursor: pointer;" 
+                      ng-click="addTag('i')">Italic</span>
                 <span class="label label-default" 
                       style="cursor: pointer;" 
                       ng-click="addText()">Text</span>
@@ -27,6 +30,10 @@
                       ng-show="element.tag === 'b'">Bold</span>
                 <span class="label label-success" 
                       ng-show="element.tag === 'b-close'">Close Bold</span>
+                <span class="label label-success" 
+                      ng-show="element.tag === 'i'">Italic</span>
+                <span class="label label-success" 
+                      ng-show="element.tag === 'i-close'">Close Italic</span>
                 <span class="label label-danger" 
                       style="cursor: pointer;" 
                       ng-click="remove(element)"

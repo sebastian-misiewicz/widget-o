@@ -102,6 +102,12 @@ widgeto.controller('MainController', function ($scope, $rootScope, $compile, Tem
                 case "b-close":
                     text += "</b>";
                     break;
+                case "i":
+                    text += "<i>";
+                    break;
+                case "i-close":
+                    text += "</i>";
+                    break;
             }
         }
         
