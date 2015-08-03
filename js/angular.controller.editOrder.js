@@ -13,6 +13,10 @@ widgeto.controller('EditOrderController', function ($scope, $rootScope, EnableMa
         });
     });
     
+    $scope.sortableOptions = {
+        axis: 'y'
+    };
+    
     $scope.remove = function(element) {
         var index = $scope.value.elements.indexOf(element);
         if (index > -1) {
@@ -23,6 +27,7 @@ widgeto.controller('EditOrderController', function ($scope, $rootScope, EnableMa
     $scope.add = function() {
         var element = JSON.parse(JSON.stringify($scope.value.sample));
         element.id = $scope.sampleId;
+        element.text = $scope.sampleText;
         
         $scope.value.elements.push(element);
     };
