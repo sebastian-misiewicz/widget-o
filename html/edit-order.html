@@ -1,0 +1,30 @@
+<div class="panel panel-primary" 
+     ng-controller="EditOrderController" 
+     ng-show="value.elements !== undefined">
+    <div class="panel-heading">Order</div>
+    <div class="panel-body">
+        <ul style="list-style-type: none; padding: 0;"
+            ui-sortable="sortableOptions" 
+            ng-model="value.elements">
+            <li ng-repeat="element in value.elements">
+                <h4>{{element.text}}
+                    <span class="label label-danger" 
+                          style="cursor: pointer;" 
+                          ng-click="remove(element)">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </span>
+                </h4>
+            </li>
+        </ul>
+        <hr>
+        <div class="input-group">
+            <span class="input-group-addon">ID</span>
+            <input type="text" class="form-control" placeholder="Enter an id (unique)" ng-model="sampleId">
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">Text</span>
+            <input type="text" class="form-control" placeholder="Enter a text" ng-model="sampleText">
+        </div>
+        <button type="button" class="btn btn-default" ng-click="add()">Add</button>
+    </div>
+</div>

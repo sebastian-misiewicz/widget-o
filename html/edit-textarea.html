@@ -1,0 +1,61 @@
+<div class="panel panel-primary" ng-controller="EditTextareaController" ng-show="value.textarea">
+    <div class="panel-heading">Textarea</div>
+    <div class="panel-body">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <span class="label label-primary" 
+                      style="cursor: pointer;" 
+                      ng-click="addTag('p')">Paragraph</span>
+                <span class="label label-success"
+                      style="cursor: pointer;" 
+                      ng-click="addTag('b')">Bold</span>
+                <span class="label label-success"
+                      style="cursor: pointer;" 
+                      ng-click="addTag('i')">Italic</span>
+                <span class="label label-default" 
+                      style="cursor: pointer;" 
+                      ng-click="addText()">Text</span>
+            </div>
+        </div>
+
+        <ul style="list-style-type: none; padding: 0;"
+            ui-sortable="sortableOptions" 
+            ng-model="value.textarea">
+            <li ng-repeat="element in value.textarea" style="margin-bottom: 2px;">
+                <span class="label label-primary" 
+                      ng-show="element.tag === 'p'">Paragraph</span>
+                <span class="label label-primary" 
+                      ng-show="element.tag === 'p-close'">Close Paragraph</span>
+                <span class="label label-success" 
+                      ng-show="element.tag === 'b'">Bold</span>
+                <span class="label label-success" 
+                      ng-show="element.tag === 'b-close'">Close Bold</span>
+                <span class="label label-success" 
+                      ng-show="element.tag === 'i'">Italic</span>
+                <span class="label label-success" 
+                      ng-show="element.tag === 'i-close'">Close Italic</span>
+                <span class="label label-danger" 
+                      style="cursor: pointer;" 
+                      ng-click="remove(element)"
+                      ng-show="element.tag !== undefined">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </span>
+                
+                <div class="input-group" ng-show="element.text !== undefined">
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                    </span>
+                    <input type="text" class="form-control" 
+                           ng-model="element.text"
+                           ng-trim="false" />
+                    <span class="input-group-addon" 
+                          style="cursor: pointer;"
+                          ng-click="remove(element)">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </span>
+                </div>
+
+            </li>
+        </ul>
+    </div>
+</div>

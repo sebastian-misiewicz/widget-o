@@ -25,7 +25,10 @@ widgeto.controller('ModalLoginController', function ($scope, $rootScope, $http, 
 });
 
 widgeto.run(function (TemplateManager) {
-    TemplateManager.add('bower_components/widget-o/html/modal-login.html');
+    TemplateManager.add(
+            'modal-login', 
+            'bower_components/widget-o/html/modal-login.html',
+            'body');
 });
 
 

@@ -1,4 +1,4 @@
-widgeto.controller('ModalTextController', function ($scope, $rootScope, EnableManager) {
+widgeto.controller('EditTextController', function ($scope, $rootScope, EnableManager) {
 
     EnableManager.add($scope);
     $scope.isEnabled = false;
@@ -13,15 +13,13 @@ widgeto.controller('ModalTextController', function ($scope, $rootScope, EnableMa
         });
     });
 
-    $scope.save = function () {
-        $rootScope.$broadcast('modal-close', $scope.id, $scope.value);
-        $('#modal-text').modal('hide');
-    };
-
 });
 
 widgeto.run(function (TemplateManager) {
-    TemplateManager.add('bower_components/widget-o/html/modal-text.html');
+    TemplateManager.add(
+            'edit-text', 
+            'bower_components/widget-o/html/edit-text.html', 
+            '#modal-edit');
 });
 
 
