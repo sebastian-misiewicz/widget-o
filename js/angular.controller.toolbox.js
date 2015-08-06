@@ -28,6 +28,10 @@ widgeto.controller('ToolboxController', function ($scope, $rootScope, EnableMana
         $rootScope.$broadcast('modal-add-new-page-open');
     };
     
+    $scope.fileUpload = function() {
+        $rootScope.$broadcast('modal-file-upload-open');
+    };
+    
 });
 
 widgeto.run(function (TemplateManager) {
