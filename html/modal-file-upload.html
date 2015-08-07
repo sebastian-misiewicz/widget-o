@@ -14,12 +14,13 @@
                     <noscript><input type="hidden" name="redirect" value="https://blueimp.github.io/jQuery-File-Upload/"></noscript>
                     <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
                     <div class="row fileupload-buttonbar">
-                        <div class="col-lg-7">
+                        <div class="col-lg-9">
                             <!-- The fileinput-button span is used to style the file input field as button -->
                             <span class="btn btn-success fileinput-button" ng-class="{disabled: disabled}">
                                 <i class="glyphicon glyphicon-plus"></i>
                                 <span>Add files...</span>
-                                <input type="file" name="files[]" multiple ng-disabled="disabled">
+                                <input style="position: absolute; opacity: 0;"
+                                    type="file" name="files[]" multiple ng-disabled="disabled">
                             </span>
                             <button type="button" class="btn btn-primary start" data-ng-click="submit()">
                                 <i class="glyphicon glyphicon-upload"></i>
@@ -33,7 +34,7 @@
                             <span class="fileupload-process"></span>
                         </div>
                         <!-- The global progress state -->
-                        <div class="col-lg-5 fade" data-ng-class="{in: active()}">
+                        <div class="col-lg-3 fade" data-ng-class="{in: active()}">
                             <!-- The global progress bar -->
                             <div class="progress progress-striped active" data-file-upload-progress="progress()"><div class="progress-bar progress-bar-success" data-ng-style="{width: num + '%'}"></div></div>
                             <!-- The extended global progress state -->
