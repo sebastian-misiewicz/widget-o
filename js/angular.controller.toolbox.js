@@ -32,6 +32,10 @@ widgeto.controller('ToolboxController', function ($scope, $rootScope, EnableMana
         $rootScope.$broadcast('modal-file-upload-open');
     };
     
+    $scope.fileManager = function() {
+        $rootScope.$broadcast('modal-file-manager-open');
+    };
+    
 });
 
 widgeto.run(function (TemplateManager) {

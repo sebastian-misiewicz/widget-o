@@ -1,0 +1,42 @@
+<div class="modal fade" id="modal-file-manager" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     data-ng-controller="ModalFileManagerController">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">File Manager</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped files ng-cloak">
+                    <tr data-ng-repeat="file in files" data-ng-class="{'processing': file.$processing()}">
+                        <td data-ng-switch data-on="!!file.thumbnailUrl">
+                            <div class="preview" data-ng-switch-when="true">
+                                <a data-ng-href="{{file.url}}" title="{{file.name}}" download="{{file.name}}" data-gallery><img data-ng-src="{{file.thumbnailUrl}}" alt=""></a>
+                            </div>
+                            <div class="preview" data-ng-switch-default data-file-upload-preview="file"></div>
+                        </td>
+                        <td>
+                            <p class="name" data-ng-switch data-on="!!file.url">
+                                <span data-ng-switch-when="true" data-ng-switch data-on="!!file.thumbnailUrl">
+                                    <a data-ng-switch-when="true" data-ng-href="{{file.url}}" title="{{file.name}}" download="{{file.name}}" data-gallery>{{file.name}}</a>
+                                    <a data-ng-switch-default data-ng-href="{{file.url}}" title="{{file.name}}" download="{{file.name}}">{{file.name}}</a>
+                                </span>
+                                <span data-ng-switch-default>{{file.name}}</span>
+                            </p>
+                            <strong data-ng-show="file.error" class="error text-danger">{{file.error}}</strong>
+                        </td>
+                        <td>
+                            <p class="size">{{file.size| formatFileSize}}</p>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-danger destroy" data-ng-click="delete(file)">
+                                <i class="glyphicon glyphicon-trash"></i>
+                                <span>Delete</span>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
