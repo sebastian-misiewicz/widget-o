@@ -22,7 +22,6 @@ widgeto.controller('ModalFileUploadController', function (
         console.log($scope);
     });
 
-
 });
 
 widgeto.run(function (TemplateManager) {
