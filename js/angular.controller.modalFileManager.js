@@ -24,7 +24,29 @@ widgeto.controller('ModalFileManagerController', function (
     });
     
     $scope.delete = function (file) {
-        // TODO sebastian implement
+        $http.delete("rest/file", { "params": {"files[]": file.name} })
+            .then(
+                function (response) {
+                    fileRemovedSuccess(response, file);
+                }, function () {
+                    fileRemovedFailed(file);
+                }
+            );
+    };
+    
+    function fileRemovedSuccess(response, file) {
+        if (response.data[file.name]) {
+            var index = $scope.files.indexOf(file);
+            if (index > -1) {
+                $scope.files.splice(index, 1);
+            }
+        } else {
+            fileRemovedFailed(file);
+        }
+    };
+    
+    function fileRemovedFailed(file) {
+        file.error = 'Error';
     };
     
 });
