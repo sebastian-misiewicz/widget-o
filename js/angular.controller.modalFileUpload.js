@@ -8,6 +8,8 @@ widgeto.controller('ModalFileUploadController', function ($scope, $rootScope, En
         "template": ""
     };
 
+    $scope.loadingFiles = true;
+
     $scope.options = {
         url: "url"
     };
