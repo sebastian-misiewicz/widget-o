@@ -1,5 +1,5 @@
 <div class="modal fade" id="modal-file-upload" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     ng-controller="ModalFileUploadController">
+     data-ng-controller="ModalFileUploadController">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -7,8 +7,8 @@
                 <h4 class="modal-title" id="myModalLabel">File upload</h4>
             </div>
             <div class="modal-body">
-                <form id="fileupload" action="//jquery-file-upload.appspot.com/" method="POST" enctype="multipart/form-data" 
-                      data-ng-app="demo" data-file-upload="options" 
+                <form id="fileupload" action="//action/" method="POST" enctype="multipart/form-data" 
+                      data-file-upload="options" 
                       data-ng-class="{'fileupload-processing': processing() || loadingFiles}">
                     <!-- Redirect browsers with JavaScript disabled to the origin page -->
                     <noscript><input type="hidden" name="redirect" value="https://blueimp.github.io/jQuery-File-Upload/"></noscript>

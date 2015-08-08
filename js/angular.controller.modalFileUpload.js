@@ -1,4 +1,6 @@
-widgeto.controller('ModalFileUploadController', function ($scope, $rootScope, EnableManager, Template, Page) {
+widgeto.controller('ModalFileUploadController', function (
+        $scope, $rootScope,
+        EnableManager) {
 
     EnableManager.add($scope);
     $scope.isEnabled = false;
@@ -8,15 +10,16 @@ widgeto.controller('ModalFileUploadController', function ($scope, $rootScope, En
         "template": ""
     };
 
-    $scope.loadingFiles = true;
-
     $scope.options = {
-        url: "url"
+        url: "rest/file"
     };
-
+    
     $rootScope.$on('modal-file-upload-open', function () {
-        $scope.templates = Template.query();
         $('#modal-file-upload').modal('show');
+    });
+    
+    $scope.$watch('queue', function() {
+        console.log($scope);
     });
 
 
