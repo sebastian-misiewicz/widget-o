@@ -7,6 +7,11 @@
                 <h4 class="modal-title" id="myModalLabel">File Manager</h4>
             </div>
             <div class="modal-body">
+                <div class="panel panel-default" ng-show="files.length === 0">
+                    <div class="panel-body">
+                        No files.
+                    </div>
+                </div>
                 <table class="table table-striped files ng-cloak">
                     <tr data-ng-repeat="file in files" data-ng-class="{'processing': file.$processing()}">
                         <td data-ng-switch data-on="!!file.thumbnailUrl">
