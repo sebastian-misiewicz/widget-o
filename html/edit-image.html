@@ -5,11 +5,17 @@
             <select class="form-control" ng-model="value.src">
                 <option ng-repeat="file in files" value="{{file.url}}">{{file.name}}</option>
             </select>
-            <input type="text" 
-                   class="form-control" 
-                   id="value" 
-                   disabled="disabled"
-                   ng-model="value.src">
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">src</span>
+                <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" 
+                       ng-model="value.src" 
+                       disabled="disabled">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">width</span>
+                <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" 
+                       ng-model="value.width">
+            </div>
         </div>
     </div>
 </div>
