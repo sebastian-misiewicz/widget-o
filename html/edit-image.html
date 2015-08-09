@@ -1,0 +1,15 @@
+<div class="panel panel-primary" ng-controller="EditImageController" ng-show="value.src">
+    <div class="panel-heading">Image</div>
+    <div class="panel-body">
+        <div class="form-group">
+            <select class="form-control" ng-model="value.src">
+                <option ng-repeat="file in files" value="{{file.url}}">{{file.name}}</option>
+            </select>
+            <input type="text" 
+                   class="form-control" 
+                   id="value" 
+                   disabled="disabled"
+                   ng-model="value.src">
+        </div>
+    </div>
+</div>
