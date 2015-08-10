@@ -15,7 +15,7 @@ widgeto.controller('EditImageController', function (
             $scope.value = value;
         });
         
-        $http.get("rest/file")
+        $http.get("rest/file/image")
             .then(
                 function (response) {
                     $scope.files = response.data.files || [];
