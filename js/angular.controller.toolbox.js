@@ -1,7 +1,7 @@
 widgeto.controller('ToolboxController', function ($scope, $rootScope, EnableManager) {
 
     EnableManager.add($scope);
-    $scope.isEnabled = false;
+    $scope.isEnabled = true;
     
     $scope.isVisible = false;
 
@@ -34,6 +34,16 @@ widgeto.controller('ToolboxController', function ($scope, $rootScope, EnableMana
     
     $scope.fileManager = function() {
         $rootScope.$broadcast('modal-file-manager-open');
+    };
+    
+    $scope.toggleWidgets = function() {
+        $(".widget-o-editable").each(function () {
+            if ($(this).hasClass('widget-o-toggle')) {
+                $(this).removeClass('widget-o-toggle');
+            } else {
+                $(this).addClass('widget-o-toggle');
+            }
+        });
     };
     
 });
