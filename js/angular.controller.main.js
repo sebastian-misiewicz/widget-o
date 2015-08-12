@@ -113,6 +113,12 @@ widgeto.controller('MainController', function ($scope, $rootScope, $compile, Tem
         
         return text;
     };
+    
+    $scope.toWidget = function(element) {
+        var text = element.id;
+        
+        return text;
+    };
 
 });
 
