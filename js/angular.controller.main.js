@@ -1,4 +1,7 @@
-widgeto.controller('MainController', function ($scope, $rootScope, $compile, TemplateManager, PageCache, Page) {
+widgeto.controller('MainController', function (
+        $scope, $rootScope, $compile, $sce, $templateRequest, $q,
+        TemplateManager, WidgetManager,
+        PageCache, Page) {
 
     TemplateManager.loadAll();
 
@@ -55,21 +58,42 @@ widgeto.controller('MainController', function ($scope, $rootScope, $compile, Tem
     });
 
     $rootScope.$on('page-save', function () {
-        Page.update({id: $scope.idpage}, $scope.page);
+//        Page.update({id: $scope.idpage}, $scope.page);
+
+        for(var parent in widgets) {
+            for(var index in widgets[parent]) {
+                var element = widgets[parent][index];
+                $("#" + parent).append(WidgetManager.get(element.widget).replace("[[ID]]", element.id));
+            }
+            $compile($("#" + parent).contents())($scope);
+            for(var index in widgets[parent]) {
+                var element = widgets[parent][index];
+                $rootScope.$broadcast('widget-scope-set', element.id, element);
+            }
+        }
     });
 
     $rootScope.$on('page-reset', function () {
-        Page.get({id: $scope.idpage}, function (page) {
-            $scope.page = page;
-        }, function () {
-            // TODO sebastian show a proper error message on the website
-            console.log('Failed to get the page: ' + $scope.idpage);
-        });
+//        Page.get({id: $scope.idpage}, function (page) {
+//            $scope.page = page;
+//        }, function () {
+//            // TODO sebastian show a proper error message on the website
+//            console.log('Failed to get the page: ' + $scope.idpage);
+//        });
+        for(var parent in widgets) {
+            for(var index in widgets[parent]) {
+                var element = widgets[parent][index];
+                $rootScope.$broadcast('widget-scope-set', element.id, element);
+            }
+        }
     });
 
     $rootScope.$on('templates-loaded', function (event, id) {
         Page.get({id: $scope.idpage}, function (page) {
             $scope.page = page;
+            
+            $("body").append('<div id="aaaa">{{page.introText.text}}</div>');
+            $compile($("#aaaa").contents())($scope);
         }, function () {
             // TODO sebastian show a proper error message on the website
             console.log('Failed to get the page: ' + $scope.idpage);
@@ -78,6 +102,9 @@ widgeto.controller('MainController', function ($scope, $rootScope, $compile, Tem
         $compile($(id).contents())($scope);
         console.log('Compiled '+ id);
         $rootScope.$broadcast('compiled', id);
+
+        
+        
     });
     
     $scope.toText = function(elements) {
@@ -114,10 +141,21 @@ widgeto.controller('MainController', function ($scope, $rootScope, $compile, Tem
         return text;
     };
     
-    $scope.toWidget = function(element) {
-        var text = element.id;
+    var widgets = [];
+    
+    $scope.renderWidgets = function(parent, elements) {
+        if (!elements) {
+            return false;
+        }
         
-        return text;
+        widgets[parent] = elements;
+        
+//        for(var index in elements) {
+//            var element = elements[index];
+//            $("#" + parent).append(WidgetManager.get(element.widget));
+//        }
+//        $compile($("#" + parent).contents())($scope);
+        return false;
     };
 
 });
