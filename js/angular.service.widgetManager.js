@@ -2,6 +2,17 @@ widgeto.service('WidgetManager', function($sce, $templateRequest) {
     
     var widgets = [];
     
+    var scopes = [];
+    
+    this.addScope = function(id, scope) {
+        scopes[id] = scope;
+    };
+    
+    this.getScope = function(id) {
+        return scopes[id];
+    };
+    
+    
     this.add = function(name) {
         var templateUrl = $sce.getTrustedResourceUrl('widgets/' +  name + ".html");
         
