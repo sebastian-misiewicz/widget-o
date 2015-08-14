@@ -4,13 +4,28 @@ widgeto.controller('ModalEditController', function ($scope, $rootScope, EnableMa
     $scope.isEnabled = false;
 
     $scope.id = '';
+    $scope.value = null;
+    
+    $scope.elements = [];
 
     $rootScope.$on('modal-open', function (event, id, value) {
         console.log('modal-edit-opened');
-        console.log(value);
         $scope.$apply(function () {
             $scope.id = id;
+            $scope.value = value;
         });
+    });
+    
+    $scope.$watch('value', function () {
+        console.log("New Value has arrived!");
+        var value = $scope.value;
+        
+        for (var i in value) {
+            var element = value[i];
+            if (element.text) {
+                $scope.elements.push(element);
+            }
+        }
     });
 
 });
