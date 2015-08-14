@@ -13,30 +13,26 @@ widgeto.controller('MainController', function (
     };
     
     function getElement(id) {
-        var ids = id.split("-");
-        
-        if (ids.length === 1) {
+        console.log("Getting an element with ID " + id);
+        if ($scope.page[id]) {
+            console.log("Found parent element for edit: " + id);
             return $scope.page[id];
         }
-        var elements = $scope.page[ids[0]].elements;
-        for (var i in elements) {
-            if (elements[i].id === ids[1]) {
-                return elements[i];
+        
+        for (var parent in $scope.page) {
+            var elements = $scope.page[parent].elements;
+            if (elements) {
+                for (var i in elements) {
+                    if (elements[i].id === id) {
+                        console.log("Found child element for edit: " + id);
+                        return elements[i];
+                    }
+                }
             }
         }
     }
     function setElement(id, value) {
-        var ids = id.split("-");
-        
-        if (ids.length === 1) {
-            $scope.page[id] = value;
-        }
-        var elements = $scope.page[ids[0]].elements;
-        for (var i in elements) {
-            if (elements[i].id === ids[1]) {
-                elements[i] = value;
-            }
-        }
+        // TODO sebastian Let's revise the use of this function later
     }
 
     $scope.startEdit = function () {
