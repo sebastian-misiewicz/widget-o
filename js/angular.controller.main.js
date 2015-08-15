@@ -186,7 +186,7 @@ $("body").on("mouseenter", ".widget-o-editable", function (e) {
         $('.modal-dialog').draggable({
             handle: ".modal-header"
         });
-        current = e.target.id;
+        current = e.currentTarget.id;
         $(this).popover('show');
     }
 });
@@ -209,7 +209,7 @@ $("body").on("mouseenter", ".widget-o-managable", function (e) {
             placement: "bottom",
             template: '<div class="popover" onmouseover="clearTimeout(timeoutObj);$(this).mouseleave(function() {$(this).hide();});"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
         });
-        currentManage = e.target.id;
+        currentManage = e.currentTarget.id;
         $(this).popover('show');
     }
 });
