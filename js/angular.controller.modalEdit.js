@@ -24,18 +24,24 @@ widgeto.controller('ModalEditController', function (
         modalBody.html("");
         for (var i in value) {
             var element = value[i];
+            appendEditWidget(modalBody, $scope.id, i, value);
             if (element !== null && typeof element === 'object') {
                 for(var item in element) {
-                    WidgetManager.addScope(i, element);
-                    modalBody.append(
-                            WidgetManager.get("edit-" + item)
-                                .replace("[[ID]]", i));
+                    appendEditWidget(modalBody, i, item, element);
                 }
             }
         }
         $compile(modalBody.contents())($scope);
     };
 
+    function appendEditWidget(modalBody, id, editType, elementToEdit) {
+        var template = WidgetManager.get("edit-" + editType);
+        if (!template) {
+            return;
+        }
+        WidgetManager.addScope(id, elementToEdit);
+        modalBody.append(template.replace("[[ID]]", id));
+    }
 });
 
 widgeto.run(function (TemplateManager) {
