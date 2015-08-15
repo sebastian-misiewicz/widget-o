@@ -1,5 +1,8 @@
-<div class="panel panel-primary" ng-controller="EditImageController" ng-show="value.src">
-    <div class="panel-heading">Image</div>
+<div id="edit-image-{{id}}"
+     class="panel panel-primary" 
+     ng-controller="EditImageController" 
+     ng-init="set('[[ID]]')">
+    <div class="panel-heading">{{id}} - Image</div>
     <div class="panel-body">
         <div class="form-group">
             <select class="form-control" ng-model="value.src">

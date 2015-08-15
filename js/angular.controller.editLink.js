@@ -1,4 +1,6 @@
-widgeto.controller('EditLinkController', function ($scope, $rootScope, EnableManager, Page) {
+widgeto.controller('EditLinkController', function (
+        $scope, 
+        WidgetManager, EnableManager, Page) {
 
     EnableManager.add($scope);
     $scope.isEnabled = false;
@@ -7,12 +9,12 @@ widgeto.controller('EditLinkController', function ($scope, $rootScope, EnableMan
     $scope.value = '';
     $scope.hrefs = [];
     
-    $rootScope.$on('modal-open', function (event, id, value) {
-        $scope.$apply(function () {
-            $scope.id = id;
-            $scope.value = value;
-        });
-    });
+    $scope.set = function (id) {
+        console.log("Setting widget id to: " + id);
+        $scope.id = id;
+        $scope.value = WidgetManager.getScope(id);
+        return true;
+    };
 
     $scope.$watch('value.type', function() {
         $scope.hrefs = new Array();
@@ -38,10 +40,9 @@ widgeto.controller('EditLinkController', function ($scope, $rootScope, EnableMan
 
 });
 
-widgeto.run(function (TemplateManager) {
-    TemplateManager.add(
+widgeto.run(function (WidgetManager) {
+    WidgetManager.add(
             'edit-link', 
-            'bower_components/widget-o/html/edit-link.html', 
-            '#modal-edit');
+            'bower_components/widget-o/html/edit-link.html');
 });
 

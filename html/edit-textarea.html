@@ -1,4 +1,7 @@
-<div class="panel panel-primary" ng-controller="EditTextareaController" ng-show="value.textarea">
+<div id="edit-textarea-{{id}}"
+     class="panel panel-primary" 
+     ng-controller="EditTextareaController" 
+     ng-init="set('[[ID]]')">
     <div class="panel-heading">Textarea</div>
     <div class="panel-body">
         <div class="panel panel-default">

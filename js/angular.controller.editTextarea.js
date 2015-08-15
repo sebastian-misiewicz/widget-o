@@ -1,4 +1,6 @@
-widgeto.controller('EditTextareaController', function ($scope, $rootScope, EnableManager) {
+widgeto.controller('EditTextareaController', function (
+        $scope, 
+        WidgetManager, EnableManager) {
 
     EnableManager.add($scope);
     $scope.isEnabled = false;
@@ -6,12 +8,12 @@ widgeto.controller('EditTextareaController', function ($scope, $rootScope, Enabl
     $scope.id = '';
     $scope.value = '';
 
-    $rootScope.$on('modal-open', function (event, id, value) {
-        $scope.$apply(function () {
-            $scope.id = id;
-            $scope.value = value;
-        });
-    });
+    $scope.set = function (id) {
+        console.log("Setting widget id to: " + id);
+        $scope.id = id;
+        $scope.value = WidgetManager.getScope(id);
+        return true;
+    };
     
     $scope.sortableOptions = {
         axis: 'y'
@@ -35,11 +37,10 @@ widgeto.controller('EditTextareaController', function ($scope, $rootScope, Enabl
 
 });
 
-widgeto.run(function (TemplateManager) {
-    TemplateManager.add(
-            'edit-textarea',
-            'bower_components/widget-o/html/edit-textarea.html',
-            '#modal-edit');
+widgeto.run(function (WidgetManager) {
+    WidgetManager.add(
+            'edit-textarea', 
+            'bower_components/widget-o/html/edit-textarea.html');
 });
 
 

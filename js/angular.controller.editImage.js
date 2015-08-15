@@ -1,6 +1,6 @@
 widgeto.controller('EditImageController', function (
-        $scope, $rootScope, $http, 
-        EnableManager) {
+        $scope, $http, 
+        EnableManager, WidgetManager) {
 
     EnableManager.add($scope);
     $scope.isEnabled = false;
@@ -9,25 +9,24 @@ widgeto.controller('EditImageController', function (
     $scope.value = '';
     $scope.files = [];
     
-    $rootScope.$on('modal-open', function (event, id, value) {
-        $scope.$apply(function () {
-            $scope.id = id;
-            $scope.value = value;
-        });
-        
+    $scope.set = function (id) {
+        console.log("Setting widget id to: " + id);
+        $scope.id = id;
+        $scope.value = WidgetManager.getScope(id);
         $http.get("rest/file/image")
             .then(
                 function (response) {
                     $scope.files = response.data.files || [];
                 }
             );
-    });
+        return true;
+    };
+    
 });
 
-widgeto.run(function (TemplateManager) {
-    TemplateManager.add(
-            'edit-image', 
-            'bower_components/widget-o/html/edit-image.html', 
-            '#modal-edit');
+widgeto.run(function (WidgetManager) {
+    WidgetManager.add(
+            'edit-src', 
+            'bower_components/widget-o/html/edit-image.html');
 });
 

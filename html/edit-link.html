@@ -1,5 +1,8 @@
-<div class="panel panel-primary" ng-controller="EditLinkController" ng-show="value.href">
-    <div class="panel-heading">Link</div>
+<div id="edit-image-{{id}}"
+     class="panel panel-primary"
+     ng-controller="EditLinkController"
+     ng-init="set('[[ID]]')">
+    <div class="panel-heading">{{id}} - Link</div>
     <div class="panel-body">
         <div class="radio">
             <label>
