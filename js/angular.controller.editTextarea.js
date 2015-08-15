@@ -37,7 +37,7 @@ widgeto.controller('EditTextareaController', function ($scope, $rootScope, Enabl
 
 widgeto.run(function (TemplateManager) {
     TemplateManager.add(
-            'edit-text',
+            'edit-textarea',
             'bower_components/widget-o/html/edit-textarea.html',
             '#modal-edit');
 });

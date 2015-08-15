@@ -36,7 +36,7 @@ widgeto.controller('EditOrderController', function ($scope, $rootScope, EnableMa
 
 widgeto.run(function (TemplateManager) {
     TemplateManager.add(
-            'edit-text', 
+            'edit-order', 
             'bower_components/widget-o/html/edit-order.html', 
             '#modal-edit');
 });
