@@ -118,8 +118,13 @@ widgeto.controller('MainController', function (
     };
     
     $scope.widgets = [];
+
+    $rootScope.$on('rerender-widgets', function (event, id) {
+        console.log('Caught rerender-widgets of id: ' + id);
+        $scope.renderWidgets(id, true);
+    });
     
-    $scope.renderWidgets = function(parent) {
+    $scope.renderWidgets = function(parent, force) {
         if (!$scope.page) {
             return false;
         }
@@ -130,12 +135,14 @@ widgeto.controller('MainController', function (
         }
 
         // Block multi-rendering
-        if ($scope.widgets[parent]) {
+        if ($scope.widgets[parent] && !force) {
             return true;
         }
         
         $scope.widgets[parent] = true;
 
+        console.log($("#" + parent));
+        $("#" + parent).html("");
         console.log("Appending widgets for parent " + parent);
         for(var index in elements) {
             var element = elements[index];
@@ -178,10 +185,10 @@ $("body").on("mouseenter", ".widget-o-editable", function (e) {
     if (inEdit) {
         // Taken from http://stackoverflow.com/a/12274958 Thanks.
         $(this).popover({
-            content: '<button type="button" class="btn btn-default" onclick="edit()"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</button>',
+            content: '<button type="button" style="z-index: 999" class="btn btn-default" onclick="edit()"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</button>',
             trigger: "manual",
             html: true,
-            template: '<div class="popover" onmouseover="clearTimeout(timeoutObj);$(this).mouseleave(function() {$(this).hide();});"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
+            template: '<div class="popover" style="z-index: 999" onmouseover="clearTimeout(timeoutObj);$(this).mouseleave(function() {$(this).hide();});"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
         });
         $('.modal-dialog').draggable({
             handle: ".modal-header"
@@ -203,11 +210,11 @@ $("body").on("mouseenter", ".widget-o-managable", function (e) {
     if (inEdit) {
         // Taken from http://stackoverflow.com/a/12274958 Thanks.
         $(this).popover({
-            content: '<button type="button" class="btn btn-default" onclick="manage()"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Manage</button>',
+            content: '<button type="button" style="z-index: 999" class="btn btn-default" onclick="manage()"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Manage</button>',
             trigger: "manual",
             html: true,
             placement: "bottom",
-            template: '<div class="popover" onmouseover="clearTimeout(timeoutObj);$(this).mouseleave(function() {$(this).hide();});"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
+            template: '<div class="popover" style="z-index: 999" onmouseover="clearTimeout(timeoutObj);$(this).mouseleave(function() {$(this).hide();});"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
         });
         currentManage = e.currentTarget.id;
         $(this).popover('show');

@@ -1,4 +1,6 @@
-widgeto.controller('EditOrderController', function ($scope, $rootScope, EnableManager) {
+widgeto.controller('EditOrderController', function (
+        $scope, $rootScope,
+        EnableManager, WidgetManager) {
 
     EnableManager.add($scope);
     $scope.isEnabled = false;
@@ -6,15 +8,19 @@ widgeto.controller('EditOrderController', function ($scope, $rootScope, EnableMa
     $scope.id = '';
     $scope.value = '';
 
-    $rootScope.$on('modal-open', function (event, id, value) {
-        $scope.$apply(function () {
-            $scope.id = id;
-            $scope.value = value;
-        });
-    });
+    $scope.set = function (id) {
+        console.log("Setting widget id to: " + id);
+        $scope.id = id;
+        $scope.value = WidgetManager.getScope(id);
+        return true;
+    };
     
     $scope.sortableOptions = {
         axis: 'y'
+    };
+    
+    $scope.reRender = function() {
+        $rootScope.$broadcast('rerender-widgets', $scope.id);
     };
     
     $scope.remove = function(element) {
@@ -34,11 +40,10 @@ widgeto.controller('EditOrderController', function ($scope, $rootScope, EnableMa
 
 });
 
-widgeto.run(function (TemplateManager) {
-    TemplateManager.add(
-            'edit-order', 
-            'bower_components/widget-o/html/edit-order.html', 
-            '#modal-edit');
+widgeto.run(function (WidgetManager) {
+    WidgetManager.add(
+            'edit-elements', 
+            'bower_components/widget-o/html/edit-order.html');
 });
 
 

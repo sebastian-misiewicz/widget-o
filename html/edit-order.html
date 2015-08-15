@@ -1,13 +1,14 @@
-<div class="panel panel-primary" 
+<div id="edit-text-{{id}}"
+     class="panel panel-primary" 
      ng-controller="EditOrderController" 
-     ng-show="value.elements !== undefined">
-    <div class="panel-heading">Order</div>
+     ng-init="set('[[ID]]')">
+    <div class="panel-heading">Order of {{id}}</div>
     <div class="panel-body">
         <ul style="list-style-type: none; padding: 0;"
             ui-sortable="sortableOptions" 
             ng-model="value.elements">
             <li ng-repeat="element in value.elements">
-                <h4>{{element.text}}
+                <h4>{{element.id}}
                     <span class="label label-danger" 
                           style="cursor: pointer;" 
                           ng-click="remove(element)">
@@ -26,5 +27,7 @@
             <input type="text" class="form-control" placeholder="Enter a text" ng-model="sampleText">
         </div>
         <button type="button" class="btn btn-default" ng-click="add()">Add</button>
+        <hr>
+        <button type="button" class="btn btn-default" ng-click="reRender()">Apply changes</button>
     </div>
 </div>
