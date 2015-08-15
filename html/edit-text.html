@@ -2,7 +2,7 @@
      class="panel panel-primary" 
      ng-controller="EditTextController"
      ng-init="set('[[ID]]')">
-    <div class="panel-heading">Text</div>
+    <div class="panel-heading">{{id}}</div>
     <div class="panel-body">
         <div class="form-group">
             <input type="text" class="form-control" id="value" placeholder="Value of {{id}}" ng-model="value.text">
