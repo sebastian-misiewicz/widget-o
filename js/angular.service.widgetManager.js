@@ -13,8 +13,8 @@ widgeto.service('WidgetManager', function($sce, $templateRequest) {
     };
     
     
-    this.add = function(name) {
-        var templateUrl = $sce.getTrustedResourceUrl('widgets/' +  name + ".html");
+    this.add = function(name, templatePath) {
+        var templateUrl = $sce.getTrustedResourceUrl(templatePath);
         
         $templateRequest(templateUrl).then(function(template) {
             console.log("Loaded widget: " + name);

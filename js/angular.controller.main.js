@@ -66,13 +66,17 @@ widgeto.controller('MainController', function (
         });
     });
 
+    
+
     $rootScope.$on('templates-loaded', function (event, id) {
         Page.get({id: $scope.idpage}, function (page) {
-            $scope.page = page;
+            if(!$scope.page) {
+               $scope.page = page;
+            }
         }, function () {
             // TODO sebastian show a proper error message on the website
             console.log('Failed to get the page: ' + $scope.idpage);
-        });
+        }); 
         console.log('Compiling ' + id);
         $compile($(id).contents())($scope);
         console.log('Compiled '+ id);
@@ -115,24 +119,31 @@ widgeto.controller('MainController', function (
     
     $scope.widgets = [];
     
-    $scope.renderWidgets = function(parent, elements) {
+    $scope.renderWidgets = function(parent) {
+        if (!$scope.page) {
+            return false;
+        }
+        
+        var elements = $scope.page[parent].elements;
         if (!elements) {
             return false;
         }
+
+        // Block multi-rendering
         if ($scope.widgets[parent]) {
             return true;
         }
         
-        console.log('Rendering widgets' + elements);
-        $scope.widgets[parent] = elements;
-//        $compile($("#" + parent).contents())($scope);
+        $scope.widgets[parent] = true;
 
         console.log("Appending widgets for parent " + parent);
-        for(var index in $scope.widgets[parent]) {
-            var element = $scope.widgets[parent][index];
+        for(var index in elements) {
+            var element = elements[index];
             console.log("Appending widget " + element.id);
             WidgetManager.addScope(element.id, element);
-            $("#" + parent).append(WidgetManager.get(element.widget).replace("[[ID]]", element.id));
+            $("#" + parent).append(
+                    WidgetManager.get(element.widget)
+                        .replace("[[ID]]", element.id));
         }
         $compile($("#" + parent).contents())($scope);
         return false;

@@ -1,4 +1,7 @@
-<div class="panel panel-primary" ng-controller="EditTextController" ng-show="value.text">
+<div id="edit-text-{{id}}"
+     class="panel panel-primary" 
+     ng-controller="EditTextController"
+     ng-init="set('[[ID]]')">
     <div class="panel-heading">Text</div>
     <div class="panel-body">
         <div class="form-group">
