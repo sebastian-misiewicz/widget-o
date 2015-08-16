@@ -50,7 +50,10 @@ widgeto.service('WidgetManager', function($sce, $templateRequest) {
     this.getAll = function() {
         var widgetNames = [];
         for (var index in widgets) {
-            widgetNames.push(widgets[index].name);
+            var widget = widgets[index];
+            if (widget.sampleJson) {
+                widgetNames.push(widgets[index].name);
+            }
         }
         return widgetNames;
     };
