@@ -20,11 +20,14 @@
         <hr>
         <div class="input-group">
             <span class="input-group-addon">ID</span>
-            <input type="text" class="form-control" placeholder="Enter an id (unique)" ng-model="sampleId">
+            <input type="text" class="form-control" placeholder="Enter an id (unique)" ng-model="sample.id">
         </div>
         <div class="input-group">
-            <span class="input-group-addon">Text</span>
-            <input type="text" class="form-control" placeholder="Enter a text" ng-model="sampleText">
+            <span class="input-group-addon">Widget</span>
+            <select class="form-control"
+                    ng-model="sample.widgetName">
+                <option ng-repeat="widget in widgets">{{widget}}</option>
+            </select>
         </div>
         <button type="button" class="btn btn-default" ng-click="add()">Add</button>
         <hr>

@@ -8,6 +8,13 @@ widgeto.controller('EditOrderController', function (
     $scope.id = '';
     $scope.value = '';
 
+    $scope.widgets = WidgetManager.getAll();
+
+    $scope.sample = {
+        "id": "",
+        "widgetName": ""
+    };
+
     $scope.set = function (id) {
         console.log("Setting widget id to: " + id);
         $scope.id = id;
@@ -31,10 +38,15 @@ widgeto.controller('EditOrderController', function (
     };
     
     $scope.add = function() {
-        var element = JSON.parse(JSON.stringify($scope.value.sample));
-        element.id = $scope.sampleId;
-        element.text = $scope.sampleText;
+        var widget = WidgetManager.getWidget($scope.sample.widgetName);
         
+        if (!widget || !widget.sampleJson) {
+            return;
+        }
+        
+        var element = JSON.parse(JSON.stringify(widget.sampleJson));
+        
+        element.id = $scope.id + "-" + $scope.sample.id;
         $scope.value.elements.push(element);
     };
 
