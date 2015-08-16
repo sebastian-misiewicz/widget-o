@@ -37,7 +37,7 @@ widgeto.controller('ToolboxController', function ($scope, $rootScope, EnableMana
     };
     
     $scope.toggleWidgets = function() {
-        $(".widget-o-editable").each(function () {
+        $(".widget-o-editable, .widget-o-managable").each(function () {
             if ($(this).hasClass('widget-o-toggle')) {
                 $(this).removeClass('widget-o-toggle');
             } else {
