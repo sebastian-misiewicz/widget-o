@@ -16,6 +16,10 @@ widgeto.controller('ToolboxController', function ($scope, $rootScope, EnableMana
         $rootScope.$broadcast('page-save');
     };
     
+    $scope.render = function() {
+        $rootScope.$broadcast('page-render');
+    };
+    
     $scope.reset = function() {
         $rootScope.$broadcast('page-reset');
     };

@@ -65,8 +65,10 @@ widgeto.controller('MainController', function (
             console.log('Failed to get the page: ' + $scope.idpage);
         });
     });
-
     
+    $rootScope.$on('page-render', function () {
+        console.log($('html').html());
+    });
 
     $rootScope.$on('templates-loaded', function (event, id) {
         Page.get({id: $scope.idpage}, function (page) {
