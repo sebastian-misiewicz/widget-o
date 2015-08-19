@@ -46,7 +46,7 @@ widgeto.controller('MainController', function (
 
     $rootScope.$on('stop-edit', function () {
         console.log('Stopping the edit mode');
-        inEdit = false;
+        window.location = $scope.idpage;
     });
 
     $rootScope.$on('modal-close', function (event, id, value) {
