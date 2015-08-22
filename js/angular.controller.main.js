@@ -54,7 +54,12 @@ widgeto.controller('MainController', function (
     });
 
     $rootScope.$on('page-save', function () {
-        Page.update({id: $scope.idpage}, $scope.page);
+        Page.update(
+                {id: $scope.idpage}, 
+                {
+                    "html": $('html').html(),
+                    "data": $scope.page
+                });
     });
 
     $rootScope.$on('page-reset', function () {
