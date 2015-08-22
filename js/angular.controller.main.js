@@ -71,18 +71,6 @@ widgeto.controller('MainController', function (
         });
     });
     
-    $rootScope.$on('page-render', function () {
-        Render.save({
-            "idpage": $scope.idpage,
-            "html": $('html').html()
-        }, function () {
-            console.log("render success");
-        }, function () {
-            console.log("render failed");
-        });
-            
-    });
-
     $rootScope.$on('templates-loaded', function (event, id) {
         Page.get({id: $scope.idpage}, function (page) {
             if(!$scope.page) {
