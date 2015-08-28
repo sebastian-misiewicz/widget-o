@@ -31,9 +31,6 @@ widgeto.controller('MainController', function (
             }
         }
     }
-    function setElement(id, value) {
-        // TODO sebastian Let's revise the use of this function later
-    }
 
     $scope.startEdit = function () {
         console.log('Starting the edit mode');
@@ -47,10 +44,6 @@ widgeto.controller('MainController', function (
     $rootScope.$on('stop-edit', function () {
         console.log('Stopping the edit mode');
         window.location = $scope.idpage;
-    });
-
-    $rootScope.$on('modal-close', function (event, id, value) {
-        setElement(id, value);
     });
 
     $rootScope.$on('page-save', function () {
