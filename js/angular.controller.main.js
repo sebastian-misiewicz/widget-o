@@ -52,6 +52,11 @@ widgeto.controller('MainController', function (
                 {
                     "html": $('html').html(),
                     "data": $scope.page
+                },
+                function () {
+                },
+                function (e) {
+                    $rootScope.$broadcast('modal-alert-open', 'danger', 'Save failed', e["status"]);
                 });
     });
 
