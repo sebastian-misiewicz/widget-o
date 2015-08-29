@@ -15,6 +15,9 @@ widgeto.controller('ModalAlertController', function (
                 case 403:
                     $scope.message = "403 - Forbidden - Log in first.";
                     break;
+                case 404:
+                    $scope.message = "403 - Page Not Found.";
+                    break;
                 default:
                     $scope.message = message;
                     break;
