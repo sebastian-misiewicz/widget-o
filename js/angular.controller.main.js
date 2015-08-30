@@ -1,7 +1,7 @@
 widgeto.controller('MainController', function (
-        $scope, $rootScope, $compile, $sce, $templateRequest, $q,
+        $scope, $rootScope, $compile,
         TemplateManager, WidgetManager,
-        PageCache, Page, Render) {
+        PageCache, Page) {
 
     TemplateManager.loadAll();
 
