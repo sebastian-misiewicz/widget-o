@@ -75,8 +75,11 @@ widgeto.controller('MainController', function (
                $scope.page = page;
             }
         }, function () {
-            // TODO sebastian show a proper error message on the website
-            console.log('Failed to get the page: ' + $scope.idpage);
+            $rootScope.$broadcast(
+                    'modal-alert-open', 
+                    'danger', 
+                    'Templates load fail', 
+                    'Failed to get the page ' + $scope.idpage);
         }); 
         console.log('Compiling ' + id);
         $compile($(id).contents())($scope);
