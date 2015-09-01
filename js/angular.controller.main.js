@@ -64,8 +64,7 @@ widgeto.controller('MainController', function (
         Page.get({id: $scope.idpage}, function (page) {
             $scope.page = page;
         }, function () {
-            // TODO sebastian show a proper error message on the website
-            console.log('Failed to get the page: ' + $scope.idpage);
+            $rootScope.$broadcast('modal-alert-open', 'danger', 'Page get failed', 'Failed to get the page: ' + $scope.idpage);
         });
     });
     
