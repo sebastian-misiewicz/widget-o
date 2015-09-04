@@ -9,13 +9,13 @@ widgeto.controller('ModalLoginController', function ($scope, $rootScope, $http, 
         // TODO Make it more secure
         $http.defaults.headers.common['auth-token'] = '{"username":"' + $scope.username + '", "password":"' + $scope.password + '"}';
         $http.post('rest/login/', {
-        }).success(function () {
-            $scope.loginFailed = false;
-            $('#modal-login').modal('hide');
-            $rootScope.$broadcast('login-success');
-        }).error(function () {
-            $scope.loginFailed = true;
-        });
+            }).success(function () {
+                $scope.loginFailed = false;
+                $('#modal-login').modal('hide');
+                $rootScope.$broadcast('login-success');
+            }).error(function () {
+                $scope.loginFailed = true;
+            });
     };
     
     $rootScope.$on('start-edit', function() {
