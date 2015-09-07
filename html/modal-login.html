@@ -1,5 +1,4 @@
-<div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static"
-     ng-controller="ModalLoginController">
+<div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -7,16 +6,16 @@
                 <h4 class="modal-title" id="myModalLabel">Login</h4>
             </div>
             <div class="modal-body">
-                <div class="alert alert-warning" role="alert" ng-show="loginFailed">Login has failed. Try again.</div>
+                <div class="alert alert-warning" role="alert">Login has failed. Try again.</div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="value" placeholder="Username" ng-model="username">
+                    <input type="text" class="form-control" id="value" placeholder="Username">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" id="value" placeholder="Password" ng-model="password">
+                    <input type="password" class="form-control" id="value" placeholder="Password">
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" ng-click="login()">Login</button>
+                <button type="button" class="btn btn-primary" onclick="login()">Login</button>
             </div>
         </div>
     </div>
