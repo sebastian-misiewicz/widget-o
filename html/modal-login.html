@@ -6,16 +6,16 @@
                 <h4 class="modal-title" id="myModalLabel">Login</h4>
             </div>
             <div class="modal-body">
-                <div class="alert alert-warning" role="alert">Login has failed. Try again.</div>
+                <div class="alert alert-warning" id="modal-login-alert" role="alert" style="display: none;">Login has failed. Try again.</div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="value" placeholder="Username">
+                    <input type="text" id="modal-login-username" class="form-control" id="value" placeholder="Username">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" id="value" placeholder="Password">
+                    <input type="password" id="modal-login-password" class="form-control" id="value" placeholder="Password">
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" onclick="login()">Login</button>
+                <button type="submit" class="btn btn-primary" onclick="login()">Login</button>
             </div>
         </div>
     </div>
