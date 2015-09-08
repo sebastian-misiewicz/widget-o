@@ -12,7 +12,8 @@
   "dependencies": {
     "angular": "~1.4.4",
     "angular-ui-sortable": "~0.13.4",
-    "blueimp-file-upload": "~9.10.6"
+    "blueimp-file-upload": "~9.10.6",
+    "js-cookie": "2.0.3"
   },
   "ignore": [
     "**/.*",
