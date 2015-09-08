@@ -19,7 +19,7 @@ function login() {
         })
     })
     .done(function (data) {
-        console.log(data); 
+        Cookies.set('auth-token', data);
     })
     .fail(function () {
         $("#modal-login-alert").show();
