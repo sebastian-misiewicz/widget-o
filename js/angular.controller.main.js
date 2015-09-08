@@ -1,7 +1,9 @@
 widgeto.controller('MainController', function (
-        $scope, $rootScope, $compile,
+        $scope, $rootScope, $compile, $http,
         TemplateManager, WidgetManager,
         PageCache, Page) {
+
+    $http.defaults.headers.common['auth-token']= Cookies.get('auth-token');
 
     TemplateManager.loadAll();
 
