@@ -24,8 +24,8 @@ widgeto.controller('ToolboxController', function ($scope, $rootScope, EnableMana
         $rootScope.$broadcast('page-reset');
     };
     
-    $scope.stopEdit = function() {
-        $rootScope.$broadcast('stop-edit');
+    $scope.logout = function() {
+        $rootScope.$broadcast('logout');
     };
     
     $scope.addNew = function() {

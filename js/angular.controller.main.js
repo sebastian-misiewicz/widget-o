@@ -43,9 +43,12 @@ widgeto.controller('MainController', function (
         inEdit = true;
     });
 
-    $rootScope.$on('stop-edit', function () {
-        console.log('Stopping the edit mode');
-        window.location = $scope.idpage;
+    $rootScope.$on('logout', function () {
+        $http.post("rest/logout/")
+            .then(function () {
+                Cookies.remove('auth-token');
+                window.location = $scope.idpage;
+            });
     });
 
     $rootScope.$on('page-save', function () {

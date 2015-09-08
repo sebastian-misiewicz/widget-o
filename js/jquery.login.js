@@ -20,6 +20,7 @@ function login() {
     })
     .done(function (data) {
         Cookies.set('auth-token', data);
+        location.reload();
     })
     .fail(function () {
         $("#modal-login-alert").show();
