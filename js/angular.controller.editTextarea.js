@@ -1,9 +1,6 @@
 widgeto.controller('EditTextareaController', function (
         $scope, 
-        WidgetManager, EnableManager) {
-
-    EnableManager.add($scope);
-    $scope.isEnabled = false;
+        WidgetManager) {
 
     $scope.id = '';
     $scope.value = '';

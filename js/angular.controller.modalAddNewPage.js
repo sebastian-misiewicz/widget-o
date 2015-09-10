@@ -1,7 +1,5 @@
-widgeto.controller('ModalAddNewPageController', function ($scope, $rootScope, EnableManager, Template, Page) {
+widgeto.controller('ModalAddNewPageController', function ($scope, $rootScope, Template, Page) {
 
-    EnableManager.add($scope);
-    $scope.isEnabled = false;
     $scope.saveFailed = false;
     $scope.saveSucceeded = false;
     

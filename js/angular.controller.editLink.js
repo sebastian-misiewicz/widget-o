@@ -1,9 +1,6 @@
 widgeto.controller('EditLinkController', function (
         $scope, 
-        WidgetManager, EnableManager, Page) {
-
-    EnableManager.add($scope);
-    $scope.isEnabled = false;
+        WidgetManager, Page) {
 
     $scope.id = '';
     $scope.value = '';

@@ -1,9 +1,5 @@
 widgeto.controller('ModalFileManagerController', function (
-        $scope, $rootScope, $http,
-        EnableManager) {
-
-    EnableManager.add($scope);
-    $scope.isEnabled = false;
+        $scope, $rootScope, $http) {
 
     $scope.value = {
         "idsite": "",

@@ -1,9 +1,6 @@
 widgeto.controller('ModalEditController', function (
         $scope, $rootScope, $compile,
-        EnableManager, WidgetManager) {
-
-    EnableManager.add($scope);
-    $scope.isEnabled = false;
+        WidgetManager) {
 
     $scope.id = '';
     $scope.value = null;

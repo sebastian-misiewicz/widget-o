@@ -1,9 +1,6 @@
 widgeto.controller('EditBooleanController', function (
         $scope, 
-        EnableManager, WidgetManager) {
-
-    EnableManager.add($scope);
-    $scope.isEnabled = false;
+        WidgetManager) {
 
     $scope.id = '';
     $scope.value = '';

@@ -1,9 +1,5 @@
 widgeto.controller('ModalAlertController', function (
-        $scope, $rootScope,
-        EnableManager) {
-
-    EnableManager.add($scope);
-    $scope.isEnabled = false;
+        $scope, $rootScope) {
 
     $rootScope.$on('modal-alert-open', function (event, type, title, message) {
             setScope(type, title, message);

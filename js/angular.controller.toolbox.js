@@ -1,8 +1,5 @@
-widgeto.controller('ToolboxController', function ($scope, $rootScope, EnableManager) {
+widgeto.controller('ToolboxController', function ($scope, $rootScope) {
 
-    EnableManager.add($scope);
-    $scope.isEnabled = true;
-    
     $scope.isVisible = false;
 
     $scope.show = function() {

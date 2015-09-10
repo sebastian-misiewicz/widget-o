@@ -1,7 +1,4 @@
-widgeto.controller('ModalLoginController', function ($scope, $rootScope, $http, EnableManager) {
-
-    EnableManager.add($scope);
-    $scope.isEnabled = false;
+widgeto.controller('ModalLoginController', function ($scope, $rootScope, $http) {
 
     $scope.loginFailed = false;
 
