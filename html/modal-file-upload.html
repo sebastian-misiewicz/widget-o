@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">File upload</h4>
+                <h4 class="modal-title" id="myModalLabel">{{ 'FILE.UPLOAD' | translate }}</h4>
             </div>
             <div class="modal-body">
                 <form id="fileupload" action="//action/" method="POST" enctype="multipart/form-data" 
@@ -18,16 +18,16 @@
                             <!-- The fileinput-button span is used to style the file input field as button -->
                             <span class="btn btn-success fileinput-button" ng-class="{disabled: disabled}">
                                 <i class="glyphicon glyphicon-plus"></i>
-                                <span>Add files...</span>
+                                <span>{{ 'FILE.ADD' | translate }}</span>
                                 <input type="file" name="files[]" multiple ng-disabled="disabled">
                             </span>
                             <button type="button" class="btn btn-primary start" data-ng-click="submit()">
                                 <i class="glyphicon glyphicon-upload"></i>
-                                <span>Start upload</span>
+                                <span>{{ 'FILE.UPLOAD_START' | translate }}</span>
                             </button>
                             <button type="button" class="btn btn-warning cancel" data-ng-click="cancel()">
                                 <i class="glyphicon glyphicon-ban-circle"></i>
-                                <span>Cancel upload</span>
+                                <span>{{ 'FILE.UPLOAD_CANCEL' | translate }}</span>
                             </button>
                             <!-- The global file processing state -->
                             <span class="fileupload-process"></span>

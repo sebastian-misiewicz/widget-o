@@ -8,7 +8,13 @@ var plTranslations = {
     MANAGER: 'Manager',
     PAGES: 'Strony',
     ADD_NEW: 'Dodaj nową',
-    LOGOUT: 'Wyloguj'
+    LOGOUT: 'Wyloguj',
+    FILE: {
+        UPLOAD: 'Wczytytywanie plików',
+        ADD: 'Dodaj pliki...',
+        UPLOAD_START: 'Zacznij',
+        UPLOAD_CANCEL: 'Zaniechaj'
+    }
 };
 
 
