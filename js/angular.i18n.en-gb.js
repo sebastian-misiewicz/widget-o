@@ -9,11 +9,14 @@ var enTranslations = {
     PAGES: 'Pages',
     ADD_NEW: 'Add new',
     LOGOUT: 'Logout',
+    DELETE: 'Delete',
     FILE: {
         UPLOAD: 'File upload',
         ADD: 'Add files...',
         UPLOAD_START: 'Start upload',
-        UPLOAD_CANCEL: 'Cancel upload'
+        UPLOAD_CANCEL: 'Cancel upload',
+        MANAGER: 'File manager',
+        NO_FILES: 'No files'
     }
 };
 

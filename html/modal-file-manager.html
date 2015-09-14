@@ -4,12 +4,12 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">File Manager</h4>
+                <h4 class="modal-title" id="myModalLabel">{{ 'FILE.MANAGER' | translate }}</h4>
             </div>
             <div class="modal-body">
                 <div class="panel panel-default" ng-show="files.length === 0">
                     <div class="panel-body">
-                        No files.
+                        {{ 'FILE.NO_FILES' | translate }}
                     </div>
                 </div>
                 <table class="table table-striped files ng-cloak">
@@ -36,7 +36,7 @@
                         <td>
                             <button type="button" class="btn btn-danger destroy" data-ng-click="delete(file)">
                                 <i class="glyphicon glyphicon-trash"></i>
-                                <span>Delete</span>
+                                <span>{{ 'DELETE' | translate }}</span>
                             </button>
                         </td>
                     </tr>
