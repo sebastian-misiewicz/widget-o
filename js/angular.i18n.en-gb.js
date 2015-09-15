@@ -10,6 +10,9 @@ var enTranslations = {
     ADD_NEW: 'Add new',
     LOGOUT: 'Logout',
     DELETE: 'Delete',
+    IMAGE: 'Image',
+    WIDTH: 'Width',
+    SOURCE: 'Source',
     FILE: {
         UPLOAD: 'File upload',
         ADD: 'Add files...',

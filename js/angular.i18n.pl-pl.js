@@ -10,6 +10,9 @@ var plTranslations = {
     ADD_NEW: 'Dodaj nową',
     LOGOUT: 'Wyloguj',
     DELETE: 'Skasuj',
+    IMAGE: 'Obraz',
+    WIDTH: 'Długość',
+    SOURCE: 'Źródło',
     FILE: {
         UPLOAD: 'Wczytytywanie plików',
         ADD: 'Dodaj pliki...',
