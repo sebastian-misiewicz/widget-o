@@ -26,3 +26,10 @@ function login() {
         $("#modal-login-alert").show();
     });
 }
+
+$("body").on("keypress", ".login-input", function (e) {
+    if (e.which === 13) {
+        login();
+        return false;
+    }
+});
