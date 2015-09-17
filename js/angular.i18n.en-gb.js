@@ -13,6 +13,7 @@ var enTranslations = {
     IMAGE: 'Image',
     WIDTH: 'Width',
     SOURCE: 'Source',
+    EDITING: 'Editing',
     FILE: {
         UPLOAD: 'File upload',
         ADD: 'Add files...',

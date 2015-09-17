@@ -13,6 +13,7 @@ var plTranslations = {
     IMAGE: 'Obraz',
     WIDTH: 'Długość',
     SOURCE: 'Źródło',
+    EDITING: 'Edycja',
     FILE: {
         UPLOAD: 'Wczytytywanie plików',
         ADD: 'Dodaj pliki...',
