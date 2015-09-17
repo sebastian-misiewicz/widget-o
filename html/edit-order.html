@@ -2,7 +2,7 @@
      class="panel panel-primary" 
      ng-controller="EditOrderController" 
      ng-init="set('[[ID]]')">
-    <div class="panel-heading">Order of {{id}}</div>
+    <div class="panel-heading">{{ 'ORDER_OF' | translate }} {{id}}</div>
     <div class="panel-body">
         <ul style="list-style-type: none; padding: 0;"
             ui-sortable="sortableOptions" 
@@ -20,7 +20,7 @@
         <hr>
         <div class="input-group">
             <span class="input-group-addon">ID</span>
-            <input type="text" class="form-control" placeholder="Enter an id (unique)" ng-model="sample.id">
+            <input type="text" class="form-control" placeholder="{{ 'ENTER_UNIQUE_ID' | translate }}" ng-model="sample.id">
         </div>
         <div class="input-group">
             <span class="input-group-addon">Widget</span>
@@ -29,8 +29,8 @@
                 <option ng-repeat="widget in widgets">{{widget}}</option>
             </select>
         </div>
-        <button type="button" class="btn btn-default" ng-click="add()">Add</button>
+        <button type="button" class="btn btn-default" ng-click="add()">{{ 'ADD' | translate }}</button>
         <hr>
-        <button type="button" class="btn btn-default" ng-click="reRender()">Apply changes</button>
+        <button type="button" class="btn btn-default" ng-click="reRender()">{{ 'APPLY_CHANGES' | translate }}</button>
     </div>
 </div>

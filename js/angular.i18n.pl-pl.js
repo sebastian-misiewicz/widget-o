@@ -14,6 +14,10 @@ var plTranslations = {
     WIDTH: 'Długość',
     SOURCE: 'Źródło',
     EDITING: 'Edycja',
+    ADD: 'Dodaj',
+    APPLY_CHANGES: 'Zatwierdź zmiany',
+    ORDER_OF: 'Kolejność',
+    ENTER_UNIQUE_ID: 'Wprowadź unikalne ID',
     FILE: {
         UPLOAD: 'Wczytytywanie plików',
         ADD: 'Dodaj pliki...',

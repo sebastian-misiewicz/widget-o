@@ -14,6 +14,10 @@ var enTranslations = {
     WIDTH: 'Width',
     SOURCE: 'Source',
     EDITING: 'Editing',
+    ADD: 'Add',
+    APPLY_CHANGES: 'Apply changes',
+    ORDER_OF: 'Order of',
+    ENTER_UNIQUE_ID: 'Enter an id (unique)',
     FILE: {
         UPLOAD: 'File upload',
         ADD: 'Add files...',
