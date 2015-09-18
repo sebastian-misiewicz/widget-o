@@ -18,6 +18,7 @@ var plTranslations = {
     APPLY_CHANGES: 'Zatwierdź zmiany',
     ORDER_OF: 'Kolejność',
     ENTER_UNIQUE_ID: 'Wprowadź unikalne ID',
+    CLOSE: 'Zamknij',
     FILE: {
         UPLOAD: 'Wczytytywanie plików',
         ADD: 'Dodaj pliki...',
