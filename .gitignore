@@ -3,3 +3,4 @@ startbootstrap-freelancer/
 nbproject/
 bower_components/
 .bower.json
+node_modules/
