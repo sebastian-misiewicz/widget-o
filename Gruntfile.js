@@ -4,18 +4,8 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-//        bower: {
-//            install: {
-//                options: {
-//                    install: true,
-//                    copy: false,
-//                    targetDir: './libs',
-//                    cleanTargetDir: true
-//                }
-//            }
-//        },
         jshint: {
-             all: [ 'app/*.js', 'app/**/*.js' ]
+             all: [ 'js/*.js', 'js/**/*.js' ]
         },
         html2js: {
             dist: {
@@ -29,14 +19,22 @@ module.exports = function (grunt) {
               separator: ';'
             },
             dist: {
-                src: [ 'app/*.js', 'tmp/*.js' ],
+                src: [ 'js/angular.*.js', 'tmp/*.js' ],
                 dest: 'dist/app.js'
             }
         },
+        copy: {
+            login: {
+                src: 'js/jquery.login.js',
+                dest: 'dist/login.js'
+            }
+        },
+        
         uglify: {
             dist: {
                 files: {
-                    'dist/app.js': [ 'dist/app.js' ]
+                    'dist/app.js': [ 'dist/app.js' ],
+                    'dist/login.js': ['dist/login.js']
                 },
                 options: {
                     mangle: false
@@ -46,26 +44,6 @@ module.exports = function (grunt) {
         clean: {
             temp: {
                 src: [ 'tmp' ]
-            }
-        },
-        compress: {
-            dist: {
-                options: {
-                    archive: 'dist/<%= pkg.name %>-<%= pkg.version %>.zip'
-                },
-                files: [{
-                    src: [ 'index.html' ],
-                    dest: '/'
-                }, {
-                    src: [ 'dist/**' ],
-                    dest: 'dist/'
-                }, {
-                    src: [ 'assets/**' ],
-                    dest: 'assets/'
-                }, {
-                    src: [ 'libs/**' ],
-                    dest: 'libs/'
-                }]
             }
         }
                 // Task configuration will be written here
@@ -80,11 +58,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-html2js');
     grunt.loadNpmTasks('grunt-contrib-watch');
-//    grunt.loadNpmTasks('grunt-bower-task');
     grunt.loadNpmTasks('grunt-karma');
-
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    
     grunt.registerTask('minified', [ 'bower', 'connect:server', 'watch:min' ]);
-    grunt.registerTask('package', [ 'jshint', 'html2js:dist', 'concat:dist', 'uglify:dist',
-        'clean:temp', 'compress:dist' ]);
+    grunt.registerTask('package', [
+        'jshint', 'html2js:dist', 'concat:dist', 'copy:login', 'uglify:dist', 'clean:temp']);
 
 };
