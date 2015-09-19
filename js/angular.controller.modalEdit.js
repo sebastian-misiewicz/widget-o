@@ -29,7 +29,7 @@ widgeto.controller('ModalEditController', function (
             }
         }
         $compile(modalBody.contents())($scope);
-    };
+    }
 
     function appendEditWidget(modalBody, id, editType, elementToEdit) {
         var template = WidgetManager.get("edit-" + editType);

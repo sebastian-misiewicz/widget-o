@@ -39,11 +39,11 @@ widgeto.controller('ModalFileManagerController', function (
         } else {
             fileRemovedFailed(file);
         }
-    };
+    }
     
     function fileRemovedFailed(file) {
         file.error = 'Error';
-    };
+    }
     
 });
 

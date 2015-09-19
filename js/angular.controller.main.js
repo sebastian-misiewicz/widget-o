@@ -62,7 +62,7 @@ widgeto.controller('MainController', function (
                     $rootScope.$broadcast('modal-alert-popup', 'success', 'Page saved', "Page " + $scope.idpage + " saved succesfully.");
                 },
                 function (e) {
-                    $rootScope.$broadcast('modal-alert-open', 'danger', 'Save failed', e["status"]);
+                    $rootScope.$broadcast('modal-alert-open', 'danger', 'Save failed', e.status);
                 });
     });
 

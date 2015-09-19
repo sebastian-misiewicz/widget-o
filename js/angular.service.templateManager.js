@@ -34,7 +34,7 @@ widgeto.service('TemplateManager', function($rootScope, $sce, $templateRequest, 
     
     this.loadAll = function() {
         this.loadLevel(templates);
-    },
+    };
     
     this.loadLevel = function(element) {
         count[element.id] = (element.elements) ? element.elements.length : 0;
@@ -47,7 +47,7 @@ widgeto.service('TemplateManager', function($rootScope, $sce, $templateRequest, 
            templateManager.load(element, template.path); 
         });
 
-    },
+    };
     
     this.load = function (element, templateFilePath) {
         var templateUrl = $sce.getTrustedResourceUrl(templateFilePath);
@@ -70,7 +70,7 @@ widgeto.service('TemplateManager', function($rootScope, $sce, $templateRequest, 
                 });
             }
         }, function() {
-            // TODO Add some exception throwing
+            $rootScope.$broadcast('modal-alert-open', 'danger', 'Loading a template failed', 'Failed to load: ' + templateUrl);
         });
     };
     
