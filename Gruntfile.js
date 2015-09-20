@@ -15,9 +15,6 @@ module.exports = function (grunt) {
         },
         
         concat: {
-            options: {
-              separator: ';'
-            },
             dist: {
                 src: [ 'js/angular.*.js', 'tmp/*.js' ],
                 dest: 'dist/app.js'
@@ -63,6 +60,6 @@ module.exports = function (grunt) {
     
     grunt.registerTask('minified', [ 'bower', 'connect:server', 'watch:min' ]);
     grunt.registerTask('package', [
-        'jshint', 'html2js:dist', 'concat:dist', 'copy:login', 'uglify:dist', 'clean:temp']);
+        'jshint', 'concat:dist', 'copy:login', 'uglify:dist', 'clean:temp']);
 
 };
