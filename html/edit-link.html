@@ -6,28 +6,28 @@
     <div class="panel-body">
         <div class="radio">
             <label>
-                <input type="radio" name="optionsRadios" id="optionsRadios1" ng-model="value.type" value="section" checked>
+                <input type="radio" name="optionsRadios" id="optionsRadios1" ng-model="value.link.type" value="section" checked>
                 Section
             </label>
         </div>
         <div class="radio">
             <label>
-                <input type="radio" name="optionsRadios" id="optionsRadios1" ng-model="value.type" value="internal">
+                <input type="radio" name="optionsRadios" id="optionsRadios1" ng-model="value.link.type" value="internal">
                 Internal
             </label>
         </div>
         <div class="radio">
             <label>
-                <input type="radio" name="optionsRadios" id="optionsRadios1" ng-model="value.type" value="external">
+                <input type="radio" name="optionsRadios" id="optionsRadios1" ng-model="value.link.type" value="external">
                 External
             </label>
         </div>
         <div class="form-group">
-            <select class="form-control" ng-model="value.href" ng-show="value.type !== 'external'">
+            <select class="form-control" ng-model="value.link.href" ng-show="value.link.type !== 'external'">
                 <option ng-repeat="href in hrefs">{{href}}</option>
             </select>
             <input type="text" class="form-control" id="value" placeholder="Href of {{id}}" 
-                   ng-model="value.href" ng-show="value.type === 'external'">
+                   ng-model="value.link.href" ng-show="value.link.type === 'external'">
         </div>
     </div>
 </div>

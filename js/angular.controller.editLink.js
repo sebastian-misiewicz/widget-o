@@ -15,7 +15,7 @@ widgeto.controller('EditLinkController', function (
 
     $scope.$watch('value.type', function() {
         $scope.hrefs = [];
-        switch ($scope.value.type) {
+        switch ($scope.value.link.type) {
             case 'section':
                 var sections = $('section').toArray();
                 for (var section in sections) {
