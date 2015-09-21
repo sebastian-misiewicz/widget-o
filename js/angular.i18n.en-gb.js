@@ -19,6 +19,12 @@ var enTranslations = {
     ORDER_OF: 'Order of',
     ENTER_UNIQUE_ID: 'Enter an id (unique)',
     CLOSE: 'Close',
+    TEXTAREA: 'Textarea',
+    BOLD: 'Bold',
+    ITALIC: 'Italic',
+    PARAGRAPH: 'Paragraph',
+    TEXT: 'Text',
+    END: 'End',
     FILE: {
         UPLOAD: 'File upload',
         ADD: 'Add files...',

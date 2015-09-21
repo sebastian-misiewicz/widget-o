@@ -2,22 +2,22 @@
      class="panel panel-primary" 
      ng-controller="EditTextareaController" 
      ng-init="set('[[ID]]')">
-    <div class="panel-heading">Textarea</div>
+    <div class="panel-heading">{{ 'TEXTAREA' | translate }}</div>
     <div class="panel-body">
         <div class="panel panel-default">
             <div class="panel-body">
                 <span class="label label-primary" 
                       style="cursor: pointer;" 
-                      ng-click="addTag('p')">Paragraph</span>
+                      ng-click="addTag('p')">{{ 'PARAGRAPH' | translate }}</span>
                 <span class="label label-success"
                       style="cursor: pointer;" 
-                      ng-click="addTag('b')">Bold</span>
+                      ng-click="addTag('b')">{{ 'BOLD' | translate }}</span>
                 <span class="label label-success"
                       style="cursor: pointer;" 
-                      ng-click="addTag('i')">Italic</span>
+                      ng-click="addTag('i')">{{ 'ITALIC' | translate }}</span>
                 <span class="label label-default" 
                       style="cursor: pointer;" 
-                      ng-click="addText()">Text</span>
+                      ng-click="addText()">{{ 'TEXT' | translate }}</span>
             </div>
         </div>
 
@@ -26,17 +26,17 @@
             ng-model="value.textarea">
             <li ng-repeat="element in value.textarea" style="margin-bottom: 2px;">
                 <span class="label label-primary" 
-                      ng-show="element.tag === 'p'">Paragraph</span>
+                      ng-show="element.tag === 'p'">{{ 'PARAGRAPH' | translate }}</span>
                 <span class="label label-primary" 
-                      ng-show="element.tag === 'p-close'">Close Paragraph</span>
+                      ng-show="element.tag === 'p-close'">{{ 'END' | translate }} {{ 'PARAGRAPH' | translate }}</span>
                 <span class="label label-success" 
-                      ng-show="element.tag === 'b'">Bold</span>
+                      ng-show="element.tag === 'b'">{{ 'BOLD' | translate }}</span>
                 <span class="label label-success" 
-                      ng-show="element.tag === 'b-close'">Close Bold</span>
+                      ng-show="element.tag === 'b-close'">{{ 'END' | translate }} {{ 'BOLD' | translate }}</span>
                 <span class="label label-success" 
-                      ng-show="element.tag === 'i'">Italic</span>
+                      ng-show="element.tag === 'i'">{{ 'ITALIC' | translate }}</span>
                 <span class="label label-success" 
-                      ng-show="element.tag === 'i-close'">Close Italic</span>
+                      ng-show="element.tag === 'i-close'">{{ 'END' | translate }} {{ 'ITALIC' | translate }}</span>
                 <span class="label label-danger" 
                       style="cursor: pointer;" 
                       ng-click="remove(element)"

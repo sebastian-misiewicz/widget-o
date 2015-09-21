@@ -19,6 +19,12 @@ var plTranslations = {
     ORDER_OF: 'Kolejność',
     ENTER_UNIQUE_ID: 'Wprowadź unikalne ID',
     CLOSE: 'Zamknij',
+    TEXTAREA: 'Pole tekstowe',
+    BOLD: 'Pogrubienie',
+    ITALIC: 'Kursywa',
+    PARAGRAPH: 'Paragraf',
+    TEXT: 'Tekst',
+    END: 'Koniec',
     FILE: {
         UPLOAD: 'Wczytytywanie plików',
         ADD: 'Dodaj pliki...',
