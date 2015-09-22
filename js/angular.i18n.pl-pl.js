@@ -25,6 +25,8 @@ var plTranslations = {
     PARAGRAPH: 'Paragraf',
     TEXT: 'Tekst',
     END: 'Koniec',
+    EDIT: 'Edytuj',
+    MANAGE: 'Zarządzaj',
     FILE: {
         UPLOAD: 'Wczytytywanie plików',
         ADD: 'Dodaj pliki...',

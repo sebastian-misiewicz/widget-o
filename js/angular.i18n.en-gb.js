@@ -25,6 +25,8 @@ var enTranslations = {
     PARAGRAPH: 'Paragraph',
     TEXT: 'Text',
     END: 'End',
+    EDIT: 'Edit',
+    MANAGE: 'Manage',
     FILE: {
         UPLOAD: 'File upload',
         ADD: 'Add files...',

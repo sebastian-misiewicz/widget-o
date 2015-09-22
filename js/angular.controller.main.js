@@ -174,7 +174,7 @@ widgeto.controller('MainController', function (
 // TODO global variables!
 var current;
 var currentManage;
-var inEdit = true;
+var inEdit = false;
 function edit() {
     var scope = angular.element($("#" + current)).scope();
     if (!current) {
@@ -189,12 +189,24 @@ function manage() {
     }
     scope.edit(currentManage);
 }
+var i18n = [];
+function translate(text) {
+    angular.element(document.body).injector().get('$translate')(text).then(function (data) {
+        i18n[text] = data;
+        console.log(i18n);
+    });
+}
+$("body").ready(function () {
+    translate('EDIT');
+    translate('MANAGE');
+    inEdit = true;
+});
 
 $("body").on("mouseenter", ".widget-o-editable", function (e) {
     if (inEdit) {
         // Taken from http://stackoverflow.com/a/12274958 Thanks.
         $(this).popover({
-            content: '<button type="button" style="z-index: 999" class="btn btn-default" onclick="edit()"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</button>',
+            content: '<button type="button" style="z-index: 999" class="btn btn-default" onclick="edit()"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> ' + i18n['EDIT'] + '</button>',
             trigger: "manual",
             html: true,
             template: '<div class="popover" style="z-index: 999" onmouseover="clearTimeout(timeoutObj);$(this).mouseleave(function() {$(this).hide();});"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
@@ -219,7 +231,7 @@ $("body").on("mouseenter", ".widget-o-managable", function (e) {
     if (inEdit) {
         // Taken from http://stackoverflow.com/a/12274958 Thanks.
         $(this).popover({
-            content: '<button type="button" style="z-index: 999" class="btn btn-default" onclick="manage()"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Manage</button>',
+            content: '<button type="button" style="z-index: 999" class="btn btn-default" onclick="manage()"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> ' + i18n['MANAGE'] + '</button>',
             trigger: "manual",
             html: true,
             placement: "bottom",
