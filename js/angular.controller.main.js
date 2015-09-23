@@ -4,7 +4,10 @@ widgeto.controller('MainController', function (
         PageCache, Page) {
 
     $http.defaults.headers.common['auth-token']= Cookies.get('auth-token');
-
+    $.ajaxSetup({
+        headers: { 'auth-token': Cookies.get('auth-token') }
+    });
+    
     TemplateManager.loadAll();
 
     $scope.idpage = PageCache.getIdPage();
