@@ -27,6 +27,10 @@ var plTranslations = {
     END: 'Koniec',
     EDIT: 'Edytuj',
     MANAGE: 'Zarządzaj',
+    ADD_NEW_PAGE: 'Dodaj nową stronę',
+    PAGE_MANAGER: 'Zarządzaj stronami',
+    PAGE: 'Strona',
+    TEMPLATE: 'Szablon',
     FILE: {
         UPLOAD: 'Wczytytywanie plików',
         ADD: 'Dodaj pliki...',

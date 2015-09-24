@@ -10,6 +10,7 @@ widgeto.controller('ModalAddNewPageController', function ($scope, $rootScope, Te
 
     $rootScope.$on('modal-add-new-page-open', function () {
         $scope.templates = Template.query();
+        $scope.pages = Page.query();
         $('#modal-add-new-page').modal('show');
     });
 
@@ -20,6 +21,16 @@ widgeto.controller('ModalAddNewPageController', function ($scope, $rootScope, Te
         }, function () {
             $scope.saveSucceeded = false;
             $scope.saveFailed = true;
+        });
+    };
+    
+    $scope.deletePage = function (page) {
+        var idpage = page.idpage;
+        Page.delete({id: page.idpage}, function () {
+            $rootScope.$broadcast('modal-alert-open', 'success', 'Deleted page ' + idpage);
+            $scope.pages = Page.query();
+        }, function (e) {
+            $rootScope.$broadcast('modal-alert-open', 'danger', 'Page delete failed', e.status);
         });
     };
 

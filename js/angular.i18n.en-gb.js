@@ -27,6 +27,10 @@ var enTranslations = {
     END: 'End',
     EDIT: 'Edit',
     MANAGE: 'Manage',
+    ADD_NEW_PAGE: 'Add new page',
+    PAGE_MANAGER: 'Page manager',
+    PAGE: 'Page',
+    TEMPLATE: 'Template',
     FILE: {
         UPLOAD: 'File upload',
         ADD: 'Add files...',
