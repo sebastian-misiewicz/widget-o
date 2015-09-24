@@ -1,4 +1,4 @@
-widgeto.controller('ModalAddNewPageController', function ($scope, $rootScope, Template, Page) {
+widgeto.controller('ModalPageManagerController', function ($scope, $rootScope, Template, Page) {
 
     $scope.saveFailed = false;
     $scope.saveSucceeded = false;
@@ -8,10 +8,10 @@ widgeto.controller('ModalAddNewPageController', function ($scope, $rootScope, Te
         "template": ""
     };
 
-    $rootScope.$on('modal-add-new-page-open', function () {
+    $rootScope.$on('modal-page-manager-open', function () {
         $scope.templates = Template.query();
         $scope.pages = Page.query();
-        $('#modal-add-new-page').modal('show');
+        $('#modal-page-manager').modal('show');
     });
 
     $scope.save = function () {
@@ -39,7 +39,7 @@ widgeto.controller('ModalAddNewPageController', function ($scope, $rootScope, Te
 widgeto.run(function (TemplateManager) {
     TemplateManager.add(
             'modal-add-new-page', 
-            'bower_components/widget-o/html/modal-add-new-page.html',
+            'bower_components/widget-o/html/modal-page-manager.html',
             'body');
 });
 

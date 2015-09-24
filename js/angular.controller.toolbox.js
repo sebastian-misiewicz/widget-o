@@ -25,10 +25,6 @@ widgeto.controller('ToolboxController', function ($scope, $rootScope) {
         $rootScope.$broadcast('logout');
     };
     
-    $scope.addNew = function() {
-        $rootScope.$broadcast('modal-add-new-page-open');
-    };
-    
     $scope.fileUpload = function() {
         $rootScope.$broadcast('modal-file-upload-open');
     };
@@ -37,7 +33,7 @@ widgeto.controller('ToolboxController', function ($scope, $rootScope) {
         $rootScope.$broadcast('modal-file-manager-open');
     };
     
-    $scope.fileManager = function() {
+    $scope.pageManager = function() {
         $rootScope.$broadcast('modal-page-manager-open');
     };
     
