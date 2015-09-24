@@ -37,6 +37,10 @@ widgeto.controller('ToolboxController', function ($scope, $rootScope) {
         $rootScope.$broadcast('modal-file-manager-open');
     };
     
+    $scope.fileManager = function() {
+        $rootScope.$broadcast('modal-page-manager-open');
+    };
+    
     $scope.toggleWidgets = function() {
         $(".widget-o-editable, .widget-o-managable").each(function () {
             if ($(this).hasClass('widget-o-toggle')) {
