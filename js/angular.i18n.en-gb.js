@@ -31,6 +31,10 @@ var enTranslations = {
     PAGE_MANAGER: 'Page manager',
     PAGE: 'Page',
     TEMPLATE: 'Template',
+    SAVE_FAILED: 'Save has failed',
+    SAVE_SUCCEDED: 'Save succeded',
+    TRY_AGAIN: 'Try again',
+    GO_TO_NEW_PAGE: 'Go to new page',
     FILE: {
         UPLOAD: 'File upload',
         ADD: 'Add files...',

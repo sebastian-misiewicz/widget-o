@@ -31,6 +31,10 @@ var plTranslations = {
     PAGE_MANAGER: 'Zarządzaj stronami',
     PAGE: 'Strona',
     TEMPLATE: 'Szablon',
+    SAVE_FAILED: 'Zapis nie powiódł się',
+    SAVE_SUCCEDED: 'Zapis powiódł się',
+    TRY_AGAIN: 'Spróbuj ponownie',
+    GO_TO_NEW_PAGE: 'Przejdź do nowej strony',
     FILE: {
         UPLOAD: 'Wczytytywanie plików',
         ADD: 'Dodaj pliki...',
