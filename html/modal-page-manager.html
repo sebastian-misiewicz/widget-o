@@ -11,9 +11,9 @@
                     <div class="panel-heading">{{ 'ADD_NEW_PAGE' | translate }}</div>
                     <div class="panel-body">
                       <div class="alert alert-warning" role="alert" ng-show="saveFailed">{{ 'SAVE_FAILED' | translate }}. {{ 'TRY_AGAIN' | translate }}.</div>
-                        <div class="alert alert-success" role="alert" ng-show="saveSucceeded">{{ 'SAVE_SUCCEDED' | translate }}. {{ 'GO_TO_NEW_PAGE' | translate }}: <a class="btn btn-primary" href="{{value.idsite}}.html" role="button">{{value.idsite}}.html</a></div>
+                        <div class="alert alert-success" role="alert" ng-show="saveSucceeded">{{ 'SAVE_SUCCEDED' | translate }}. {{ 'GO_TO_NEW_PAGE' | translate }}: <a class="btn btn-primary" href="{{value.idpage}}.html" role="button">{{value.idpage}}.html</a></div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="idsite" placeholder="Alias" ng-model="value.idsite">
+                            <input type="text" class="form-control" id="idpage" placeholder="Alias" ng-model="value.idpage">
                             <select class="form-control" ng-model="value.template">
                                 <option ng-repeat="template in templates">{{template}}</option>
                             </select>

@@ -4,7 +4,7 @@ widgeto.controller('ModalPageManagerController', function ($scope, $rootScope, T
     $scope.saveSucceeded = false;
     
     $scope.value = {
-        "idsite": "",
+        "idpage": "",
         "template": ""
     };
 
@@ -18,6 +18,7 @@ widgeto.controller('ModalPageManagerController', function ($scope, $rootScope, T
         Page.save($scope.value, function () {
             $scope.saveFailed = false;
             $scope.saveSucceeded = true;
+            $scope.pages = Page.query();
         }, function () {
             $scope.saveSucceeded = false;
             $scope.saveFailed = true;
