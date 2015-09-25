@@ -13,7 +13,7 @@ widgeto.controller('EditLinkController', function (
         return true;
     };
 
-    $scope.$watch('value.type', function() {
+    $scope.$watch('value.link.type', function() {
         $scope.hrefs = [];
         switch ($scope.value.link.type) {
             case 'section':
@@ -26,8 +26,8 @@ widgeto.controller('EditLinkController', function (
             case 'internal':
                 Page.query({}, function(pages) {
                     pages.forEach(function (page) {
-                        if (page.idsite) {
-                           $scope.hrefs.push(page.idsite);
+                        if (page.idpage) {
+                           $scope.hrefs.push(page.idpage);
                         }
                     });
                 });
