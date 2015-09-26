@@ -35,6 +35,7 @@ var enTranslations = {
     SAVE_SUCCEDED: 'Save succeded',
     TRY_AGAIN: 'Try again',
     GO_TO_NEW_PAGE: 'Go to new page',
+    LINK: 'Link',
     FILE: {
         UPLOAD: 'File upload',
         ADD: 'Add files...',
