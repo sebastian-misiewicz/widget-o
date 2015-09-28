@@ -199,7 +199,7 @@ function translate(text) {
         console.log(i18n);
     });
 }
-$("body").ready(function () {
+angular.element(document).ready(function () {
     translate('EDIT');
     translate('MANAGE');
     inEdit = true;
