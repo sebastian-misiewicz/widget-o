@@ -42,6 +42,7 @@ Add following lines to your template:
     
 ## Adding a widget
 1. Prepare a controller:
+
    ```JavaScript
    widgeto.controller('TopMenuController', function ($scope, WidgetManager) {
     $scope.id;
@@ -75,6 +76,7 @@ Add following lines to your template:
    });
    ```
 3. Add a template at specified location during registration phase (above):
+
    ```html
    <li id="{{id}}" 
     class="page-scroll widget-o-editable"
