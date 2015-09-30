@@ -37,12 +37,14 @@ widgeto.controller('ToolboxController', function ($scope, $rootScope) {
         $rootScope.$broadcast('modal-page-manager-open');
     };
     
+    var toggleModeOn = false;
     $scope.toggleWidgets = function() {
+        toggleModeOn = !toggleModeOn;
         $(".widget-o-editable, .widget-o-managable").each(function () {
-            if ($(this).hasClass('widget-o-toggle')) {
-                $(this).removeClass('widget-o-toggle');
-            } else {
+            if (toggleModeOn) {
                 $(this).addClass('widget-o-toggle');
+            } else {
+                $(this).removeClass('widget-o-toggle');
             }
         });
     };
