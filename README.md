@@ -2,11 +2,20 @@
 
 ## Installation
 Add following lines to your template:
+
+1. Add ng-app and ng-controller to the body:
+
+   ```html
+   <body ng-app="widget-o" ng-controller="MainController">
+   ```
+
 1. CSS
+
    ```html
    <link href="bower_components/widget-o/css/widgeto.css" rel="stylesheet">
    ```
-2. JavaScript
+1. JavaScript
+
    ```html
    <!-- Logging -->
     <script src="bower_components/widget-o/dist/login.js"></script>
