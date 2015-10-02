@@ -151,7 +151,7 @@ widgeto.controller('MainController', function (
         if ($scope.widgets[parent] && !force) {
             return true;
         }
-        
+        var elements = $scope.page[parent].elements;
         $scope.widgets[parent] = true;
 
         console.log($("#" + parent));
