@@ -141,9 +141,10 @@ widgeto.controller('MainController', function (
             return false;
         }
         
-        var elements = $scope.page[parent].elements;
-        if (!elements) {
-            return false;
+        if (!$scope.page[parent]) {
+            $scope.page[parent] = {
+                "elements": []
+            };
         }
 
         // Block multi-rendering
