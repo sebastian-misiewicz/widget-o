@@ -106,6 +106,15 @@ Link supports following types:
 
 ### Textarea
 
+Textarea is an array of tags and values. Following elements are supported:
+
+| Tag/Value | Description | Example value (href) | HTML |
+| --- | --- | --- | --- |
+| p / p-close | Paragraph | `{ "tag": "p" }` / `{ "tag": "p-close" }` | `<p>` / `</p>` | 
+| b / b-close | Bold text | `{ "tag": "b" }` / `{ "tag": "b-close" }` | `<b>` / `</b>` | 
+| i / i-close | Italic text | `{ "tag": "i" }` / `{ "tag": "i-close" }` | `<i>` / `</i>` |
+| text | Some text | `{ "text": "A sample text" }` | A sample text |
+
 ##### JSON
 
 ```json
