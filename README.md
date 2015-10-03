@@ -51,7 +51,7 @@ Add following lines to your template:
     
 ## Widget elements
 ### Boolean
-#### JSON
+##### JSON
 
 ```json
    "field": {
@@ -59,14 +59,14 @@ Add following lines to your template:
    }
 ```
 
-#### HTML
+##### HTML
 
 ```html
 <div ng-show="element.field.boolean"></div>
 ```
 
 ### Text
-#### JSON
+##### JSON
 
 ```json
    "field": {
@@ -74,14 +74,14 @@ Add following lines to your template:
    }
 ```
 
-#### HTML
+##### HTML
 
 ```html
 <div>{{element.field.text}}</div>
 ```
 
 ### Link
-Link has following types:
+Link supports following types:
 
 | Type | Description | Example value (href) |
 | --- | --- | --- |
@@ -89,7 +89,7 @@ Link has following types:
 | external | external link | https://github.com/sebastian-misiewicz/widget-o |
 | section | section withon one page | #section |
 
-#### JSON
+##### JSON
 
 ```json
    "field": {
@@ -98,7 +98,7 @@ Link has following types:
    }
 ```
 
-#### HTML
+##### HTML
 
 ```html
 <div>{{element.field.text}}</div>
@@ -106,7 +106,7 @@ Link has following types:
 
 ### Textarea
 
-#### JSON
+##### JSON
 
 ```json
    "field": {
@@ -114,7 +114,7 @@ Link has following types:
    }
 ```
 
-#### HTML
+##### HTML
 
 ```html
 <p ng-bind-html="toText(element.field.textarea)"></p>
@@ -122,7 +122,7 @@ Link has following types:
 
 ### Image
 
-#### JSON
+##### JSON
 
 ```json
    "field": {
@@ -131,7 +131,7 @@ Link has following types:
    }
 ```
 
-#### HTML
+##### HTML
 
 ```html
 <img src="{{page.introImage.src}}" alt="" width="{{page.introImage.width}}">
