@@ -49,6 +49,94 @@ Add following lines to your template:
     </script>
     ```
     
+## Widget elements
+### Boolean
+#### JSON
+
+```json
+   "field": {
+      "boolean": false
+   }
+```
+
+#### HTML
+
+```html
+<div ng-show="element.field.boolean"></div>
+```
+
+### Text
+#### JSON
+
+```json
+   "field": {
+      "text": "Some text"
+   }
+```
+
+#### HTML
+
+```html
+<div>{{element.field.text}}</div>
+```
+
+### Link
+Link has following types:
+
+| Type | Description | Example value (href) |
+| --- | --- | --- |
+| internal | link within a single widget-o application | index.html |
+| external | external link | https://github.com/sebastian-misiewicz/widget-o |
+| section | section withon one page | #section |
+
+#### JSON
+
+```json
+   "field": {
+      "type": "internal",
+      "href": "index.html"
+   }
+```
+
+#### HTML
+
+```html
+<div>{{element.field.text}}</div>
+```
+
+### Textarea
+
+#### JSON
+
+```json
+   "field": {
+      "textarea": []
+   }
+```
+
+#### HTML
+
+```html
+<p ng-bind-html="toText(element.field.textarea)"></p>
+```
+
+### Image
+
+#### JSON
+
+```json
+   "field": {
+      "src": "img/profile.png",
+      "width": 100
+   }
+```
+
+#### HTML
+
+```html
+<img src="{{page.introImage.src}}" alt="" width="{{page.introImage.width}}">
+```
+
 ## Adding a widget
 1. Prepare a controller:
 
