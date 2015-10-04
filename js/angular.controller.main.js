@@ -123,6 +123,24 @@ widgeto.controller('MainController', function (
                 case "i-close":
                     text += "</i>";
                     break;
+                case "ul":
+                    text += "<ul>";
+                    break;
+                case "ul-close":
+                    text += "</ul>";
+                    break;
+                case "ol":
+                    text += "<ol>";
+                    break;
+                case "ol-close":
+                    text += "</ul>";
+                    break;
+                case "li":
+                    text += "<ul>";
+                    break;
+                case "li-close":
+                    text += "</ul>";
+                    break;
             }
         }
         

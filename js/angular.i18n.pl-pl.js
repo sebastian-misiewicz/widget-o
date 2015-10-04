@@ -36,6 +36,9 @@ var plTranslations = {
     TRY_AGAIN: 'Spróbuj ponownie',
     GO_TO_NEW_PAGE: 'Przejdź do nowej strony',
     LINK: 'Link',
+    UNORDERED_LIST: 'Lista punktowa',
+    ORDERED_LIST: 'Lista numerowana',
+    LIST_ITEM: 'Element listy',
     FILE: {
         UPLOAD: 'Wczytytywanie plików',
         ADD: 'Dodaj pliki...',

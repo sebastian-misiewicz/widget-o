@@ -36,6 +36,9 @@ var enTranslations = {
     TRY_AGAIN: 'Try again',
     GO_TO_NEW_PAGE: 'Go to new page',
     LINK: 'Link',
+    UNORDERED_LIST: 'Unordered list',
+    ORDERED_LIST: 'Ordered list',
+    LIST_ITEM: 'List item',
     FILE: {
         UPLOAD: 'File upload',
         ADD: 'Add files...',
