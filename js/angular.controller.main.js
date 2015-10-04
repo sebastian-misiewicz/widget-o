@@ -136,10 +136,10 @@ widgeto.controller('MainController', function (
                     text += "</ul>";
                     break;
                 case "li":
-                    text += "<ul>";
+                    text += "<li>";
                     break;
                 case "li-close":
-                    text += "</ul>";
+                    text += "</li>";
                     break;
             }
         }
