@@ -11,7 +11,7 @@ var plTranslations = {
     LOGOUT: 'Wyloguj',
     DELETE: 'Skasuj',
     IMAGE: 'Obraz',
-    WIDTH: 'Długość',
+    WIDTH: 'Szerokość',
     SOURCE: 'Źródło',
     EDITING: 'Edycja',
     ADD: 'Dodaj',
