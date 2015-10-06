@@ -11,26 +11,6 @@ widgeto.controller('EditTextareaController', function (
         $scope.value = WidgetManager.getScope(id);
         return true;
     };
-    
-    $scope.sortableOptions = {
-        axis: 'y'
-    };
-    
-    $scope.addTag = function (tag) {
-        $scope.value.textarea.push({ "tag": tag });
-        $scope.value.textarea.push({ "tag": tag + "-close" });
-    };
-    
-    $scope.addText = function () {
-        $scope.value.textarea.push({ "text": "Some text" });
-    };
-    
-    $scope.remove = function (element) {
-        var index = $scope.value.textarea.indexOf(element);
-        if (index > -1) {
-            $scope.value.textarea.splice(index, 1);
-        }
-    };
 
 });
 

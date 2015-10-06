@@ -95,58 +95,6 @@ widgeto.controller('MainController', function (
         $rootScope.$broadcast('compiled', id);
     });
     
-    $scope.toText = function(elements) {
-        var text = "";
-        for (var i in elements) {
-            var element = elements[i];
-            if (!element.tag) {
-                text += element.text;
-                continue;
-            }
-            
-            switch (element.tag) {
-                case "p":
-                    text += "<p>";
-                    break;
-                case "p-close":
-                    text += "</p>";
-                    break;
-                case "b":
-                    text += "<b>";
-                    break;
-                case "b-close":
-                    text += "</b>";
-                    break;
-                case "i":
-                    text += "<i>";
-                    break;
-                case "i-close":
-                    text += "</i>";
-                    break;
-                case "ul":
-                    text += "<ul>";
-                    break;
-                case "ul-close":
-                    text += "</ul>";
-                    break;
-                case "ol":
-                    text += "<ol>";
-                    break;
-                case "ol-close":
-                    text += "</ul>";
-                    break;
-                case "li":
-                    text += "<li>";
-                    break;
-                case "li-close":
-                    text += "</li>";
-                    break;
-            }
-        }
-        
-        return text;
-    };
-    
     $scope.widgets = [];
 
     $rootScope.$on('rerender-widgets', function (event, id) {
