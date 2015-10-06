@@ -14,7 +14,8 @@
     "angular-ui-sortable": "~0.13.4",
     "blueimp-file-upload": "~9.10.6",
     "js-cookie": "2.0.3",
-    "angular-translate": "2.7.2"
+    "angular-translate": "2.7.2",
+    "angular-ui-tinymce": "latest"
   },
   "ignore": [
     "**/.*",
