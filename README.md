@@ -9,7 +9,7 @@ Add following lines to your template:
    <body ng-app="widget-o" ng-controller="MainController">
    ```
    
-   or to html (if meta tags values will be edited as well):
+   or to html (if meta tag values will be edited as well):
    ```html
    <html ng-app="widget-o" ng-controller="MainController">
    ```
