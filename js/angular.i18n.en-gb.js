@@ -39,6 +39,7 @@ var enTranslations = {
     UNORDERED_LIST: 'Unordered list',
     ORDERED_LIST: 'Ordered list',
     LIST_ITEM: 'List item',
+    PARAMETERS: 'Parameters',
     FILE: {
         UPLOAD: 'File upload',
         ADD: 'Add files...',
