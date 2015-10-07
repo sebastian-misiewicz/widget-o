@@ -42,6 +42,10 @@ widgeto.controller('MainController', function (
         $rootScope.$broadcast('start-edit');
     };
 
+    $rootScope.$on('edit-meta', function () {
+        $scope.edit('meta');
+    });
+    
     $rootScope.$on('login-success', function () {
         inEdit = true;
     });
