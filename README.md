@@ -28,6 +28,7 @@ Add following lines to your template:
     
     <!-- widget-o:no-render -->
     <script src="bower_components/tinymce-dist/tinymce.min.js"></script>
+    <script src="bower_components/ivan-chkv.tinymce-i18n/langs/pl.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular-resource.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular-sanitize.js"></script>

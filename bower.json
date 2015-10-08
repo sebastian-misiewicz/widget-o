@@ -15,7 +15,8 @@
     "blueimp-file-upload": "~9.10.6",
     "js-cookie": "2.0.3",
     "angular-translate": "2.7.2",
-    "angular-ui-tinymce": "latest"
+    "angular-ui-tinymce": "latest",
+    "ivan-chkv.tinymce-i18n": "latest"
   },
   "ignore": [
     "**/.*",
