@@ -51,12 +51,14 @@ widgeto.controller('MainController', function (
     });
 
     $rootScope.$on('logout', function () {
+        Cookies.remove('auth-token');
         $http.post("rest/logout/")
-            .then(function () {
-                Cookies.remove('auth-token');
-                window.location = $scope.idpage;
-            });
+            .then(refreshCurrentPage, refreshCurrentPage);
     });
+    
+    function refreshCurrentPage() {
+        window.location = $scope.idpage;
+    }
 
     $rootScope.$on('page-save', function () {
         Page.update(
