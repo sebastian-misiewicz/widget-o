@@ -11,6 +11,17 @@ widgeto.controller('EditTextareaController', function (
         $scope.value = WidgetManager.getScope(id);
         return true;
     };
+    
+    $scope.tinymceOptions = {
+        inline: false,
+        plugins : 'link image'
+    };
+    
+    $(document).on('focusin', function(e) {
+        if ($(e.target).closest(".mce-window").length) {
+            e.stopImmediatePropagation();
+        }
+    });
 
 });
 

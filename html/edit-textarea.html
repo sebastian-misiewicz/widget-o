@@ -4,6 +4,6 @@
      ng-init="set('[[ID]]')">
     <div class="panel-heading">{{ 'TEXTAREA' | translate }}</div>
     <div class="panel-body">
-        <textarea ui-tinymce ng-model="value.textarea"></textarea>
+        <textarea ui-tinymce="tinymceOptions" ng-model="value.textarea"></textarea>
     </div>
 </div>
