@@ -37,6 +37,10 @@ widgeto.controller('ToolboxController', function ($scope, $rootScope) {
         $rootScope.$broadcast('modal-page-manager-open');
     };
     
+    $scope.editMeta = function() {
+        $rootScope.$broadcast('edit-meta');
+    };
+    
     var toggleModeOn = false;
     $scope.toggleWidgets = function() {
         toggleModeOn = !toggleModeOn;

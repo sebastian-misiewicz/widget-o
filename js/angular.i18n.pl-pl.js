@@ -39,6 +39,7 @@ var plTranslations = {
     UNORDERED_LIST: 'Lista punktowa',
     ORDERED_LIST: 'Lista numerowana',
     LIST_ITEM: 'Element listy',
+    PARAMETERS: 'Parametry',
     FILE: {
         UPLOAD: 'Wczytytywanie plików',
         ADD: 'Dodaj pliki...',

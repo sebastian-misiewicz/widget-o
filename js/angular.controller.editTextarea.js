@@ -12,25 +12,16 @@ widgeto.controller('EditTextareaController', function (
         return true;
     };
     
-    $scope.sortableOptions = {
-        axis: 'y'
+    $scope.tinymceOptions = {
+        inline: false,
+        plugins : 'link image'
     };
     
-    $scope.addTag = function (tag) {
-        $scope.value.textarea.push({ "tag": tag });
-        $scope.value.textarea.push({ "tag": tag + "-close" });
-    };
-    
-    $scope.addText = function () {
-        $scope.value.textarea.push({ "text": "Some text" });
-    };
-    
-    $scope.remove = function (element) {
-        var index = $scope.value.textarea.indexOf(element);
-        if (index > -1) {
-            $scope.value.textarea.splice(index, 1);
+    $(document).on('focusin', function(e) {
+        if ($(e.target).closest(".mce-window").length) {
+            e.stopImmediatePropagation();
         }
-    };
+    });
 
 });
 

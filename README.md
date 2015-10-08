@@ -8,6 +8,11 @@ Add following lines to your template:
    ```html
    <body ng-app="widget-o" ng-controller="MainController">
    ```
+   
+   or to html (if meta tag values will be edited as well):
+   ```html
+   <html ng-app="widget-o" ng-controller="MainController">
+   ```
 
 1. CSS
 
@@ -22,11 +27,13 @@ Add following lines to your template:
     <script src="bower_components/js-cookie/src/js.cookie.js"></script>
     
     <!-- widget-o:no-render -->
+    <script src="bower_components/tinymce-dist/tinymce.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular-resource.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular-sanitize.js"></script>
     <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
     <script src="bower_components/angular-ui-sortable/sortable.js"></script>
+    <script src="bower_components/angular-ui-tinymce/src/tinymce.js"></script>
     <script src="//blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
     <script src="//blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
     <script src="bower_components/angular-translate/angular-translate.js"></script>
@@ -106,27 +113,20 @@ Link supports following types:
 
 ### Textarea
 
-Textarea is an array of tags and values. Following elements are supported:
-
-| Tag/Value | Description | Example value (href) | HTML |
-| --- | --- | --- | --- |
-| p / p-close | Paragraph | `{ "tag": "p" }` / `{ "tag": "p-close" }` | `<p>` / `</p>` | 
-| b / b-close | Bold text | `{ "tag": "b" }` / `{ "tag": "b-close" }` | `<b>` / `</b>` | 
-| i / i-close | Italic text | `{ "tag": "i" }` / `{ "tag": "i-close" }` | `<i>` / `</i>` |
-| text | Some text | `{ "text": "A sample text" }` | A sample text |
+Textarea is basically a field with HTML code.
 
 ##### JSON
 
 ```json
    "field": {
-      "textarea": []
+      "textarea": ""
    }
 ```
 
 ##### HTML
 
 ```html
-<p ng-bind-html="toText(element.field.textarea)"></p>
+<p ng-bind-html="element.field.textarea"></p>
 ```
 
 ### Image

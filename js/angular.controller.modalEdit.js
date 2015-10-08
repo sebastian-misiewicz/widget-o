@@ -7,12 +7,23 @@ widgeto.controller('ModalEditController', function (
 
     $rootScope.$on('modal-open', function (event, id, value) {
         console.log('modal-edit-opened');
-        $scope.$apply(function () {
+        $scope.safeApply(function () {
             $scope.id = id;
             $scope.value = value;
             render();
         });
     });
+    
+    $scope.safeApply = function (fn) {
+        var phase = this.$root.$$phase;
+        if (phase == '$apply' || phase == '$digest') {
+            if (fn && (typeof (fn) === 'function')) {
+                fn();
+            }
+        } else {
+            this.$apply(fn);
+        }
+    };
     
     function render() {
         var value = $scope.value,
