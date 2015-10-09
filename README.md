@@ -192,3 +192,7 @@ Textarea is basically a field with HTML code.
     <a href="{{element.link.href}}">{{element.label.text}}</a>
    </li>
    ```
+
+## Other
+
+For technical information visit: [TECHICAL.md](TECHICAL.md)
