@@ -195,4 +195,4 @@ Textarea is basically a field with HTML code.
 
 ## Other
 
-For technical information visit: [TECHICAL.md](TECHICAL.md)
+For technical information visit: [TECHNICAL.md](TECHNICAL.md)
