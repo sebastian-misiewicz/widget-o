@@ -14,7 +14,8 @@ widgeto.controller('EditTextareaController', function (
     
     $scope.tinymceOptions = {
         inline: false,
-        plugins : 'link image'
+        plugins : 'link image table',
+        tools: 'inserttable'
     };
     
     $(document).on('focusin', function(e) {
