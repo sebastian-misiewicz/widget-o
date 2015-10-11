@@ -11,14 +11,14 @@
   "license": "MIT",
   "dependencies": {
     "angular": "~1.4.4",
+    "angular-sanitize": "~1.4.4",
+    "angular-resource": "~1.4.4",
     "angular-ui-sortable": "~0.13.4",
     "blueimp-file-upload": "~9.10.6",
     "js-cookie": "2.0.3",
     "angular-translate": "2.7.2",
     "angular-ui-tinymce": "latest",
-    "ivan-chkv.tinymce-i18n": "latest",
-    "blueimp-load-image": "1.14.0",
-    "blueimp-canvas-to-blob": "2.2.0"
+    "ivan-chkv.tinymce-i18n": "latest"
   },
   "ignore": [
     "**/.*",
