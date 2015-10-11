@@ -29,15 +29,15 @@ Add following lines to your template:
     <!-- widget-o:no-render -->
     <script src="bower_components/tinymce-dist/tinymce.min.js"></script>
     <script src="bower_components/ivan-chkv.tinymce-i18n/langs/pl.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular-resource.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular-sanitize.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
     <script src="bower_components/angular-ui-sortable/sortable.js"></script>
     <script src="bower_components/angular-ui-tinymce/src/tinymce.js"></script>
-    <script src="//blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
-    <script src="//blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
     <script src="bower_components/angular-translate/angular-translate.js"></script>
+    <script src="bower_components/blueimp-load-image/js/load-image.all.min.js"></script>
+    <script src="bower_components/blueimp-canvas-to-blob/js/canvas-to-blob.min.js"></script>
     <script src="bower_components/blueimp-file-upload/js/jquery.fileupload.js"></script>
     <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
     <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
