@@ -22,7 +22,7 @@ Add following lines to your template:
 1. JavaScript
 
    ```html
-   <!-- Logging -->
+    <!-- Log in scripts -->
     <script src="bower_components/widget-o/dist/login.js"></script>
     <script src="bower_components/js-cookie/src/js.cookie.js"></script>
     
