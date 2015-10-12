@@ -137,6 +137,7 @@ Textarea is basically a field with HTML code.
 ```json
    "field": {
       "src": "img/profile.png",
+      "alt": "Alternate text",
       "width": 100
    }
 ```
@@ -144,7 +145,7 @@ Textarea is basically a field with HTML code.
 ##### HTML
 
 ```html
-<img src="{{page.introImage.src}}" alt="" width="{{page.introImage.width}}">
+<img src="{{page.introImage.src}}" alt="{{page.introImage.alt}}" width="{{page.introImage.width}}">
 ```
 
 ## Adding a widget
