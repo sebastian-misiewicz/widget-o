@@ -40,6 +40,7 @@ var enTranslations = {
     ORDERED_LIST: 'Ordered list',
     LIST_ITEM: 'List item',
     PARAMETERS: 'Parameters',
+    ALT: 'Alternate text',
     FILE: {
         UPLOAD: 'File upload',
         ADD: 'Add files...',

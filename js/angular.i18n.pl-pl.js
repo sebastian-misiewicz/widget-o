@@ -40,6 +40,7 @@ var plTranslations = {
     ORDERED_LIST: 'Lista numerowana',
     LIST_ITEM: 'Element listy',
     PARAMETERS: 'Parametry',
+    ALT: 'Treść alternatywna',
     FILE: {
         UPLOAD: 'Wczytytywanie plików',
         ADD: 'Dodaj pliki...',
