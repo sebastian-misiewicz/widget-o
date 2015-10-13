@@ -58,6 +58,25 @@ Add following lines to your template:
     ```
     
 ## Widget elements
+CSS classes `widget-o-editable` and `widget-o-managable` are used to start editing mode of a certain widget-o element.
+
+Code below will allow to start edit mode for the `introText`. It is important to put the id with a proper element name. Widget-o in edit mode reads the id and finds the contents associated with the given ID within page JSON.
+
+```html
+<span class="name widget-o-editable widget-o-widget-text" id="introText">{{page.introText.text}}</span>
+```
+
+Managing multiple widgets is done with the use of `widget-o-managable`. Typical setup looks like:
+
+```html
+<div class="row widget-o-managable" id="section">
+ <div ng-show="renderWidgets('section')"></div>
+</div>
+```
+
+Note the `renderWidgets('section')`, which matches the `id` of parent `div`.
+
+
 ### Boolean
 ##### JSON
 
