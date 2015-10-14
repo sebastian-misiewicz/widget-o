@@ -46,6 +46,11 @@ widgeto.controller('MainController', function (
         $scope.edit('meta');
     });
     
+    $rootScope.$on('configure-widget', function (event, id, value) {
+        $scope.page[id] = value;
+        $('#modal-edit').modal('hide');
+    });
+    
     $rootScope.$on('login-success', function () {
         inEdit = true;
     });

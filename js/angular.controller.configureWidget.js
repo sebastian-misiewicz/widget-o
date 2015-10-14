@@ -1,5 +1,5 @@
 widgeto.controller('ConfigureWidgetController', function (
-        $scope, 
+        $scope, $rootScope,
         WidgetManager) {
 
     $scope.id = '';
@@ -13,6 +13,12 @@ widgeto.controller('ConfigureWidgetController', function (
         $scope.widgets = WidgetManager.getAll();
         
         return true;
+    };
+    
+    $scope.addSampleJson = function(widgetName) {
+        console.log(widgetName);
+        var widget = WidgetManager.getWidget(widgetName);
+        $rootScope.$broadcast('configure-widget', $scope.id, widget.sampleJson);
     };
 
 });

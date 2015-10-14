@@ -2,7 +2,8 @@
      ng-controller="ConfigureWidgetController"
      ng-init="set('[[ID]]')">
     <h4>{{ 'PICK_A_TYPE_OF_WIDGET' | translate }}</h4>
-    <button type="button" 
+    <button type="button"
+            ng-click="addSampleJson(widget)"
             class="btn btn-primary" style="margin-right: 5px;"
             ng-repeat="widget in widgets">{{widget}}</button>
 </div>
