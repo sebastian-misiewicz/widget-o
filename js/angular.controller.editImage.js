@@ -24,6 +24,11 @@ widgeto.controller('EditImageController', function (
 widgeto.run(function (WidgetManager) {
     WidgetManager.add(
             'edit-src', 
-            'bower_components/widget-o/html/edit-image.html');
+            'bower_components/widget-o/html/edit-image.html',
+            {
+                "src": "http://someimage.url.com",
+                "alt": "Some image text",
+                "width": ""
+            });
 });
 
