@@ -41,6 +41,7 @@ var enTranslations = {
     LIST_ITEM: 'List item',
     PARAMETERS: 'Parameters',
     ALT: 'Alternate text',
+    PICK_A_TYPE_OF_WIDGET: 'Pick a type of widget',
     FILE: {
         UPLOAD: 'File upload',
         ADD: 'Add files...',

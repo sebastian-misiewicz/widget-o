@@ -41,6 +41,7 @@ var plTranslations = {
     LIST_ITEM: 'Element listy',
     PARAMETERS: 'Parametry',
     ALT: 'Treść alternatywna',
+    PICK_A_TYPE_OF_WIDGET: 'Wybierz rodzaj widgeta',
     FILE: {
         UPLOAD: 'Wczytytywanie plików',
         ADD: 'Dodaj pliki...',

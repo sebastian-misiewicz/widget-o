@@ -9,6 +9,9 @@ widgeto.controller('ConfigureWidgetController', function (
         console.log("Setting widget id to: " + id);
         $scope.id = id;
         $scope.value = WidgetManager.getScope(id);
+        
+        $scope.widgets = WidgetManager.getAll();
+        
         return true;
     };
 
