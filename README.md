@@ -64,7 +64,7 @@ Add following lines to your template:
     ```
 
 ## Guards
-While you edit HTML the page itself changes. JavaScript and CSS might be added to the original template. To prevent it from beeing rendered `guard`s are used. Surround important tags with guards to remove all additional code added next to them. For instance:
+While you edit the HTML of a page itself changes. JavaScript and CSS might be added to the original template. To prevent it from beeing rendered `guard`s are used. Surround important tags with guards to remove all additional code added next to them. For instance:
 
 ```html
 <!-- widget-o:guard:<head>; -->
@@ -191,7 +191,7 @@ Textarea is basically a field with HTML code.
 ##### HTML
 
 ```html
-<img src="{{page.introImage.src}}" alt="{{page.introImage.alt}}" width="{{page.introImage.width}}">
+<img src="{{page.introImage.src}}" alt="{{page.introImage.alt}}" width="{{page.introImage.width}}" class="widget-o-editable" id="introImage">
 ```
 
 ## Adding a widget
