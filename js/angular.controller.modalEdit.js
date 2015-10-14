@@ -32,26 +32,32 @@ widgeto.controller('ModalEditController', function (
         modalBody.html("");
         
         if(!value) {
-            return;
-        }
-        
-        for (var i in value) {
-            var element = value[i];
-            appendEditWidget(modalBody, $scope.id, i, value);
-            if (element !== null && typeof element === 'object') {
-                for(var item in element) {
-                    appendEditWidget(modalBody, i, item, element);
+            appendWidget(modalBody, $scope.id, "configure-widget", value);
+        } else {
+            for (var i in value) {
+                var element = value[i];
+                appendEditWidget(modalBody, $scope.id, i, value);
+                if (element !== null && typeof element === 'object') {
+                    for(var item in element) {
+                        appendEditWidget(modalBody, i, item, element);
+                    }
                 }
             }
         }
+        
         $compile(modalBody.contents())($scope);
     }
 
     function appendEditWidget(modalBody, id, editType, elementToEdit) {
-        var template = WidgetManager.get("edit-" + editType);
+        appendWidget(modalBody, id, "edit-" + editType, elementToEdit);
+    }
+    
+    function appendWidget(modalBody, id, widget, elementToEdit) {
+        var template = WidgetManager.get(widget);
         if (!template) {
             return;
         }
+        
         WidgetManager.addScope(id, elementToEdit);
         modalBody.append(template.replace("[[ID]]", id));
     }
