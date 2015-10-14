@@ -82,7 +82,7 @@ or
 
 Syntax for `guard` starting point: `<!-- widget-o:guard:<TAG>; -->` and for end point: `<!-- widget-o:guard:<TAG>;end -->`.
 
-In the first section one guard is already present. It guards the `</body>` tag. This time the guard starting point is set before all scripts import needed to edit the page.
+In the first section one guard is already present. It guards the `</body>` tag. This time the guard starting point is set before all scripts import needed to edit the page since they are not needed after page rendering.
 
 ## Widget elements
 CSS classes `widget-o-editable` and `widget-o-managable` are used to start editing mode of a certain widget-o element.
