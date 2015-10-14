@@ -47,6 +47,9 @@ widgeto.controller('ToolboxController', function ($scope, $rootScope) {
         $(".widget-o-editable, .widget-o-managable").each(function () {
             if (toggleModeOn) {
                 $(this).addClass('widget-o-toggle');
+                if(this.nodeName.toLowerCase() === 'img' && this.src === "") {
+                    this.src = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
+                }
             } else {
                 $(this).removeClass('widget-o-toggle');
             }
