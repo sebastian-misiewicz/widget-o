@@ -30,6 +30,11 @@ widgeto.controller('ModalEditController', function (
             modalBody = $("#modal-edit-body");
         
         modalBody.html("");
+        
+        if(!value) {
+            return;
+        }
+        
         for (var i in value) {
             var element = value[i];
             appendEditWidget(modalBody, $scope.id, i, value);
