@@ -26,7 +26,7 @@ Add following lines to your template:
     <script src="bower_components/widget-o/dist/login.js"></script>
     <script src="bower_components/js-cookie/src/js.cookie.js"></script>
     
-    <!-- widget-o:no-render -->
+    <!-- widget-o:guard:</body>; -->
     <script src="bower_components/tinymce-dist/tinymce.min.js"></script>
     <script src="bower_components/ivan-chkv.tinymce-i18n/langs/pl.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
@@ -47,16 +47,43 @@ Add following lines to your template:
     <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-angular.js"></script>
     
     <script src="bower_components/widget-o/dist/app.js"></script>
+    
+    </body>
+    <!-- widget-o:guard:</body>;end -->
     ```
-    And the script to set the id of the current page:
+    And the script to set the id of the current page. Add it just before the `</body>`:
     ```html
     <script>
         widgeto.run(function (PageCache) {
             PageCache.setIdPage("{idpage}");
         });
     </script>
-    ```
     
+    </body>
+    <!-- widget-o:guard:</body>; -->
+    ```
+
+## Guards
+While you edit HTML the page itself changes. JavaScript and CSS might be added to the original template. To prevent it from beeing rendered `guard`s are used. Surround important tags with guards to remove all additional code added next to them. For instance:
+
+```html
+<!-- widget-o:guard:<head>; -->
+<head>
+<!-- widget-o:guard:<head>;end -->
+```
+
+or
+
+```html
+<!-- widget-o:guard:</head>; -->
+</head>
+<!-- widget-o:guard:</head>;end -->
+```
+
+Syntax for `guard` starting point: `<!-- widget-o:guard:<TAG>; -->` and for end point: `<!-- widget-o:guard:<TAG>;end -->`.
+
+In the first section one guard is already present. It guards the `</body>` tag. This time the guard starting point is set before all scripts import needed to edit the page.
+
 ## Widget elements
 CSS classes `widget-o-editable` and `widget-o-managable` are used to start editing mode of a certain widget-o element.
 
