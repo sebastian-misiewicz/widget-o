@@ -31,7 +31,7 @@ widgeto.run(function (WidgetManager) {
             'edit-textarea', 
             'bower_components/widget-o/html/edit-textarea.html',
             {
-                "textarea": ""
+                "textarea": "This is a sample text"
             });
 });
 
