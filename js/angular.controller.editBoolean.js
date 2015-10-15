@@ -17,7 +17,10 @@ widgeto.controller('EditBooleanController', function (
 widgeto.run(function (WidgetManager) {
     WidgetManager.add(
             'edit-boolean', 
-            'bower_components/widget-o/html/edit-boolean.html');
+            'bower_components/widget-o/html/edit-boolean.html',
+            {
+                "boolean": false
+            });
 });
 
 
