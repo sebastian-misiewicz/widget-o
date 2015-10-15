@@ -49,7 +49,12 @@ var enTranslations = {
         UPLOAD_CANCEL: 'Cancel upload',
         MANAGER: 'File manager',
         NO_FILES: 'No files'
-    }
+    },
+    "edit-boolean": "Boolean",
+    "edit-src": "Image",
+    "edit-link": "Link",
+    "edit-text": "Text",
+    "edit-textarea": "Text area"
 };
 
 

@@ -49,7 +49,12 @@ var plTranslations = {
         UPLOAD_CANCEL: 'Zaniechaj',
         MANAGER: 'Manager plików',
         NO_FILES: 'Brak plików'
-    }
+    },
+    "edit-boolean": "Wartość logiczna",
+    "edit-src": "Obraz",
+    "edit-link": "Link",
+    "edit-text": "Tekst",
+    "edit-textarea": "Pole tekstowe"
 };
 
 
