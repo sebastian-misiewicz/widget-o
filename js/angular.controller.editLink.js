@@ -40,6 +40,10 @@ widgeto.controller('EditLinkController', function (
 widgeto.run(function (WidgetManager) {
     WidgetManager.add(
             'edit-link', 
-            'bower_components/widget-o/html/edit-link.html');
+            'bower_components/widget-o/html/edit-link.html', 
+            {
+                "type": "internal",
+                "href": "index.html"
+            });
 });
 
