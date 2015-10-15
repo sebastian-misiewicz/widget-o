@@ -29,7 +29,10 @@ widgeto.controller('EditTextareaController', function (
 widgeto.run(function (WidgetManager) {
     WidgetManager.add(
             'edit-textarea', 
-            'bower_components/widget-o/html/edit-textarea.html');
+            'bower_components/widget-o/html/edit-textarea.html',
+            {
+                "textarea": ""
+            });
 });
 
 
