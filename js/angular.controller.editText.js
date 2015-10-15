@@ -17,7 +17,10 @@ widgeto.controller('EditTextController', function (
 widgeto.run(function (WidgetManager) {
     WidgetManager.add(
             'edit-text', 
-            'bower_components/widget-o/html/edit-text.html');
+            'bower_components/widget-o/html/edit-text.html',
+            {
+                "text": "Some text"
+            });
 });
 
 
