@@ -183,13 +183,30 @@ angular.element(document).ready(function () {
     inEdit = true;
 });
 
+function getPopoverPlacement(element, defaultValue) {
+    var placement = defaultValue;
+    if (element.hasClass('widget-o-placement-top')) {
+        placement = 'top';
+    } else if (element.hasClass('widget-o-placement-right')) {
+        placement = 'right';
+    } else if (element.hasClass('widget-o-placement-bottom')) {
+        placement = 'bottom';
+    } else if (element.hasClass('widget-o-placement-left')) {
+        placement = 'left';
+    }
+    return placement;
+}
+
 $("body").on("mouseenter", ".widget-o-editable", function (e) {
     if (inEdit) {
         // Taken from http://stackoverflow.com/a/12274958 Thanks.
+        
+        
         $(this).popover({
             content: '<button type="button" style="z-index: 999" class="btn btn-default" onclick="edit()"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> ' + i18n.EDIT + '</button>',
             trigger: "manual",
             html: true,
+            placement: getPopoverPlacement($(this), 'right'),
             template: '<div class="popover" style="z-index: 999" onmouseover="clearTimeout(timeoutObj);$(this).mouseleave(function() {$(this).hide();});"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
         });
         $('.modal-dialog').draggable({
@@ -215,7 +232,7 @@ $("body").on("mouseenter", ".widget-o-managable", function (e) {
             content: '<button type="button" style="z-index: 999" class="btn btn-default" onclick="manage()"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> ' + i18n.MANAGE + '</button>',
             trigger: "manual",
             html: true,
-            placement: "bottom",
+            placement: getPopoverPlacement($(this), 'bottom'),
             template: '<div class="popover" style="z-index: 999" onmouseover="clearTimeout(timeoutObj);$(this).mouseleave(function() {$(this).hide();});"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
         });
         currentManage = e.currentTarget.id;
