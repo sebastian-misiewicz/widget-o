@@ -20,6 +20,7 @@ Use following set of `js` files instead of app.js for debugging:
     <script src="bower_components/widget-o/js/angular.factory.page.js"></script>
     <script src="bower_components/widget-o/js/angular.factory.render.js"></script>
     <script src="bower_components/widget-o/js/angular.factory.template.js"></script>
+    <script src="bower_components/widget-o/js/angular.controller.configureWidget.js"></script>
     <script src="bower_components/widget-o/js/angular.controller.modalPageManager.js"></script>
     <script src="bower_components/widget-o/js/angular.controller.modalFileUpload.js"></script>
     <script src="bower_components/widget-o/js/angular.controller.modalFileManager.js"></script>
