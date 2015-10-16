@@ -143,6 +143,7 @@ widgeto.controller('MainController', function (
                         .replace("[[ID]]", element.id));
         }
         $compile($("#" + parent).contents())($scope);
+        $rootScope.$broadcast('rendered-widgets-for-'+parent);
         return false;
     };
     
