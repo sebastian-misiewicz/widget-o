@@ -140,7 +140,7 @@ widgeto.controller('MainController', function (
             WidgetManager.addScope(element.id, element);
             $("#" + parent).append(
                     WidgetManager.get(element.widget)
-                        .replace("[[ID]]", element.id));
+                        .replace(/\[\[ID\]\]/g, element.id));
                 
             if ($scope.page[element.id] && $scope.page[element.id].elements) {
                 $scope.renderWidgets(element.id, force);
