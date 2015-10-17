@@ -18,7 +18,9 @@ widgeto.controller('ConfigureWidgetController', function (
     $scope.addSampleJson = function(widgetName) {
         console.log(widgetName);
         var widget = WidgetManager.getWidget(widgetName);
-        $rootScope.$broadcast('configure-widget', $scope.id, widget.sampleJson);
+        var json = JSON.parse(JSON.stringify(widget.sampleJson));
+        
+        $rootScope.$broadcast('configure-widget', $scope.id, json);
     };
 
 });
