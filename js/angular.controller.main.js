@@ -141,6 +141,10 @@ widgeto.controller('MainController', function (
             $("#" + parent).append(
                     WidgetManager.get(element.widget)
                         .replace("[[ID]]", element.id));
+                
+            if ($scope.page[element.id] && $scope.page[element.id].elements) {
+                $scope.renderWidgets(element.id, force);
+            }
         }
         $compile($("#" + parent).contents())($scope);
         $rootScope.$broadcast('rendered-widgets-for-'+parent);
