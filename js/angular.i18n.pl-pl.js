@@ -40,6 +40,7 @@ var plTranslations = {
     ORDERED_LIST: 'Lista numerowana',
     LIST_ITEM: 'Element listy',
     PARAMETERS: 'Parametry',
+    META: 'Metadane strony',
     ALT: 'Treść alternatywna',
     PICK_A_TYPE_OF_WIDGET: 'Wybierz rodzaj widgeta',
     FILE: {

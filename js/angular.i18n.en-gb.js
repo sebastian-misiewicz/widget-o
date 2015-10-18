@@ -40,6 +40,7 @@ var enTranslations = {
     ORDERED_LIST: 'Ordered list',
     LIST_ITEM: 'List item',
     PARAMETERS: 'Parameters',
+    META: 'Page metadata',
     ALT: 'Alternate text',
     PICK_A_TYPE_OF_WIDGET: 'Pick a type of widget',
     FILE: {
