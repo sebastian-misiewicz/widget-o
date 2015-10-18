@@ -50,6 +50,10 @@ var enTranslations = {
         MANAGER: 'File manager',
         NO_FILES: 'No files'
     },
+    WIDGET_IS_A_PANEL: 'Panel',
+    WIDGET_IS_NOT_A_PANEL: 'Not a Panel',
+    PANEL_IN_EDIT: 'Panel in edit',
+    PANEL_NOT_IN_EDIT: 'Panel not in edit',
     "edit-boolean": "Boolean",
     "edit-src": "Image",
     "edit-link": "Link",

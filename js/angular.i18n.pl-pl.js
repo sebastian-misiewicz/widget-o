@@ -50,6 +50,10 @@ var plTranslations = {
         MANAGER: 'Manager plików',
         NO_FILES: 'Brak plików'
     },
+    WIDGET_IS_A_PANEL: 'To jest panel',
+    WIDGET_IS_NOT_A_PANEL: 'To nie jest panel',
+    PANEL_IN_EDIT: 'Edytujesz panel',
+    PANEL_NOT_IN_EDIT: 'Nie edytujesz panelu',
     "edit-boolean": "Wartość logiczna",
     "edit-src": "Obraz",
     "edit-link": "Link",

@@ -13,16 +13,16 @@
                         class="btn btn-default"
                         ng-class="{active: value.isPanel}"
                         ng-click="togglePanel()">
-                    <span ng-show="value.isPanel">Widget is a Panel</span>
-                    <span ng-show="!value.isPanel">Widget is not a Panel</span>
+                    <span ng-show="value.isPanel">{{ 'WIDGET_IS_A_PANEL' | translate }}</span>
+                    <span ng-show="!value.isPanel">{{ 'WIDGET_IS_NOT_A_PANEL' | translate }}</span>
                 </button>
                 <button type="button" 
                         class="btn btn-default"
                         ng-show="value.isPanel"
                         ng-class="{active: value.isEdit}"
                         ng-click="toggleEdit()">
-                    <span ng-show="value.isEdit">Panel in edit</span>
-                    <span ng-show="!value.isEdit">Panel not in edit</span>
+                    <span ng-show="value.isEdit">{{ 'PANEL_IN_EDIT' | translate }}</span>
+                    <span ng-show="!value.isEdit">{{ 'PANEL_NOT_IN_EDIT' | translate }}</span>
                 </button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">{{ 'CLOSE' | translate }}</button>
             </div>
