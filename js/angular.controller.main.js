@@ -79,7 +79,9 @@ widgeto.controller('MainController', function (
                             if (panelJson.isPanel) {
                                 console.log("Updating after page save: " + panelId);
                                 $scope.page[panelId] = panelJson;
-                                $scope.renderWidgets(panelId, true);
+                                if (panelJson.elements) {
+                                    $scope.renderWidgets(panelId, true);
+                                }
                             }
                         }
                     }

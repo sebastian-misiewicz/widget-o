@@ -43,6 +43,7 @@ widgeto.controller('ModalEditController', function (
                     }
                 }
             }
+            appendEditWidget(modalBody, $scope.id, "panel", value);
         }
         
         $compile(modalBody.contents())($scope);
