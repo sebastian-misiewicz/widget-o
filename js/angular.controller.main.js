@@ -72,7 +72,17 @@ widgeto.controller('MainController', function (
                     "html": $('html').html(),
                     "data": $scope.page
                 },
-                function () {
+                function (panels) {
+                    if (panels) {
+                        for (var panelId in panels) {
+                            var panelJson = panels[panelId];
+                            if (panelJson.isPanel) {
+                                console.log("Updating after page save: " + panelId);
+                                $scope.page[panelId] = panelJson;
+                                $scope.renderWidgets(panelId, true);
+                            }
+                        }
+                    }
                     $rootScope.$broadcast('modal-alert-popup', 'success', 'Page saved', "Page " + $scope.idpage + " saved succesfully.");
                 },
                 function (e) {
