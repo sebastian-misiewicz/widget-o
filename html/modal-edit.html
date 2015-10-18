@@ -6,9 +6,24 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">{{ 'EDITING' | translate }}: {{id}}</h4>
             </div>
-            <div class="modal-body" id="modal-edit-body">
+            <div class="modal-body" id="modal-edit-body" ng-show="!value.isPanel || value.isPanel && value.isEdit">
             </div>
             <div class="modal-footer">
+                <button type="button"
+                        class="btn btn-default"
+                        ng-class="{active: value.isPanel}"
+                        ng-click="togglePanel()">
+                    <span ng-show="value.isPanel">Widget is a Panel</span>
+                    <span ng-show="!value.isPanel">Widget is not a Panel</span>
+                </button>
+                <button type="button" 
+                        class="btn btn-default"
+                        ng-show="value.isPanel"
+                        ng-class="{active: value.isEdit}"
+                        ng-click="toggleEdit()">
+                    <span ng-show="value.isEdit">Panel in edit</span>
+                    <span ng-show="!value.isEdit">Panel not in edit</span>
+                </button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">{{ 'CLOSE' | translate }}</button>
             </div>
         </div>

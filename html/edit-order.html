@@ -31,28 +31,6 @@
         </div>
         <button type="button" class="btn btn-default" ng-click="add()">{{ 'ADD' | translate }}</button>
         <hr>
-        <div class="row">
-            <div class="col-md-1">
-                <input type="checkbox" 
-                       class="form-control" 
-                       id="edit-boolean-checkbox" 
-                       ng-model="value.isPanel">
-            </div>
-            <div class="col-md-11" style="line-height: 43px;">
-                Is a panel?
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-1">
-                <input type="checkbox" 
-                       class="form-control" 
-                       id="edit-boolean-checkbox" 
-                       ng-model="value.isEdit">
-            </div>
-            <div class="col-md-11" style="line-height: 43px;">
-                Is in edit mode?
-            </div>
-        </div>
         <button type="button" 
                 class="btn btn-default" 
                 ng-click="reRender()" 

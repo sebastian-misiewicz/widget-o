@@ -25,6 +25,14 @@ widgeto.controller('ModalEditController', function (
         }
     };
     
+    $scope.toggleEdit = function () {
+        $scope.value.isEdit = !$scope.value.isEdit;
+    };
+    
+    $scope.togglePanel = function () {
+        $scope.value.isPanel = !$scope.value.isPanel;
+    };
+    
     function render() {
         var value = $scope.value,
             modalBody = $("#modal-edit-body");
@@ -43,7 +51,6 @@ widgeto.controller('ModalEditController', function (
                     }
                 }
             }
-            appendEditWidget(modalBody, $scope.id, "panel", value);
         }
         
         $compile(modalBody.contents())($scope);
@@ -62,6 +69,7 @@ widgeto.controller('ModalEditController', function (
         WidgetManager.addScope(id, elementToEdit);
         modalBody.append(template.replace("[[ID]]", id));
     }
+    
 });
 
 widgeto.run(function (TemplateManager) {
