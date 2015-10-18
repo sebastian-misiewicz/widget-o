@@ -43,7 +43,7 @@ widgeto.controller('EditOrderController', function (
         
         var element = JSON.parse(JSON.stringify(widget.sampleJson));
         
-        element.id = $scope.id + "-" + $scope.sample.id;
+        element.id = $scope.id + "_" + $scope.sample.widgetName + "_" + $scope.sample.id;
         $scope.value.elements.push(element);
     };
 
