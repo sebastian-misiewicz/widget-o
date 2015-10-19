@@ -26,7 +26,11 @@
                                 {{page.template}}
                             </div>
                             <div class="col-md-3">
-                                <button type="button" class="btn btn-sm btn-danger" ng-click="deletePage(page)">{{ 'DELETE' | translate }}</button>
+                                <button type="button" class="btn btn-sm btn-danger" ng-click="page.toDelete = true" ng-show="!page.toDelete">{{ 'DELETE' | translate }}</button>
+                                
+                                <span ng-show="page.toDelete">{{ 'ARE_YOU_SURE' | translate }}</span>
+                                <button type="button" class="btn btn-sm btn-danger" ng-click="deletePage(page)" ng-show="page.toDelete">{{ 'YES' | translate }}</button>
+                                <button type="button" class="btn btn-sm btn-info" ng-click="page.toDelete = false" ng-show="page.toDelete">{{ 'NO' | translate }}</button>
                             </div>
                         </div>
                     </div>
@@ -54,3 +58,4 @@
         </div>
     </div>
 </div>
+
