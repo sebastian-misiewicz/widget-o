@@ -254,6 +254,10 @@ Textarea is basically a field with HTML code.
    </li>
    ```
 
+## Panels
+
+Each widget can became a panel. It means, that it can be shared with other pages. If a panel is edited on one page it will be can be reused on other page. The `ID` of a widget has to be the same.
+
 ## Other
 
 For technical information visit: [TECHNICAL.md](TECHNICAL.md)
