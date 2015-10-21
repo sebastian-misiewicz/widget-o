@@ -254,6 +254,24 @@ Textarea is basically a field with HTML code.
    </li>
    ```
 
+## Panels
+
+Each widget can be a panel. It means, that it can be shared with other pages. If a panel is edited on one page it can be reused on other page. The `ID` of a widget has to be the same.
+
+For instance:
+
+```json
+"topMenuImage": {
+   "src":"box.png",
+   "alt":"Some image text",
+   "width":"40",
+   "isPanel":true,
+   "isEdit":false
+}
+```
+
+Flag `isPanel` indicates, that an element is a panel. `isEdit` if set to `true` informs, that by next panel save the panel data should be updated. Otherwise the panel data is not touched.
+
 ## Other
 
 For technical information visit: [TECHNICAL.md](TECHNICAL.md)
