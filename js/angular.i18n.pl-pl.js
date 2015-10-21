@@ -58,6 +58,8 @@ var plTranslations = {
     ARE_YOU_SURE: "Na pewno?",
     YES: "Tak",
     NO: "Nie",
+    USER: "Użytkownik",
+    SETTINGS: "Ustawienia",
     "edit-boolean": "Wartość logiczna",
     "edit-src": "Obraz",
     "edit-link": "Link",

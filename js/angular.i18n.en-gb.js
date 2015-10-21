@@ -58,6 +58,8 @@ var enTranslations = {
     ARE_YOU_SURE: "Are you sure?",
     YES: "Yes",
     NO: "No",
+    USER: "User",
+    SETTINGS: "Settings",
     "edit-boolean": "Boolean",
     "edit-src": "Image",
     "edit-link": "Link",
