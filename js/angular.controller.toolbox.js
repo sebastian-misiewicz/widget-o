@@ -41,6 +41,10 @@ widgeto.controller('ToolboxController', function ($scope, $rootScope) {
         $rootScope.$broadcast('edit-meta');
     };
     
+    $scope.settings = function() {
+        $rootScope.$broadcast('modal-settings-open');
+    };
+    
     var toggleModeOn = false;
     $scope.toggleWidgets = function() {
         toggleModeOn = !toggleModeOn;
