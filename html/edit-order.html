@@ -26,7 +26,7 @@
             <span class="input-group-addon">Widget</span>
             <select class="form-control"
                     ng-model="sample.widgetName">
-                <option ng-repeat="widget in widgets">{{widget}}</option>
+                <option ng-repeat="widget in widgets">{{ widget | translate }}</option>
             </select>
         </div>
         <button type="button" class="btn btn-default" ng-click="add()">{{ 'ADD' | translate }}</button>
