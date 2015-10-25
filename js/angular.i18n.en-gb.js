@@ -68,7 +68,8 @@ var enTranslations = {
     "edit-src": "Image",
     "edit-link": "Link",
     "edit-text": "Text",
-    "edit-textarea": "Text area"
+    "edit-textarea": "Text area",
+    "edit-meta": "Metadane"
 };
 
 

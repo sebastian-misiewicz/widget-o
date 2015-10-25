@@ -68,7 +68,8 @@ var plTranslations = {
     "edit-src": "Obraz",
     "edit-link": "Link",
     "edit-text": "Tekst",
-    "edit-textarea": "Pole tekstowe"
+    "edit-textarea": "Pole tekstowe",
+    "edit-meta": "Metadane"
 };
 
 
