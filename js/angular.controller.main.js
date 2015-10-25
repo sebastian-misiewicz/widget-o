@@ -191,13 +191,12 @@ var i18n = [];
 function translate(text) {
     angular.element(document.body).injector().get('$translate')(text).then(function (data) {
         i18n[text] = data;
-        console.log(i18n);
+        inEdit = true;
     });
 }
 angular.element(document).ready(function () {
     translate('EDIT');
     translate('MANAGE');
-    inEdit = true;
 });
 
 function getPopoverPlacement(element, defaultValue) {
