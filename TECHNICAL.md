@@ -29,6 +29,7 @@ Use following set of `js` files instead of app.js for debugging:
     <script src="bower_components/widget-o/js/angular.controller.modalSettings.js"></script>
     <script src="bower_components/widget-o/js/angular.controller.toolbox.js"></script>
     <script src="bower_components/widget-o/js/angular.controller.widget.js"></script>
+    <script src="bower_components/widget-o/js/angular.factory.asyncTranslationsLoader.js"></script>
     <script src="bower_components/widget-o/js/angular.factory.page.js"></script>
     <script src="bower_components/widget-o/js/angular.factory.render.js"></script>
     <script src="bower_components/widget-o/js/angular.factory.template.js"></script>

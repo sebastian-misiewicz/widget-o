@@ -272,6 +272,14 @@ For instance:
 
 Flag `isPanel` indicates, that an element is a panel. `isEdit` if set to `true` informs, that by next panel save the panel data should be updated. Otherwise the panel data is not touched.
 
+## Translations
+Widget names can be translated. There are two global variables with translations available: `plTranslations` and `enTranslations`. Add widget name to get it localized:
+
+```javascript
+   plTranslations["star-title"] = "Tytuł z gwiazdką";
+   enTranslations["star-title"] = "Title with a start";
+```
+
 ## Other
 
 For technical information visit: [TECHNICAL.md](TECHNICAL.md)
