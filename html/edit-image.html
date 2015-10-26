@@ -10,18 +10,18 @@
             </select>
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1">{{ 'SOURCE' | translate }}</span>
-                <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" 
+                <input type="text" class="form-control" aria-describedby="basic-addon1" 
                        ng-model="value.src" 
                        disabled="disabled">
             </div>
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1">{{ 'ALT' | translate }}</span>
-                <input type="text" class="form-control" placeholder="Alternate text" aria-describedby="basic-addon1" 
+                <input type="text" class="form-control" placeholder="{{ 'ALT' | translate }}" aria-describedby="basic-addon1" 
                        ng-model="value.alt">
             </div>
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1">{{ 'WIDTH' | translate }}</span>
-                <input type="text" class="form-control" placeholder="Width of image" aria-describedby="basic-addon1" 
+                <input type="text" class="form-control" placeholder="{{ 'WIDTH' | translate }}" aria-describedby="basic-addon1" 
                        ng-model="value.width">
             </div>
         </div>
