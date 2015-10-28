@@ -7,26 +7,26 @@
         <div class="radio">
             <label>
                 <input type="radio" name="optionsRadios" id="optionsRadios1" ng-model="value.link.type" value="section" checked>
-                Section
+                {{ 'SECTION' | translate }}
             </label>
         </div>
         <div class="radio">
             <label>
                 <input type="radio" name="optionsRadios" id="optionsRadios1" ng-model="value.link.type" value="internal">
-                Internal
+                {{ 'INTERNAL' | translate }}
             </label>
         </div>
         <div class="radio">
             <label>
                 <input type="radio" name="optionsRadios" id="optionsRadios1" ng-model="value.link.type" value="external">
-                External
+                {{ 'EXTERNAL' | translate }}
             </label>
         </div>
         <div class="form-group">
             <select class="form-control" ng-model="value.link.href" ng-show="value.link.type !== 'external'">
                 <option ng-repeat="href in hrefs">{{href}}</option>
             </select>
-            <input type="text" class="form-control" id="value" placeholder="Href of {{id}}" 
+            <input type="text" class="form-control" id="value" placeholder="{{ 'URL' | translate }}" 
                    ng-model="value.link.href" ng-show="value.link.type === 'external'">
         </div>
     </div>
