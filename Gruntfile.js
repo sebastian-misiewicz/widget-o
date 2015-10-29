@@ -34,7 +34,10 @@ module.exports = function (grunt) {
                     'dist/login.js': ['dist/login.js']
                 },
                 options: {
-                    mangle: false
+                    mangle: false,
+                    compress: {
+                        drop_console: true
+                    }
                 }
             }
         },
