@@ -68,6 +68,7 @@ var enTranslations = {
     "INTERNAL": "Internal link",
     "EXTERNAL": "External link",
     "URL": "URL",
+    "VALUE_OF": "Value of",
     "edit-boolean": "Boolean",
     "edit-src": "Image",
     "edit-link": "Link",

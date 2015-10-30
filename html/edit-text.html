@@ -5,7 +5,7 @@
     <div class="panel-heading">{{id}}</div>
     <div class="panel-body">
         <div class="form-group">
-            <input type="text" class="form-control" id="value" placeholder="Value of {{id}}" ng-model="value.text">
+            <input type="text" class="form-control" id="value" placeholder="{{ 'VALUE_OF' | translate }} {{id}}" ng-model="value.text">
         </div>
     </div>
 </div>

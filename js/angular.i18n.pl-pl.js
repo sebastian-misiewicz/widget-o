@@ -68,6 +68,7 @@ var plTranslations = {
     "INTERNAL": "Link wewnętrzny",
     "EXTERNAL": "Link zewnętrzny",
     "URL": "Adres",
+    "VALUE_OF": "Wartość dla",
     "edit-boolean": "Wartość logiczna",
     "edit-src": "Obraz",
     "edit-link": "Link",
