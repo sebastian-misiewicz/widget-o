@@ -277,7 +277,7 @@ Widget names can be translated. There are two global variables with translations
 
 ```javascript
    plTranslations["star-title"] = "Tytuł z gwiazdką";
-   enTranslations["star-title"] = "Title with a start";
+   enTranslations["star-title"] = "Title with a star";
 ```
 
 ## Other
