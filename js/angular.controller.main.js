@@ -169,7 +169,6 @@ widgeto.controller('MainController', function (
 
 });
 
-// TODO global variables!
 var current;
 var currentManage;
 var inEdit = false;
