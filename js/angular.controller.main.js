@@ -163,10 +163,6 @@ widgeto.controller('MainController', function (
         return false;
     };
     
-    $scope.$watch("widgets", function() {
-        console.log("Widgets CHANGED");
-    });
-
 });
 
 var current;
