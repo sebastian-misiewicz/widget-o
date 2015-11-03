@@ -12,7 +12,7 @@ widgeto.controller('MainController', function (
 
     $scope.idpage = PageCache.getIdPage();
 
-    $scope.edit = function (id, type) {
+    $scope.edit = function (id) {
         $rootScope.$broadcast('modal-open', id, getElement(id));
         $('#modal-edit').modal('show');
     };
