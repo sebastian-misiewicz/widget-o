@@ -211,8 +211,6 @@ function getPopoverPlacement(element, defaultValue) {
 $("body").on("mouseenter", ".widget-o-editable", function (e) {
     if (inEdit) {
         // Taken from http://stackoverflow.com/a/12274958 Thanks.
-        
-        
         $(this).popover({
             content: '<button type="button" style="z-index: 999" class="btn btn-default" onclick="edit()"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> ' + i18n.EDIT + '</button>',
             trigger: "manual",
