@@ -49,7 +49,6 @@ Add following lines to your template:
     <script src="bower_components/widget-o/dist/app.js"></script>
     
     </body>
-    <!-- widget-o:guard:</body>;end -->
     ```
     And the script to set the id of the current page. Add it just before the `</body>`:
     ```html
@@ -60,16 +59,14 @@ Add following lines to your template:
     </script>
     
     </body>
-    <!-- widget-o:guard:</body>; -->
     ```
 
 ## Guards
-While you edit the HTML of a page itself changes. JavaScript and CSS might be added to the original template. To prevent it from beeing rendered `guard`s are used. Surround important tags with guards to remove all additional code added next to them. For instance:
+While you edit the HTML of a page itself changes. JavaScript and CSS might be added to the original template. To prevent it from beeing rendered `guard`s are used. Add a guard before all important tags to remove all additional code added next to them. For instance:
 
 ```html
 <!-- widget-o:guard:<head>; -->
 <head>
-<!-- widget-o:guard:<head>;end -->
 ```
 
 or
@@ -77,10 +74,9 @@ or
 ```html
 <!-- widget-o:guard:</head>; -->
 </head>
-<!-- widget-o:guard:</head>;end -->
 ```
 
-Syntax for `guard` starting point: `<!-- widget-o:guard:<TAG>; -->` and for end point: `<!-- widget-o:guard:<TAG>;end -->`.
+Syntax for `guard` starting point: `<!-- widget-o:guard:<TAG>; -->`. Such guard will clear all additional code between the guard and the `<TAG>`.
 
 In the first section one guard is already present. It guards the `</body>` tag. This time the guard starting point is set before all scripts import needed to edit the page since they are not needed after page rendering.
 
