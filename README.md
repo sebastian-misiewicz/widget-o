@@ -101,13 +101,13 @@ Note the `renderWidgets('section')`, which matches the `id` of parent `div`.
 
 ### Placement of edit or manage popover
 
-Popover can be placed in all four sides of a widget. Use following CSS classes to change the default placement: `widget-o-position-top`, `widget-o-position-right`, `widget-o-position-bottom` or `widget-o-position-left`.
+Popover can be placed in all four sides of a widget. Use following CSS classes to change the default placement: `widget-o-placement-top`, `widget-o-placement-right`, `widget-o-placement-bottom` or `widget-o-placement-left`.
 
 For example:
 
 ```html
 <li id="{{id}}" 
-    class="widget-o-editable widget-o-position-top"
+    class="widget-o-editable widget-o-placement-top"
     ng-controller="TopMenuController" 
     ng-init="set('[[ID]]')">
     <a href="{{element.link.href}}">{{element.label.text}}</a>
