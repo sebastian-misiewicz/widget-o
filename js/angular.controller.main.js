@@ -212,11 +212,11 @@ $("body").on("mouseenter", ".widget-o-editable", function (e) {
     if (inEdit) {
         // Taken from http://stackoverflow.com/a/12274958 Thanks.
         $(this).popover({
-            content: '<button type="button" style="z-index: 9999" class="btn btn-default" onclick="edit()"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> ' + i18n.EDIT + '</button>',
+            content: '<button type="button" style="z-index: 1040" class="btn btn-default" onclick="edit()"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> ' + i18n.EDIT + '</button>',
             trigger: "manual",
             html: true,
             placement: getPopoverPlacement($(this), 'right'),
-            template: '<div class="popover" style="z-index: 9999" onmouseover="clearTimeout(timeoutObj);$(this).mouseleave(function() {$(this).hide();});"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
+            template: '<div class="popover" style="z-index: 1040" onmouseover="clearTimeout(timeoutObj);$(this).mouseleave(function() {$(this).hide();});"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
         });
         $('.modal-dialog').draggable({
             handle: ".modal-header"
@@ -238,11 +238,11 @@ $("body").on("mouseenter", ".widget-o-managable", function (e) {
     if (inEdit) {
         // Taken from http://stackoverflow.com/a/12274958 Thanks.
         $(this).popover({
-            content: '<button type="button" style="z-index: 9999" class="btn btn-default" onclick="manage()"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> ' + i18n.MANAGE + '</button>',
+            content: '<button type="button" style="z-index: 1040" class="btn btn-default" onclick="manage()"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> ' + i18n.MANAGE + '</button>',
             trigger: "manual",
             html: true,
             placement: getPopoverPlacement($(this), 'bottom'),
-            template: '<div class="popover" style="z-index: 9999" onmouseover="clearTimeout(timeoutObj);$(this).mouseleave(function() {$(this).hide();});"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
+            template: '<div class="popover" style="z-index: 1040" onmouseover="clearTimeout(timeoutObj);$(this).mouseleave(function() {$(this).hide();});"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
         });
         currentManage = e.currentTarget.id;
         $(this).popover('show');
