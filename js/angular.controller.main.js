@@ -225,6 +225,11 @@ $("body").on("mouseenter", ".widget-o-editable", function (e) {
         $(this).popover('show');
     }
 });
+$("body").on("dblclick", ".widget-o-editable", function (e) {
+    if (inEdit) {
+        edit();
+    }
+});
 $("body").on("mouseleave", ".widget-o-editable", function () {
     if (inEdit) {
         var ref = $(this);
@@ -234,6 +239,11 @@ $("body").on("mouseleave", ".widget-o-editable", function () {
     }
 });
 
+$("body").on("dblclick", ".widget-o-managable", function (e) {
+    if (inEdit) {
+        manage();
+    }
+});
 $("body").on("mouseenter", ".widget-o-managable", function (e) {
     if (inEdit) {
         // Taken from http://stackoverflow.com/a/12274958 Thanks.
