@@ -227,6 +227,7 @@ $("body").on("mouseenter", ".widget-o-editable", function (e) {
 });
 $("body").on("dblclick", ".widget-o-editable", function (e) {
     if (inEdit) {
+        current = e.currentTarget.id;
         edit();
     }
 });
@@ -241,6 +242,7 @@ $("body").on("mouseleave", ".widget-o-editable", function () {
 
 $("body").on("dblclick", ".widget-o-managable", function (e) {
     if (inEdit) {
+        current = e.currentTarget.id;
         manage();
     }
 });
