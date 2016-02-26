@@ -2,5 +2,6 @@ widgeto = angular.module('widget-o', ['ngResource', 'ngSanitize', 'ui.sortable',
 
 widgeto.config(function ($translateProvider) {
   $translateProvider.useLoader('asyncTranslationsLoader');
-  $translateProvider.preferredLanguage('pl');
+  $translateProvider.determinePreferredLanguage()
+    .fallbackLanguage('en');
 });
