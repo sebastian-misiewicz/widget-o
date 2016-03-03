@@ -40,3 +40,27 @@ Use following set of `js` files instead of app.js for debugging:
     <script src="bower_components/widget-o/js/angular.service.widgetManager.js"></script>
     <script src="bower_components/widget-o/js/angular.service.templateManager.js"></script>
 ```
+## Set of scripts instead of single vendor.js
+
+Use following set of `js` files instead of vendor.js for debugging:
+
+```html
+    <script src="bower_components/tinymce-dist/tinymce.min.js"></script>
+    <script src="bower_components/ivan-chkv.tinymce-i18n/langs/pl.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script src="bower_components/angular-ui-sortable/sortable.js"></script>
+    <script src="bower_components/angular-ui-tinymce/src/tinymce.js"></script>
+    <script src="bower_components/angular-translate/angular-translate.js"></script>
+    <script src="bower_components/blueimp-load-image/js/load-image.all.min.js"></script>
+    <script src="bower_components/blueimp-canvas-to-blob/js/canvas-to-blob.min.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-audio.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-video.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-validate.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-angular.js"></script>
+```
