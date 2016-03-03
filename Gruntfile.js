@@ -20,8 +20,7 @@ module.exports = function (grunt) {
                 dest: 'dist/app.js'
             },
             vendor: {
-                src: [ 'bower_components/tinymce-dist/tinymce.min.js',
-                    'bower_components/ivan-chkv.tinymce-i18n/langs/pl.js',
+                src: [ 
                     'bower_components/angular/angular.min.js',
                     'bower_components/angular-resource/angular-resource.min.js',
                     'bower_components/angular-sanitize/angular-sanitize.js',
