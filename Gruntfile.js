@@ -18,6 +18,28 @@ module.exports = function (grunt) {
             dist: {
                 src: [ 'js/angular.*.js', 'tmp/*.js' ],
                 dest: 'dist/app.js'
+            },
+            vendor: {
+                src: [ 'bower_components/tinymce-dist/tinymce.min.js',
+                    'bower_components/ivan-chkv.tinymce-i18n/langs/pl.js',
+                    'bower_components/angular/angular.min.js',
+                    'bower_components/angular-resource/angular-resource.min.js',
+                    'bower_components/angular-sanitize/angular-sanitize.js',
+                    'bower_components/jquery-ui/jquery-ui.min.js',
+                    'bower_components/angular-ui-sortable/sortable.js',
+                    'bower_components/angular-ui-tinymce/src/tinymce.js',
+                    'bower_components/angular-translate/angular-translate.js',
+                    'bower_components/blueimp-load-image/js/load-image.all.min.js',
+                    'bower_components/blueimp-canvas-to-blob/js/canvas-to-blob.min.js',
+                    'bower_components/blueimp-file-upload/js/jquery.fileupload.js',
+                    'bower_components/blueimp-file-upload/js/jquery.fileupload-process.js',
+                    'bower_components/blueimp-file-upload/js/jquery.fileupload-image.js',
+                    'bower_components/blueimp-file-upload/js/jquery.fileupload-audio.js',
+                    'bower_components/blueimp-file-upload/js/jquery.fileupload-video.js',
+                    'bower_components/blueimp-file-upload/js/jquery.fileupload-validate.js',
+                    'bower_components/blueimp-file-upload/js/jquery.fileupload-angular.js'
+                    ],
+                dest: 'dist/vendor.js'
             }
         },
         copy: {
@@ -63,6 +85,11 @@ module.exports = function (grunt) {
     
     grunt.registerTask('minified', [ 'bower', 'connect:server', 'watch:min' ]);
     grunt.registerTask('package', [
-        'jshint', 'concat:dist', 'copy:login', 'uglify:dist', 'clean:temp']);
+        'jshint', 
+        'concat:dist',
+        'concat:vendor',
+        'copy:login',
+        'uglify:dist',
+        'clean:temp']);
 
 };
