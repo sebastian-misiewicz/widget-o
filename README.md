@@ -27,6 +27,8 @@ Add following lines to your template:
     <script src="bower_components/js-cookie/src/js.cookie.js"></script>
     
     <!-- widget-o:guard:</body>; -->
+    <script src="bower_components/tinymce-dist/tinymce.min.js"></script>
+    <script src="bower_components/ivan-chkv.tinymce-i18n/langs/pl.js"></script>
     <script src="bower_components/widget-o/dist/vendor.js"></script>
     <script src="bower_components/widget-o/dist/app.js"></script>
     
