@@ -64,7 +64,7 @@ Syntax for `guard` starting point: `<!-- widget-o:guard:<TAG>; -->`. Such guard 
 
 In the first section one guard is already present. It guards the `</body>` tag. This time the guard starting point is set before all scripts import needed to edit the page since they are not needed after page rendering.
 
-## Widget elements
+## Widgets
 CSS classes `widget-o-editable` and `widget-o-managable` are used to start editing mode of a certain widget-o element.
 
 Code below will allow to start edit mode for the `introText`. It is important to put the id with a proper element name. Widget-o in edit mode reads the id and finds the contents associated with the given ID within page JSON.
@@ -188,7 +188,7 @@ Textarea is basically a field with HTML code.
 <img src="{{page.introImage.src}}" alt="{{page.introImage.alt}}" width="{{page.introImage.width}}" class="widget-o-editable" id="introImage">
 ```
 
-## Adding a widget
+### Adding a widget
 1. Prepare a controller:
 
    ```JavaScript
@@ -233,6 +233,52 @@ Textarea is basically a field with HTML code.
     <a href="{{element.link.href}}">{{element.label.text}}</a>
    </li>
    ```
+   
+### Render nested elements
+Nested elements within one widget require a separate configuration.
+
+```html
+<section id="{{id}}"
+         class="widget-o-editable widget-o-placement-top"
+         ng-controller="WidgetController"
+         ng-init="set('[[ID]]')">
+      <div class="row">
+         <div class="col-lg-6">
+            <h2>{{element.heading.text}}</h2>
+         </div>
+         <div class="col-lg-6">
+            <div ng-show="renderWidgets('[[ID]]-buttons')"></div>
+            <ul id="[[ID]]-buttons" class="widget-o-managable widget-o-placement-top list-inline banner-social-buttons">
+            </ul>
+         </div>
+      </div>
+</section>
+```
+
+In the example above there is a nested '[[ID]]-buttons' block. To configure it properly - for widget'o to pick it up - there is need to add a following configuration in widget:
+
+```js
+"toRender": [
+     "-buttons"
+],
+```
+
+Which results in:
+
+```js
+WidgetManager.add(
+   'contact-section', 
+   'templates/startbootstrap-landing-page/widgets/contact-section.html',
+   {
+      "widget": "contact-section",
+      "toRender": [
+         "-buttons"
+      ],
+      "heading": {
+         "text": "Contact"
+      }
+   });
+```
 
 ## Panels
 
