@@ -157,6 +157,12 @@ widgeto.controller('MainController', function (
             if ($scope.page[element.id] && $scope.page[element.id].elements) {
                 $scope.renderWidgets(element.id, force);
             }
+
+            if (element && element.toRender) {
+                var toRender = element.toRender;
+                console.log("Found elements to re-render: " + toRender);
+                $scope.renderWidgets(element.id + toRender, force);
+            }
         }
         $compile($("#" + parent).contents())($scope);
         $rootScope.$broadcast('rendered-widgets-for-'+parent);
