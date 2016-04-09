@@ -246,8 +246,8 @@ $("body").on("mouseleave", ".widget-o-editable", function () {
     }
 });
 
-$("body").on("dblclick", ".widget-o-managable", function (e) {
-    if (inEdit && e.ctrlKey) {
+$("body").on("click", ".widget-o-managable", function (e) {
+    if (inEdit && e.altKey) {
         current = e.currentTarget.id;
         manage();
     }
