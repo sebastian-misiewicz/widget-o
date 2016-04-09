@@ -1,20 +1,21 @@
 <div id="edit-text-{{id}}"
-     class="panel panel-primary" 
+     class="row" 
      ng-controller="EditOrderController" 
      ng-init="set('[[ID]]')">
-    <div class="panel-heading">{{ 'ORDER_OF' | translate }} {{id}}</div>
-    <div class="panel-body">
+    <div class="col-lg-12">
+        <h4>{{ 'ORDER_OF' | translate }} {{id}}</h4>
         <ul style="list-style-type: none; padding: 0;"
             ui-sortable="sortableOptions" 
             ng-model="value.elements">
             <li ng-repeat="element in value.elements">
-                <h4>{{element.id}}
-                    <span class="label label-danger" 
-                          style="cursor: pointer;" 
-                          ng-click="remove(element)">
-                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                    </span>
-                </h4>
+                <span style="cursor: move;"
+                      class="glyphicon glyphicon-move" aria-hidden="true"></span>
+                {{element.id}}
+                <span class="label label-danger" 
+                      style="cursor: pointer;" 
+                      ng-click="remove(element)">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </span>
             </li>
         </ul>
         <hr>

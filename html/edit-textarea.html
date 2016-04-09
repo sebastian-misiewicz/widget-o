@@ -1,9 +1,11 @@
 <div id="edit-textarea-{{id}}"
-     class="panel panel-primary" 
+     class="row" 
      ng-controller="EditTextareaController" 
      ng-init="set('[[ID]]')">
-    <div class="panel-heading">{{ 'TEXTAREA' | translate }}</div>
-    <div class="panel-body">
-        <textarea ui-tinymce="tinymceOptions" ng-model="value.textarea"></textarea>
+    <div class="col-lg-12">
+        <h4>{{ 'TEXTAREA' | translate }}</h4>
+        <div class="panel-body">
+            <textarea ui-tinymce="tinymceOptions" ng-model="value.textarea"></textarea>
+        </div>
     </div>
 </div>

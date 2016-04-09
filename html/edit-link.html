@@ -1,9 +1,9 @@
 <div id="edit-image-{{id}}"
-     class="panel panel-primary"
+     class="row"
      ng-controller="EditLinkController"
      ng-init="set('[[ID]]')">
-    <div class="panel-heading">{{id}} - Link</div>
-    <div class="panel-body">
+    <div class="col-lg-12">
+        <h4>{{id}} - Link</h4>
         <div class="radio">
             <label>
                 <input type="radio" name="optionsRadios" id="optionsRadios1" ng-model="value.link.type" value="section" checked>
