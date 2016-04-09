@@ -20,7 +20,10 @@ widgeto.controller('EditOrderController', function (
     };
     
     $scope.sortableOptions = {
-        axis: 'y'
+        axis: 'y',
+        stop: function() {
+            $scope.reRender();
+        }
     };
     
     $scope.reRender = function() {
@@ -32,6 +35,7 @@ widgeto.controller('EditOrderController', function (
         if (index > -1) {
             $scope.value.elements.splice(index, 1);
         }
+        $scope.reRender();
     };
     
     $scope.add = function() {
@@ -45,6 +49,7 @@ widgeto.controller('EditOrderController', function (
         
         element.id = $scope.id + "_" + $scope.sample.widgetName + "_" + $scope.sample.id;
         $scope.value.elements.push(element);
+        $scope.reRender();
     };
 
 });
