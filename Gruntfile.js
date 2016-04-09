@@ -23,6 +23,7 @@ module.exports = function (grunt) {
                 src: [ 
                     'bower_components/angular/angular.min.js',
                     'bower_components/angular-resource/angular-resource.min.js',
+                    'bower_components/angular-md5/angular-md5.min.js',
                     'bower_components/angular-sanitize/angular-sanitize.js',
                     'bower_components/jquery-ui/jquery-ui.min.js',
                     'bower_components/angular-ui-sortable/sortable.js',

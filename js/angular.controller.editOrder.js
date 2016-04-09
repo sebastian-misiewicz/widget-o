@@ -1,5 +1,5 @@
 widgeto.controller('EditOrderController', function (
-        $scope, $rootScope,
+        $scope, $rootScope, md5,
         WidgetManager) {
 
     $scope.id = '';
@@ -47,10 +47,14 @@ widgeto.controller('EditOrderController', function (
         
         var element = JSON.parse(JSON.stringify(widget.sampleJson));
         
-        element.id = $scope.id + "_" + $scope.sample.widgetName + "_" + $scope.sample.id;
+        element.id = $scope.id + "_" + $scope.sample.widgetName + "_" + getHash();
         $scope.value.elements.push(element);
         $scope.reRender();
     };
+    
+    function getHash() {
+        return md5.createHash(new Date().toString()).substring(1,7);
+    }
 
 });
 
